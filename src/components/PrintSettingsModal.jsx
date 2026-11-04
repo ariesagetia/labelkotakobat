@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, X, RotateCcw, Sliders, Layout, Type, Scissors, Palette, Square } from 'lucide-react';
+import { Settings, X, RotateCcw, Sliders, Layout, Type, Scissors, Palette } from 'lucide-react';
 import { AVAILABLE_FONTS, FONT_SIZE_PRESETS } from '../utils/fontConstants';
 
 export default function PrintSettingsModal({
@@ -10,8 +10,6 @@ export default function PrintSettingsModal({
   onResetSettings
 }) {
   if (!isOpen) return null;
-
-  const isWhiteBg = settings?.labelBgMode === 'white';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
@@ -102,52 +100,6 @@ export default function PrintSettingsModal({
 
             <div className="p-2.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 text-[11px]">
               Kapasitas: <strong>{(settings.columns || 3) * (settings.rows || 5)} label per lembar</strong> (Sesuai dengan layout 15 kotak obat di Lampiran 1).
-            </div>
-          </div>
-
-          {/* Mode Background Label (Berwarna vs Putih Polos) */}
-          <div className="space-y-3 pt-3 border-t border-slate-200">
-            <div className="flex items-center gap-1.5 font-bold text-slate-900 text-sm">
-              <Square className="w-4 h-4 text-purple-700" />
-              <span>Background Label Kotak Obat</span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => onUpdateSettings({ labelBgMode: 'colored' })}
-                className={`p-3 rounded-xl border text-left transition-all ${
-                  !isWhiteBg
-                    ? 'bg-purple-50/70 border-purple-600 ring-2 ring-purple-400 shadow-xs'
-                    : 'bg-white border-slate-200 hover:bg-slate-50'
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="w-3.5 h-3.5 rounded bg-purple-700 inline-block shrink-0"></span>
-                  <span className="font-bold text-xs text-slate-900">Berwarna Penuh</span>
-                </div>
-                <p className="text-[11px] text-slate-500 leading-relaxed">
-                  Latar belakang label berwarna penuh sesuai kategori masing-masing obat (seperti contoh Lampiran 1).
-                </p>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => onUpdateSettings({ labelBgMode: 'white' })}
-                className={`p-3 rounded-xl border text-left transition-all ${
-                  isWhiteBg
-                    ? 'bg-emerald-50/70 border-emerald-600 ring-2 ring-emerald-400 shadow-xs'
-                    : 'bg-white border-slate-200 hover:bg-slate-50'
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="w-3.5 h-3.5 rounded bg-white border-2 border-emerald-600 inline-block shrink-0"></span>
-                  <span className="font-bold text-xs text-slate-900">Putih Polos (Hemat Tinta)</span>
-                </div>
-                <p className="text-[11px] text-slate-500 leading-relaxed">
-                  Latar label putih polos bersih tanpa tinta blok tebal, garis tepi & pemisah tetap berwarna kategori.
-                </p>
-              </button>
             </div>
           </div>
 

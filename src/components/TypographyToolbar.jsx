@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Type, Sliders, Palette, ChevronDown, ChevronUp, Sparkles, Check, Square } from 'lucide-react';
+import { Type, Sliders, Palette, ChevronDown, ChevronUp, Sparkles, Check } from 'lucide-react';
 import { AVAILABLE_FONTS, FONT_SIZE_PRESETS, QUICK_FONT_COLORS } from '../utils/fontConstants';
 
 export default function TypographyToolbar({
@@ -18,8 +18,6 @@ export default function TypographyToolbar({
     });
   };
 
-  const isWhiteBg = settings?.labelBgMode === 'white';
-
   return (
     <div className="no-print bg-white rounded-2xl border border-slate-200 shadow-sm p-4 mb-6 transition-all">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -32,10 +30,10 @@ export default function TypographyToolbar({
             </div>
             <div>
               <span className="text-xs font-bold text-slate-900 block leading-tight">
-                Tipografi & Desain
+                Tipografi & Font
               </span>
               <span className="text-[10px] text-slate-500">
-                Font, ukuran & background
+                Ubah jenis, ukuran & warna teks
               </span>
             </div>
           </div>
@@ -57,42 +55,7 @@ export default function TypographyToolbar({
             </select>
           </div>
 
-          {/* 2. MODE BACKGROUND LABEL (Berwarna vs Putih Polos) */}
-          <div className="flex items-center space-x-1 pl-2 border-l border-slate-200">
-            <span className="text-xs font-semibold text-slate-600 mr-1 flex items-center gap-1">
-              <Square className="w-3.5 h-3.5 text-purple-600" /> Background:
-            </span>
-
-            {/* Berwarna Sesuai Kategori */}
-            <button
-              onClick={() => onUpdateSettings({ labelBgMode: 'colored' })}
-              title="Background penuh berwarna sesuai kategori masing-masing obat (seperti Lampiran 1)"
-              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1.5 ${
-                !isWhiteBg
-                  ? 'bg-purple-700 text-white border-purple-700 shadow-xs ring-1 ring-purple-400'
-                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
-              }`}
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-purple-400 inline-block"></span>
-              <span>Berwarna</span>
-            </button>
-
-            {/* Putih Polos (Hemat Tinta) */}
-            <button
-              onClick={() => onUpdateSettings({ labelBgMode: 'white' })}
-              title="Background label putih polos bersih (hemat tinta printer, garis bingkai tetap berwarna kategori)"
-              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1.5 ${
-                isWhiteBg
-                  ? 'bg-emerald-700 text-white border-emerald-700 shadow-xs ring-1 ring-emerald-400'
-                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
-              }`}
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-white border border-slate-400 inline-block"></span>
-              <span>Putih Polos</span>
-            </button>
-          </div>
-
-          {/* 3. WARNA FONT QUICK BUTTONS */}
+          {/* 2. WARNA FONT QUICK BUTTONS */}
           <div className="flex items-center space-x-1 pl-2 border-l border-slate-200">
             <span className="text-xs font-semibold text-slate-600 mr-1 flex items-center gap-1">
               <Palette className="w-3.5 h-3.5 text-purple-600" /> Teks:
@@ -111,6 +74,20 @@ export default function TypographyToolbar({
               Auto
             </button>
 
+            {/* Putih */}
+            <button
+              onClick={() => onUpdateSettings({ textColorMode: 'white', globalTextColor: '#ffffff' })}
+              title="Semua teks warna putih"
+              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1 ${
+                settings.textColorMode === 'white'
+                  ? 'bg-slate-900 text-white border-slate-900 ring-2 ring-purple-400'
+                  : 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700'
+              }`}
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-white border border-slate-300 inline-block"></span>
+              <span>Putih</span>
+            </button>
+
             {/* Hitam */}
             <button
               onClick={() => onUpdateSettings({ textColorMode: 'black', globalTextColor: '#111827' })}
@@ -124,22 +101,6 @@ export default function TypographyToolbar({
               <span className="w-2.5 h-2.5 rounded-full bg-black inline-block"></span>
               <span>Hitam</span>
             </button>
-
-            {/* Putih (Only relevant if colored bg) */}
-            {!isWhiteBg && (
-              <button
-                onClick={() => onUpdateSettings({ textColorMode: 'white', globalTextColor: '#ffffff' })}
-                title="Semua teks warna putih"
-                className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1 ${
-                  settings.textColorMode === 'white'
-                    ? 'bg-slate-900 text-white border-slate-900 ring-2 ring-purple-400'
-                    : 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700'
-                }`}
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-white border border-slate-300 inline-block"></span>
-                <span>Putih</span>
-              </button>
-            )}
 
             {/* Kuning Farmasi */}
             <button
