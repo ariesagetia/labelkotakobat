@@ -84,8 +84,8 @@ export default function App() {
       try {
         const parsed = JSON.parse(saved);
         const fontFamily = (!parsed.fontFamily || parsed.fontFamily === 'Montserrat') ? 'Arial' : parsed.fontFamily;
-        const textColorMode = (!parsed.textColorMode || parsed.textColorMode === 'category') ? 'black' : parsed.textColorMode;
-        const globalTextColor = (textColorMode === 'black' && (!parsed.globalTextColor || parsed.globalTextColor === '#ffffff' || parsed.globalTextColor === '#111827')) ? '#000000' : (parsed.globalTextColor || '#000000');
+        const textColorMode = (parsed.textColorMode === 'yellow' || parsed.textColorMode === 'custom') ? parsed.textColorMode : 'black';
+        const globalTextColor = textColorMode === 'black' ? '#000000' : (parsed.globalTextColor || '#000000');
         const isOldSize = !parsed.fontSizeNama || parsed.fontSizeNama === 13;
         const fontSizeNama = isOldSize ? 17 : parsed.fontSizeNama;
         const fontSizeKandungan = isOldSize ? 11 : (parsed.fontSizeKandungan || 11);

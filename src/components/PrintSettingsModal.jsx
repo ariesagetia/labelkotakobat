@@ -183,7 +183,7 @@ export default function PrintSettingsModal({
                   onClick={() => onUpdateSettings({ textColorMode: 'black', globalTextColor: '#000000' })}
                   className={`px-2.5 py-1.5 text-xs font-semibold rounded-lg border text-center transition-all ${
                     (!settings.textColorMode || settings.textColorMode === 'black')
-                      ? 'bg-slate-900 text-white border-slate-900 font-bold shadow-xs'
+                      ? 'bg-black text-white border-black font-bold shadow-xs ring-2 ring-purple-400'
                       : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-100'
                   }`}
                 >
@@ -194,7 +194,7 @@ export default function PrintSettingsModal({
                   onClick={() => onUpdateSettings({ textColorMode: 'white', globalTextColor: '#ffffff' })}
                   className={`px-2.5 py-1.5 text-xs font-semibold rounded-lg border text-center transition-all ${
                     settings.textColorMode === 'white'
-                      ? 'bg-slate-800 text-white border-slate-700 font-bold'
+                      ? 'bg-white text-slate-900 border-slate-900 font-bold ring-2 ring-purple-400 shadow-xs'
                       : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                   }`}
                 >

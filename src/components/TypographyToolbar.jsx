@@ -56,23 +56,41 @@ export default function TypographyToolbar({
           </div>
 
           {/* 2. WARNA FONT QUICK BUTTONS */}
-          <div className="flex items-center space-x-1 pl-2 border-l border-slate-200">
+          <div className="flex items-center space-x-1.5 pl-2 border-l border-slate-200">
             <span className="text-xs font-semibold text-slate-600 mr-1 flex items-center gap-1">
               <Palette className="w-3.5 h-3.5 text-purple-600" /> Teks:
             </span>
 
-            {/* Hitam */}
+            {/* Hitam (#000000) */}
             <button
               onClick={() => onUpdateSettings({ textColorMode: 'black', globalTextColor: '#000000' })}
               title="Semua teks warna hitam pekat (#000000)"
-              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1 ${
+              className={`px-2.5 py-1 text-xs rounded-lg font-bold border transition-all flex items-center gap-1.5 ${
                 (!settings.textColorMode || settings.textColorMode === 'black')
-                  ? 'bg-slate-100 text-slate-900 border-slate-900 font-bold ring-2 ring-purple-400'
-                  : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-100'
+                  ? 'bg-black text-white border-black ring-2 ring-purple-400 shadow-sm'
+                  : 'bg-white text-black border-slate-300 hover:bg-slate-100'
               }`}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-black inline-block"></span>
-              <span>Hitam</span>
+              <span className={`w-2.5 h-2.5 rounded-full inline-block ${
+                (!settings.textColorMode || settings.textColorMode === 'black')
+                  ? 'bg-white border border-slate-300'
+                  : 'bg-black'
+              }`}></span>
+              <span>Hitam (#000000)</span>
+            </button>
+
+            {/* Putih */}
+            <button
+              onClick={() => onUpdateSettings({ textColorMode: 'white', globalTextColor: '#ffffff' })}
+              title="Semua teks warna putih"
+              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1.5 ${
+                settings.textColorMode === 'white'
+                  ? 'bg-white text-slate-900 border-slate-900 ring-2 ring-purple-400 font-bold shadow-sm'
+                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
+              }`}
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-white border border-slate-400 inline-block"></span>
+              <span>Putih</span>
             </button>
 
             {/* Auto (Category) */}
@@ -81,32 +99,18 @@ export default function TypographyToolbar({
               title="Gunakan warna kontras otomatis (Hitam pada putih / Putih pada berwarna)"
               className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all ${
                 settings.textColorMode === 'category'
-                  ? 'bg-purple-100 text-purple-900 border-purple-300 ring-1 ring-purple-300'
+                  ? 'bg-purple-100 text-purple-900 border-purple-300 ring-1 ring-purple-300 font-bold'
                   : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
               }`}
             >
               Auto
             </button>
 
-            {/* Putih */}
-            <button
-              onClick={() => onUpdateSettings({ textColorMode: 'white', globalTextColor: '#ffffff' })}
-              title="Semua teks warna putih"
-              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1 ${
-                settings.textColorMode === 'white'
-                  ? 'bg-slate-900 text-white border-slate-900 ring-2 ring-purple-400'
-                  : 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700'
-              }`}
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-white border border-slate-300 inline-block"></span>
-              <span>Putih</span>
-            </button>
-
             {/* Kuning Farmasi */}
             <button
               onClick={() => onUpdateSettings({ textColorMode: 'yellow', globalTextColor: '#FACC15' })}
               title="Warna kuning khas apotek (sangat kontras di background ungu/merah)"
-              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1 ${
+              className={`px-2.5 py-1 text-xs rounded-lg font-semibold border transition-all flex items-center gap-1.5 ${
                 settings.textColorMode === 'yellow'
                   ? 'bg-amber-100 text-amber-950 border-amber-500 font-bold ring-2 ring-amber-400'
                   : 'bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100'
@@ -130,11 +134,9 @@ export default function TypographyToolbar({
                 title="Pilih warna font bebas"
                 className="w-6 h-6 rounded-md border border-slate-300 cursor-pointer p-0.5 bg-white"
               />
-              {settings.textColorMode === 'custom' && (
-                <span className="text-[10px] font-mono text-purple-700 font-bold">
-                  {settings.globalTextColor.toUpperCase()}
-                </span>
-              )}
+              <span className="text-[10px] font-mono text-purple-700 font-bold">
+                {(settings.globalTextColor || '#000000').toUpperCase()}
+              </span>
             </div>
           </div>
         </div>
