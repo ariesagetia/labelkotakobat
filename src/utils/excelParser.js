@@ -96,6 +96,67 @@ export function detectColumns(headers) {
 }
 
 /**
+ * Parse an Excel workbook from an ArrayBuffer or Uint8Array
+ */
+export function parseExcelArrayBuffer(arrayBuffer, customColMap = null) {
+  const data = new Uint8Array(arrayBuffer);
+  const workbook = XLSX.read(data, { type: 'array' });
+  
+  // Read first worksheet
+  const firstSheetName = workbook.SheetNames[0];
+  const worksheet = workbook.Sheets[firstSheetName];
+  
+  // Convert to JSON with header array
+  const rawJson = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+  if (!rawJson || rawJson.length < 2) {
+    throw new Error('File Excel tidak memiliki data atau baris tidak cukup.');
+  }
+
+  // Header row
+  const headers = rawJson[0].map(h => (h !== undefined && h !== null ? String(h).trim() : ''));
+  const colMap = customColMap || detectColumns(headers);
+
+  // Find column indices
+  const idxNama = headers.indexOf(colMap.nama);
+  const idxKategori = headers.indexOf(colMap.kategori);
+  const idxKandungan = headers.indexOf(colMap.kandungan);
+  const idxKemasan = colMap.kemasan ? headers.indexOf(colMap.kemasan) : -1;
+
+  const items = [];
+  const dataRows = rawJson.slice(1);
+
+  dataRows.forEach((row, index) => {
+    if (!row || row.length === 0) return;
+    
+    const rawItem = idxNama >= 0 && row[idxNama] ? String(row[idxNama]).trim() : '';
+    const kategori = idxKategori >= 0 && row[idxKategori] ? String(row[idxKategori]).trim().toUpperCase() : 'LAINNYA';
+    const kandungan = idxKandungan >= 0 && row[idxKandungan] ? String(row[idxKandungan]).trim() : '';
+    const explicitKemasan = idxKemasan >= 0 && row[idxKemasan] ? String(row[idxKemasan]).trim() : '';
+
+    if (!rawItem && !kandungan) return; // skip empty rows
+
+    const parsed = smartParseItem(rawItem, explicitKemasan);
+
+    items.push({
+      id: `item-${index + 1}`,
+      rawItem,
+      nama: parsed.nama || rawItem,
+      kemasan: parsed.kemasan,
+      kategori: kategori || 'LAINNYA',
+      kandungan: kandungan || ''
+    });
+  });
+
+  return {
+    items,
+    headers,
+    colMap,
+    sheetNames: workbook.SheetNames,
+    rowCount: items.length
+  };
+}
+
+/**
  * Parse uploaded file (.xlsx, .xls, .csv)
  */
 export async function parseExcelFile(file, customColMap = null) {
@@ -104,61 +165,8 @@ export async function parseExcelFile(file, customColMap = null) {
 
     reader.onload = (e) => {
       try {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
-        
-        // Read first worksheet
-        const firstSheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[firstSheetName];
-        
-        // Convert to JSON with header array
-        const rawJson = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-        if (!rawJson || rawJson.length < 2) {
-          throw new Error('File Excel tidak memiliki data atau baris tidak cukup.');
-        }
-
-        // Header row
-        const headers = rawJson[0].map(h => (h !== undefined && h !== null ? String(h).trim() : ''));
-        const colMap = customColMap || detectColumns(headers);
-
-        // Find column indices
-        const idxNama = headers.indexOf(colMap.nama);
-        const idxKategori = headers.indexOf(colMap.kategori);
-        const idxKandungan = headers.indexOf(colMap.kandungan);
-        const idxKemasan = colMap.kemasan ? headers.indexOf(colMap.kemasan) : -1;
-
-        const items = [];
-        const dataRows = rawJson.slice(1);
-
-        dataRows.forEach((row, index) => {
-          if (!row || row.length === 0) return;
-          
-          const rawItem = idxNama >= 0 && row[idxNama] ? String(row[idxNama]).trim() : '';
-          const kategori = idxKategori >= 0 && row[idxKategori] ? String(row[idxKategori]).trim().toUpperCase() : 'LAINNYA';
-          const kandungan = idxKandungan >= 0 && row[idxKandungan] ? String(row[idxKandungan]).trim() : '';
-          const explicitKemasan = idxKemasan >= 0 && row[idxKemasan] ? String(row[idxKemasan]).trim() : '';
-
-          if (!rawItem && !kandungan) return; // skip empty rows
-
-          const parsed = smartParseItem(rawItem, explicitKemasan);
-
-          items.push({
-            id: `item-${Date.now()}-${index}`,
-            rawItem,
-            nama: parsed.nama || rawItem,
-            kemasan: parsed.kemasan,
-            kategori: kategori || 'LAINNYA',
-            kandungan: kandungan || ''
-          });
-        });
-
-        resolve({
-          items,
-          headers,
-          colMap,
-          sheetNames: workbook.SheetNames,
-          rowCount: items.length
-        });
+        const result = parseExcelArrayBuffer(e.target.result, customColMap);
+        resolve(result);
       } catch (err) {
         reject(err);
       }

@@ -8,7 +8,9 @@ import {
   FileSpreadsheet, 
   HelpCircle, 
   PlusCircle,
-  Eye
+  Eye,
+  RefreshCw,
+  Globe
 } from 'lucide-react';
 
 export default function Header({
@@ -24,7 +26,11 @@ export default function Header({
   onLoadDemo,
   onExportExcel,
   activeTab,
-  setActiveTab
+  setActiveTab,
+  dataSource = 'github',
+  isSyncingGitHub = false,
+  lastSyncTime = null,
+  onSyncGitHub
 }) {
   return (
     <header className="no-print bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
@@ -44,6 +50,42 @@ export default function Header({
                 <span className="text-xs bg-purple-100 text-purple-800 font-semibold px-2 py-0.5 rounded-full border border-purple-200">
                   v2.0 Farmasi
                 </span>
+                
+                {/* Data Source Badge */}
+                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full border text-[11px] bg-slate-50 border-slate-200">
+                  {dataSource === 'github' ? (
+                    <>
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      <span className="font-semibold text-slate-700">GitHub Default</span>
+                      <button
+                        type="button"
+                        onClick={() => onSyncGitHub && onSyncGitHub(false)}
+                        disabled={isSyncingGitHub}
+                        title={lastSyncTime ? `Terakhir disinkronkan: ${lastSyncTime}. Klik untuk update dari GitHub.` : 'Sinkronkan data obat terbaru dari GitHub'}
+                        className="p-0.5 hover:bg-slate-200 text-slate-500 hover:text-slate-800 rounded transition-all"
+                      >
+                        <RefreshCw className={`w-3 h-3 ${isSyncingGitHub ? 'animate-spin text-purple-600' : ''}`} />
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                      <span className="font-semibold text-amber-800">Upload Lokal</span>
+                      <button
+                        type="button"
+                        onClick={() => onSyncGitHub && onSyncGitHub(false)}
+                        disabled={isSyncingGitHub}
+                        title="Kembali gunakan data default dari repositori GitHub"
+                        className="text-[10px] text-purple-700 font-bold hover:underline ml-0.5"
+                      >
+                        Pakai GitHub
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
               <p className="text-xs text-slate-500">
                 Generator & Pencetak Label Kotak Obat Multi-Kategori (Sesuai Lampiran 1 & 2)
