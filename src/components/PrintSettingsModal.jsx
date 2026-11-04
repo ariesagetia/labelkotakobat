@@ -98,8 +98,52 @@ export default function PrintSettingsModal({
               </div>
             </div>
 
-            <div className="p-2.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 text-[11px]">
-              Kapasitas: <strong>{(settings.columns || 3) * (settings.rows || 5)} label per lembar</strong> (Sesuai dengan layout 15 kotak obat di Lampiran 1).
+            {/* Ukuran Fisik Setiap Label: 6.5 cm x 5.2 cm */}
+            <div className="grid grid-cols-2 gap-3 pt-1">
+              <div>
+                <label className="block text-[11px] font-semibold text-slate-700 mb-1">
+                  Lebar Label
+                </label>
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="number"
+                    step="0.1"
+                    min="3"
+                    max="15"
+                    value={settings.labelWidth ? (settings.labelWidth / 10).toFixed(1) : '6.5'}
+                    onChange={(e) => onUpdateSettings({ labelWidth: Number(e.target.value) * 10 })}
+                    className="w-full px-3 py-1.5 rounded-xl border border-slate-300 bg-white font-bold text-xs"
+                  />
+                  <span className="text-xs font-semibold text-slate-600">cm</span>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-semibold text-slate-700 mb-1">
+                  Panjang / Tinggi Label
+                </label>
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="number"
+                    step="0.1"
+                    min="2"
+                    max="15"
+                    value={settings.labelHeight ? (settings.labelHeight / 10).toFixed(1) : '5.2'}
+                    onChange={(e) => onUpdateSettings({ labelHeight: Number(e.target.value) * 10 })}
+                    className="w-full px-3 py-1.5 rounded-xl border border-slate-300 bg-white font-bold text-xs"
+                  />
+                  <span className="text-xs font-semibold text-slate-600">cm</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 text-[11px] flex items-center justify-between">
+              <div>
+                Ukuran Label: <strong>{((settings.labelWidth || 65) / 10).toFixed(1)} cm × {((settings.labelHeight || 52) / 10).toFixed(1)} cm</strong>
+              </div>
+              <span className="font-semibold text-purple-700 text-[10px]">
+                {(settings.columns || 3) * (settings.rows || 5)} label per lembar A4
+              </span>
             </div>
           </div>
 

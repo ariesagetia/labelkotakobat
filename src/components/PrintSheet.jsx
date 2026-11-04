@@ -14,8 +14,11 @@ export default function PrintSheet({
   const paper = settings?.paperSize || 'A4';
   const cols = settings?.columns || 3;
   const rows = settings?.rows || 5;
-  const marginMm = settings?.pageMargin || 8; // mm
-  const gapMm = settings?.labelGap || 3; // mm
+
+  // Exact physical label dimensions: 6.5 cm (65mm) width x 5.2 cm (52mm) height
+  const labelWidthMm = settings?.labelWidth || 65; // 6.5 cm
+  const labelHeightMm = settings?.labelHeight || 52; // 5.2 cm
+  const gapMm = settings?.labelGap !== undefined ? settings.labelGap : 2.5; // mm
 
   // Paper physical dimensions in mm (using 0.5mm safety buffer to eliminate DPI subpixel rounding spillover)
   const paperDimensions = {
@@ -38,9 +41,13 @@ export default function PrintSheet({
           <span className="text-slate-400">•</span>
           <span>{items.length} label di lembar ini</span>
         </div>
-        <span className="text-slate-400 font-mono text-[11px]">
-          Kertas {paper} ({dim.width} × {Math.round(dim.height)} mm) • Grid {cols}×{rows}
-        </span>
+        <div className="flex items-center gap-2 text-slate-500 font-mono text-[11px]">
+          <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">
+            Ukuran Label: {(labelWidthMm / 10).toFixed(1)} × {(labelHeightMm / 10).toFixed(1)} cm
+          </span>
+          <span className="text-slate-400">•</span>
+          <span>Kertas {paper} • Grid {cols}×{rows}</span>
+        </div>
       </div>
 
       {/* Screen-only scale wrapper (neutralized to transform: none in print) */}
@@ -58,22 +65,24 @@ export default function PrintSheet({
             width: `${dim.width}mm`,
             height: `${dim.height}mm`,
             maxHeight: `${dim.height}mm`,
-            padding: `${marginMm}mm`,
             boxSizing: 'border-box',
             overflow: 'hidden',
             backgroundColor: '#ffffff',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             WebkitPrintColorAdjust: 'exact',
             printColorAdjust: 'exact'
           }}
         >
-          {/* CSS Grid for the labels */}
+          {/* CSS Grid for the labels with EXACT 65mm (6.5cm) x 52mm (5.2cm) cells */}
           <div
-            className="w-full h-full grid"
+            className="grid justify-center content-center items-center"
             style={{
-              gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-              gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${cols}, ${labelWidthMm}mm)`,
+              gridTemplateRows: `repeat(${rows}, ${labelHeightMm}mm)`,
               gap: `${gapMm}mm`,
-              height: '100%',
               boxSizing: 'border-box',
               overflow: 'hidden'
             }}
@@ -86,7 +95,19 @@ export default function PrintSheet({
               };
 
               return (
-                <div key={item.id} className="w-full h-full overflow-hidden box-border">
+                <div
+                  key={item.id}
+                  style={{
+                    width: `${labelWidthMm}mm`,
+                    height: `${labelHeightMm}mm`,
+                    minWidth: `${labelWidthMm}mm`,
+                    maxWidth: `${labelWidthMm}mm`,
+                    minHeight: `${labelHeightMm}mm`,
+                    maxHeight: `${labelHeightMm}mm`,
+                    boxSizing: 'border-box'
+                  }}
+                  className="overflow-hidden box-border"
+                >
                   <LabelCard
                     item={item}
                     colorConfig={colorConfig}

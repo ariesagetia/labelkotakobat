@@ -31,8 +31,10 @@ const DEFAULT_SETTINGS = {
   paperSize: 'A4',
   columns: 3,
   rows: 5,
-  pageMargin: 8,
-  labelGap: 3,
+  labelWidth: 65,  // mm (6.5 cm)
+  labelHeight: 52, // mm (5.2 cm)
+  pageMargin: 5,
+  labelGap: 2.5,
   labelBgMode: 'colored',
   syncKemasanSize: true,
   fontSizeNama: 13,
@@ -86,9 +88,11 @@ export default function App() {
         return {
           ...DEFAULT_SETTINGS,
           ...parsed,
+          labelWidth: parsed.labelWidth || 65,
+          labelHeight: parsed.labelHeight || 52,
+          labelGap: parsed.labelGap !== undefined ? parsed.labelGap : 2.5,
           syncKemasanSize: syncKemasan,
           fontSizeKemasan: syncKemasan ? nameSize : (parsed.fontSizeKemasan || nameSize),
-          labelBgMode: parsed.labelBgMode || 'colored',
           showDivider: parsed.showDivider !== undefined ? parsed.showDivider : true,
           dividerWidth: parsed.dividerWidth === 80 || parsed.dividerWidth === undefined ? 100 : parsed.dividerWidth
         };
@@ -626,7 +630,7 @@ export default function App() {
                     </span>
                     <div className="leading-relaxed">
                       <span>
-                        Grid <strong>3 Kolom × 5 Baris</strong> (15 label/lembar). Pada menu Cetak browser, wajib centang:
+                        Ukuran label <strong>6,5 cm × 5,2 cm</strong> (Grid 3×5, 15 label/lembar). Pada menu Cetak browser, wajib centang:
                       </span>
                       <span className="ml-1 font-mono font-bold text-amber-900 bg-amber-100 px-1.5 py-0.5 rounded border border-amber-200">
                         ☑ Grafik latar belakang (Background graphics)
