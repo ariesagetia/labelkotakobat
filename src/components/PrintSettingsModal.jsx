@@ -160,7 +160,7 @@ export default function PrintSettingsModal({
                 Jenis Huruf (Font Family)
               </label>
               <select
-                value={settings.fontFamily || 'Montserrat'}
+                value={settings.fontFamily || 'Arial'}
                 onChange={(e) => onUpdateSettings({ fontFamily: e.target.value })}
                 className="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white font-bold text-xs focus:ring-2 focus:ring-purple-500"
               >
@@ -180,36 +180,36 @@ export default function PrintSettingsModal({
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-2">
                 <button
                   type="button"
-                  onClick={() => onUpdateSettings({ textColorMode: 'category' })}
+                  onClick={() => onUpdateSettings({ textColorMode: 'black', globalTextColor: '#000000' })}
                   className={`px-2.5 py-1.5 text-xs font-semibold rounded-lg border text-center transition-all ${
-                    (!settings.textColorMode || settings.textColorMode === 'category')
-                      ? 'bg-purple-100 text-purple-900 border-purple-300 font-bold'
-                      : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
+                    (!settings.textColorMode || settings.textColorMode === 'black')
+                      ? 'bg-slate-900 text-white border-slate-900 font-bold shadow-xs'
+                      : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-100'
                   }`}
                 >
-                  Auto Kontras
+                  Hitam Pekat (#000000)
                 </button>
                 <button
                   type="button"
                   onClick={() => onUpdateSettings({ textColorMode: 'white', globalTextColor: '#ffffff' })}
                   className={`px-2.5 py-1.5 text-xs font-semibold rounded-lg border text-center transition-all ${
                     settings.textColorMode === 'white'
-                      ? 'bg-slate-900 text-white border-slate-900 font-bold'
-                      : 'bg-slate-800 text-white border-slate-700 hover:bg-slate-700'
+                      ? 'bg-slate-800 text-white border-slate-700 font-bold'
+                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
                   Putih Murni
                 </button>
                 <button
                   type="button"
-                  onClick={() => onUpdateSettings({ textColorMode: 'black', globalTextColor: '#111827' })}
+                  onClick={() => onUpdateSettings({ textColorMode: 'category' })}
                   className={`px-2.5 py-1.5 text-xs font-semibold rounded-lg border text-center transition-all ${
-                    settings.textColorMode === 'black'
-                      ? 'bg-slate-200 text-slate-900 border-slate-900 font-bold'
-                      : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-100'
+                    settings.textColorMode === 'category'
+                      ? 'bg-purple-100 text-purple-900 border-purple-300 font-bold'
+                      : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  Hitam Pekat
+                  Auto Kontras
                 </button>
                 <button
                   type="button"
@@ -229,13 +229,13 @@ export default function PrintSettingsModal({
                 <span className="text-[11px] font-semibold text-slate-600">Atau Pilih Warna Bebas:</span>
                 <input
                   type="color"
-                  value={settings.globalTextColor || '#ffffff'}
+                  value={settings.globalTextColor || '#000000'}
                   onChange={(e) => onUpdateSettings({ textColorMode: 'custom', globalTextColor: e.target.value })}
                   className="w-7 h-7 rounded border border-slate-300 cursor-pointer p-0.5 bg-white"
                 />
                 <input
                   type="text"
-                  value={(settings.globalTextColor || '#ffffff').toUpperCase()}
+                  value={(settings.globalTextColor || '#000000').toUpperCase()}
                   onChange={(e) => onUpdateSettings({ textColorMode: 'custom', globalTextColor: e.target.value })}
                   className="w-24 px-2 py-1 text-xs font-mono font-bold rounded border border-slate-300 bg-white"
                 />

@@ -37,14 +37,14 @@ const DEFAULT_SETTINGS = {
   labelGap: 2.5,
   labelBgMode: 'colored',
   syncKemasanSize: true,
-  fontSizeNama: 13,
-  fontSizeKemasan: 13,
-  fontSizeKandungan: 9,
-  fontFamily: 'Montserrat',
+  fontSizeNama: 17,      // Ekstra Besar (17 pt)
+  fontSizeKemasan: 17,   // Ekstra Besar (17 pt)
+  fontSizeKandungan: 11, // Ekstra Besar (11 pt)
+  fontFamily: 'Arial',   // Default: Arial
   fontWeight: '800',
   textTransform: 'uppercase',
-  textColorMode: 'category',
-  globalTextColor: '#ffffff',
+  textColorMode: 'black',      // Default: Hitam
+  globalTextColor: '#000000', // Default: #000000
   customNamaColor: '',
   customKemasanColor: '',
   customKandunganColor: '',
@@ -83,16 +83,28 @@ export default function App() {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
+        const fontFamily = (!parsed.fontFamily || parsed.fontFamily === 'Montserrat') ? 'Arial' : parsed.fontFamily;
+        const textColorMode = (!parsed.textColorMode || parsed.textColorMode === 'category') ? 'black' : parsed.textColorMode;
+        const globalTextColor = (textColorMode === 'black' && (!parsed.globalTextColor || parsed.globalTextColor === '#ffffff' || parsed.globalTextColor === '#111827')) ? '#000000' : (parsed.globalTextColor || '#000000');
+        const isOldSize = !parsed.fontSizeNama || parsed.fontSizeNama === 13;
+        const fontSizeNama = isOldSize ? 17 : parsed.fontSizeNama;
+        const fontSizeKandungan = isOldSize ? 11 : (parsed.fontSizeKandungan || 11);
         const syncKemasan = parsed.syncKemasanSize !== undefined ? parsed.syncKemasanSize : true;
-        const nameSize = parsed.fontSizeNama || DEFAULT_SETTINGS.fontSizeNama;
+        const fontSizeKemasan = syncKemasan ? fontSizeNama : (parsed.fontSizeKemasan || fontSizeNama);
+
         return {
           ...DEFAULT_SETTINGS,
           ...parsed,
+          fontFamily,
+          textColorMode,
+          globalTextColor,
+          fontSizeNama,
+          fontSizeKemasan,
+          fontSizeKandungan,
           labelWidth: parsed.labelWidth || 65,
           labelHeight: parsed.labelHeight || 52,
           labelGap: parsed.labelGap !== undefined ? parsed.labelGap : 2.5,
           syncKemasanSize: syncKemasan,
-          fontSizeKemasan: syncKemasan ? nameSize : (parsed.fontSizeKemasan || nameSize),
           showDivider: parsed.showDivider !== undefined ? parsed.showDivider : true,
           dividerWidth: parsed.dividerWidth === 80 || parsed.dividerWidth === undefined ? 100 : parsed.dividerWidth
         };

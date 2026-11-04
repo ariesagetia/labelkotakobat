@@ -20,11 +20,11 @@ export default function LabelCard({
     : (colorConfig?.border || '#521d66');
 
   // 2. Resolve Text Color
-  let resolvedTextColor = isWhiteBg ? '#111827' : (colorConfig?.text || '#ffffff');
+  let resolvedTextColor = isWhiteBg ? '#000000' : (colorConfig?.text || '#000000');
   if (settings?.textColorMode === 'white') {
-    resolvedTextColor = isWhiteBg ? '#111827' : '#ffffff';
+    resolvedTextColor = isWhiteBg ? '#000000' : '#ffffff';
   } else if (settings?.textColorMode === 'black') {
-    resolvedTextColor = '#111827';
+    resolvedTextColor = settings?.globalTextColor || '#000000';
   } else if (settings?.textColorMode === 'yellow') {
     resolvedTextColor = isWhiteBg ? '#B45309' : '#FACC15';
   } else if (settings?.textColorMode === 'custom' && settings?.globalTextColor) {
@@ -32,22 +32,22 @@ export default function LabelCard({
   }
 
   // Section specific colors (optional overrides)
-  const namaColor = settings?.customNamaColor || (isWhiteBg ? '#0f172a' : resolvedTextColor);
-  const kemasanColor = settings?.customKemasanColor || (isWhiteBg ? '#0f172a' : resolvedTextColor);
-  const kandunganColor = settings?.customKandunganColor || (isWhiteBg ? '#475569' : resolvedTextColor);
+  const namaColor = settings?.customNamaColor || resolvedTextColor;
+  const kemasanColor = settings?.customKemasanColor || resolvedTextColor;
+  const kandunganColor = settings?.customKandunganColor || resolvedTextColor;
 
   // 3. Resolve Font Family & Style
-  const fontObj = AVAILABLE_FONTS.find(f => f.id === settings?.fontFamily) || AVAILABLE_FONTS[0];
+  const fontObj = AVAILABLE_FONTS.find(f => f.id === settings?.fontFamily) || AVAILABLE_FONTS.find(f => f.id === 'Arial') || AVAILABLE_FONTS[0];
   const fontFamilyCss = fontObj.family;
   const fontWeight = settings?.fontWeight || '800';
   const textTransform = settings?.textTransform || 'uppercase';
 
   // 4. Sizing from user settings: Besaran/Kemasan obat sama persis dengan ukuran nama obat
-  const nameSize = settings?.fontSizeNama || 13; // pt
+  const nameSize = settings?.fontSizeNama || 17; // pt (default Ekstra Besar 17 pt)
   const kemasanSize = (settings?.syncKemasanSize !== false) 
     ? nameSize 
-    : (settings?.fontSizeKemasan || nameSize); // pt (default sama dengan nama obat)
-  const kandunganSize = settings?.fontSizeKandungan || 9; // pt
+    : (settings?.fontSizeKemasan || nameSize); // pt
+  const kandunganSize = settings?.fontSizeKandungan || 11; // pt (default Ekstra Besar 11 pt)
   const borderStyle = settings?.borderStyle || 'solid'; // 'solid', 'dashed', 'dotted', 'none'
   const borderRadius = settings?.borderRadius !== undefined ? settings.borderRadius : 0; // px
   const showCategoryTag = settings?.showCategoryTag || false;
