@@ -7,7 +7,6 @@ import {
   Settings, 
   FileSpreadsheet, 
   HelpCircle, 
-  RotateCcw,
   PlusCircle,
   Eye
 } from 'lucide-react';
@@ -73,16 +72,6 @@ export default function Header({
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-2">
             
-            {/* Load Lampiran 2 Demo Data */}
-            <button
-              onClick={onLoadDemo}
-              title="Muat 1,118 item obat lengkap dari Lampiran 2"
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 transition-colors"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>Contoh Lampiran 2</span>
-            </button>
-
             {/* Upload Excel */}
             <button
               onClick={onOpenUpload}
