@@ -353,9 +353,10 @@ export default function UploadModal({
                           href="https://github.com/settings/tokens/new?scopes=repo&description=Apotek+Label+Master"
                           target="_blank"
                           rel="noreferrer"
-                          className="text-[10px] text-purple-700 hover:underline inline-flex items-center gap-0.5"
+                          className="text-[10px] font-semibold text-purple-700 hover:underline inline-flex items-center gap-0.5"
+                          title="Buat Classic Token dengan izin 'repo' tercentang otomatis"
                         >
-                          <span>Buat Token GitHub</span>
+                          <span>Buat Token (Izin repo)</span>
                           <ExternalLink className="w-2.5 h-2.5" />
                         </a>
                       </div>
@@ -406,9 +407,27 @@ export default function UploadModal({
                       )}
 
                       {pushError && (
-                        <div className="p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-800 text-xs flex items-center gap-2">
-                          <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
-                          <span>{pushError}</span>
+                        <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs space-y-2">
+                          <div className="flex items-start gap-2">
+                            <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                            <div>
+                              <p className="font-bold">{pushError}</p>
+                              {pushError.includes('Resource not accessible') && (
+                                <div className="text-[11px] text-red-700 mt-1.5 space-y-1 bg-white/70 p-2.5 rounded-lg border border-red-200">
+                                  <p className="font-bold text-red-900">Penyebab: Token belum memiliki izin tulis (Write/Contents):</p>
+                                  <p>
+                                    1. <strong>Jika Fine-grained token:</strong> Di bagian <em>Repository permissions</em> &rarr; <em>Contents</em>, wajib ubah menjadi <strong>Read and write</strong>.
+                                  </p>
+                                  <p>
+                                    2. <strong>Jika Tokens (classic):</strong> Wajib centang kotak <strong><code>repo</code></strong> (Full control of private repositories).
+                                  </p>
+                                  <p className="text-slate-600 pt-0.5">
+                                    💡 <em>Tips:</em> Anda juga bisa gunakan <strong>Cara 2</strong> di bawah (tinggal drag & drop file ke web GitHub, tanpa perlu token).
+                                  </p>
+                                </div>
+                              )}
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
