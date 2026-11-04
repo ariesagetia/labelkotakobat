@@ -47,9 +47,24 @@ export default function UploadModal({
   const [pushSuccess, setPushSuccess] = useState(false);
   const [pushError, setPushError] = useState(null);
 
+  // Auto-sync setting: default true if user has saved a token
+  const [autoSyncToGitHub, setAutoSyncToGitHub] = useState(() => {
+    try {
+      const saved = localStorage.getItem('apotek_auto_sync_github');
+      return saved !== null ? saved === 'true' : true;
+    } catch {
+      return true;
+    }
+  });
+
   useEffect(() => {
     if (isOpen) {
-      setGithubToken(getSavedGitHubToken());
+      const savedToken = getSavedGitHubToken();
+      setGithubToken(savedToken);
+      if (savedToken) {
+        // Automatically default auto-sync to true if token exists
+        setAutoSyncToGitHub(true);
+      }
     }
   }, [isOpen]);
 
@@ -82,13 +97,58 @@ export default function UploadModal({
     }
   };
 
-  const handleApplyLocal = () => {
+  // Primary action: handles both local application and automatic GitHub push
+  const handleApply = async () => {
+    if (!parsedData || !parsedData.items.length) return;
+
+    // Check if auto-push to GitHub is active and token exists
+    const hasToken = Boolean(githubToken && githubToken.trim());
+    if (autoSyncToGitHub && hasToken && file) {
+      setIsPushingGitHub(true);
+      setPushError(null);
+      setPushSuccess(false);
+
+      try {
+        if (rememberToken) {
+          saveGitHubToken(githubToken.trim());
+        }
+
+        await pushExcelToGitHub(
+          file,
+          githubToken.trim(),
+          `Auto-update data_obat_default.xlsx via Apotek Label Master (${parsedData.rowCount} obat)`
+        );
+
+        setPushSuccess(true);
+        // Apply with isGitHubDefault = true
+        onDataLoaded(parsedData.items, importMode, true);
+        setTimeout(() => {
+          onClose();
+        }, 1500);
+        return;
+      } catch (err) {
+        console.error('Error auto-push to GitHub:', err);
+        setPushError(err.message || 'Gagal upload otomatis ke GitHub.');
+        setIsPushingGitHub(false);
+        // Show push section so user can see what happened
+        setShowGitHubPush(true);
+        return;
+      }
+    }
+
+    // Fallback: Apply locally without GitHub push
+    onDataLoaded(parsedData.items, importMode, false);
+    onClose();
+  };
+
+  // Explicit local-only apply
+  const handleApplyLocalOnly = () => {
     if (!parsedData || !parsedData.items.length) return;
     onDataLoaded(parsedData.items, importMode, false);
     onClose();
   };
 
-  const handlePushToGitHub = async () => {
+  const handleManualPushToGitHub = async () => {
     if (!file) return;
     if (!githubToken.trim()) {
       setPushError('Harap masukkan Personal Access Token (PAT) GitHub.');
@@ -113,11 +173,10 @@ export default function UploadModal({
       );
 
       setPushSuccess(true);
-      // Also apply as active data with dataSource = 'github'
       onDataLoaded(parsedData.items, 'replace', true);
       setTimeout(() => {
         onClose();
-      }, 2500);
+      }, 2000);
     } catch (err) {
       console.error(err);
       setPushError(err.message || 'Gagal mengupload file ke GitHub.');
@@ -138,6 +197,8 @@ export default function UploadModal({
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
+
+  const isTokenConfigured = Boolean(githubToken && githubToken.trim());
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
@@ -167,7 +228,7 @@ export default function UploadModal({
         </div>
 
         {/* Body */}
-        <div className="p-6 overflow-y-auto space-y-5 text-xs text-slate-700">
+        <div className="p-6 overflow-y-auto space-y-4 text-xs text-slate-700">
           
           {/* GitHub Auto-Sync Quick Bar */}
           <div className="p-3 rounded-xl bg-gradient-to-r from-purple-50 via-indigo-50 to-blue-50 border border-purple-200 flex items-center justify-between gap-3">
@@ -264,6 +325,54 @@ export default function UploadModal({
                 </div>
               </div>
 
+              {/* Automatic GitHub Sync Active Banner */}
+              {isTokenConfigured && (
+                <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 text-emerald-950 flex flex-col gap-2 shadow-xs animate-in fade-in">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 rounded-lg bg-emerald-600 text-white">
+                        <ShieldCheck className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <p className="font-bold text-xs text-emerald-950">
+                            Upload Otomatis ke GitHub: AKTIF
+                          </p>
+                          <span className="px-2 py-0.5 rounded-full bg-emerald-200 text-emerald-900 text-[10px] font-bold">
+                            Token Siap
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-emerald-800">
+                          File Excel ini akan <strong>langsung otomatis di-push ke GitHub</strong> saat tombol Terapkan diklik.
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowGitHubPush(!showGitHubPush)}
+                      className="text-[10px] font-bold text-emerald-800 hover:text-emerald-950 hover:underline px-2 py-1 rounded border border-emerald-300 bg-white"
+                    >
+                      {showGitHubPush ? 'Tutup Pengaturan' : 'Ganti Token'}
+                    </button>
+                  </div>
+
+                  <label className="flex items-center gap-2 pt-1 border-t border-emerald-200 text-xs font-semibold text-emerald-900 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={autoSyncToGitHub}
+                      onChange={(e) => {
+                        setAutoSyncToGitHub(e.target.checked);
+                        try {
+                          localStorage.setItem('apotek_auto_sync_github', String(e.target.checked));
+                        } catch {}
+                      }}
+                      className="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500"
+                    />
+                    <span>Otomatis upload & perbarui file default GitHub setiap kali upload Excel baru</span>
+                  </label>
+                </div>
+              )}
+
               {/* Sample Preview */}
               <div>
                 <p className="font-semibold text-slate-800 mb-1.5 text-xs">Contoh 3 Baris Pertama:</p>
@@ -285,7 +394,7 @@ export default function UploadModal({
 
               {/* Import Mode: Replace vs Append */}
               <div className="pt-2">
-                <span className="font-semibold text-slate-800 block mb-1.5">Metode Penerapan di Browser Ini:</span>
+                <span className="font-semibold text-slate-800 block mb-1.5">Metode Penerapan Data:</span>
                 <div className="grid grid-cols-2 gap-3">
                   <label className={`p-3 rounded-xl border cursor-pointer transition-all ${
                     importMode === 'replace' ? 'border-purple-600 bg-purple-50/50 text-purple-900 font-bold' : 'border-slate-200 hover:bg-slate-50'
@@ -316,28 +425,30 @@ export default function UploadModal({
                 </div>
               </div>
 
-              {/* GitHub Sync Section */}
-              <div className="pt-3 border-t border-slate-200">
-                <button
-                  type="button"
-                  onClick={() => setShowGitHubPush(!showGitHubPush)}
-                  className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-300 hover:bg-slate-100 transition-colors text-left"
-                >
-                  <div className="flex items-center gap-2">
-                    <CloudUpload className="w-4 h-4 text-purple-700" />
-                    <div>
-                      <p className="font-bold text-slate-900 text-xs">
-                        Jadikan Default di GitHub (Agar Otomatis Tampil di Seluruh Browser & HP)
-                      </p>
-                      <p className="text-[11px] text-slate-500">
-                        Klik di sini untuk push langsung ke repositori atau upload manual via web GitHub
-                      </p>
+              {/* GitHub Advanced Section */}
+              <div className="pt-2 border-t border-slate-200">
+                {(!isTokenConfigured || showGitHubPush) && (
+                  <button
+                    type="button"
+                    onClick={() => setShowGitHubPush(!showGitHubPush)}
+                    className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-300 hover:bg-slate-100 transition-colors text-left"
+                  >
+                    <div className="flex items-center gap-2">
+                      <CloudUpload className="w-4 h-4 text-purple-700" />
+                      <div>
+                        <p className="font-bold text-slate-900 text-xs">
+                          {isTokenConfigured ? 'Pengaturan Token GitHub' : 'Hubungkan Token GitHub (Agar Otomatis Tampil di Seluruh Browser & HP)'}
+                        </p>
+                        <p className="text-[11px] text-slate-500">
+                          {isTokenConfigured ? 'Kelola token atau upload manual ke repositori' : 'Masukkan token sekali saja untuk mengaktifkan upload otomatis'}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <span className="text-xs font-bold text-purple-700">
-                    {showGitHubPush ? 'Tutup ▲' : 'Buka Opsi ▼'}
-                  </span>
-                </button>
+                    <span className="text-xs font-bold text-purple-700">
+                      {showGitHubPush ? 'Tutup ▲' : 'Buka Opsi ▼'}
+                    </span>
+                  </button>
+                )}
 
                 {showGitHubPush && (
                   <div className="mt-3 p-4 rounded-xl bg-slate-50 border border-purple-200 space-y-4 animate-in fade-in">
@@ -366,14 +477,14 @@ export default function UploadModal({
                           type="password"
                           value={githubToken}
                           onChange={(e) => setGithubToken(e.target.value)}
-                          placeholder="Masukkan token GitHub (ghp_...)"
+                          placeholder="Masukkan token GitHub (ghp_... atau github_pat_...)"
                           className="flex-1 px-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white"
                         />
                         <button
                           type="button"
-                          onClick={handlePushToGitHub}
+                          onClick={handleManualPushToGitHub}
                           disabled={isPushingGitHub || !githubToken.trim()}
-                          className="px-4 py-2 bg-purple-700 text-white rounded-lg font-bold text-xs hover:bg-purple-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-sm transition-all"
+                          className="px-4 py-2 bg-purple-700 text-white rounded-lg font-bold text-xs hover:bg-purple-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-sm transition-all shrink-0"
                         >
                           {isPushingGitHub ? (
                             <>
@@ -383,7 +494,7 @@ export default function UploadModal({
                           ) : (
                             <>
                               <CloudUpload className="w-3.5 h-3.5" />
-                              <span>Push ke GitHub</span>
+                              <span>Simpan & Push Sekarang</span>
                             </>
                           )}
                         </button>
@@ -496,19 +607,52 @@ export default function UploadModal({
 
         {/* Footer */}
         <div className="flex items-center justify-between px-6 py-3 border-t border-slate-200 bg-slate-50">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 rounded-xl"
+            >
+              Batal
+            </button>
+            {isTokenConfigured && autoSyncToGitHub && parsedData && (
+              <button
+                type="button"
+                onClick={handleApplyLocalOnly}
+                disabled={isPushingGitHub}
+                title="Hanya simpan di browser ini tanpa mengupload ke GitHub"
+                className="text-[11px] text-slate-500 hover:text-slate-800 hover:underline"
+              >
+                Hanya Terapkan di Browser Ini
+              </button>
+            )}
+          </div>
+
           <button
-            onClick={onClose}
-            className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 rounded-xl"
+            onClick={handleApply}
+            disabled={!parsedData || !parsedData.items.length || isPushingGitHub}
+            className={`inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold rounded-xl text-white shadow-md transition-all ${
+              isTokenConfigured && autoSyncToGitHub
+                ? 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-700 hover:to-teal-800 shadow-emerald-200 hover:shadow-lg hover:scale-[1.01]'
+                : 'bg-purple-700 hover:bg-purple-800 shadow-purple-200'
+            } disabled:opacity-50 disabled:cursor-not-allowed`}
           >
-            Batal
-          </button>
-          <button
-            onClick={handleApplyLocal}
-            disabled={!parsedData || !parsedData.items.length}
-            className="inline-flex items-center gap-1.5 px-5 py-2 text-xs font-bold rounded-xl bg-purple-700 text-white hover:bg-purple-800 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm transition-all"
-          >
-            <span>Terapkan di Browser Ini</span>
-            <ArrowRight className="w-4 h-4" />
+            {isPushingGitHub ? (
+              <>
+                <RefreshCw className="w-4 h-4 animate-spin" />
+                <span>Mengupload ke GitHub & Menerapkan...</span>
+              </>
+            ) : isTokenConfigured && autoSyncToGitHub ? (
+              <>
+                <CloudUpload className="w-4 h-4" />
+                <span>Terapkan & Otomatis Push ke GitHub</span>
+                <ArrowRight className="w-4 h-4 ml-0.5" />
+              </>
+            ) : (
+              <>
+                <span>Terapkan ke Generator Label</span>
+                <ArrowRight className="w-4 h-4" />
+              </>
+            )}
           </button>
         </div>
 
