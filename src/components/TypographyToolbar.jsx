@@ -234,7 +234,14 @@ export default function TypographyToolbar({
               max="20"
               step="0.5"
               value={settings.fontSizeNama || 13}
-              onChange={(e) => onUpdateSettings({ fontSizeNama: Number(e.target.value) })}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                if (settings.syncKemasanSize !== false) {
+                  onUpdateSettings({ fontSizeNama: val, fontSizeKemasan: val });
+                } else {
+                  onUpdateSettings({ fontSizeNama: val });
+                }
+              }}
               className="w-full accent-purple-700 cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
@@ -244,25 +251,48 @@ export default function TypographyToolbar({
             </div>
           </div>
 
-          {/* Slider 2: Ukuran Sediaan & Kemasan */}
+          {/* Slider 2: Ukuran Sediaan & Kemasan / Besaran Obat (disamakan dengan nama obat) */}
           <div className="bg-slate-50 p-3 rounded-xl border border-slate-200">
             <div className="flex justify-between items-center mb-1">
-              <span className="font-semibold text-slate-700">Bentuk & Kemasan:</span>
-              <span className="font-bold text-purple-700">{settings.fontSizeKemasan || 11} pt</span>
+              <span className="font-semibold text-slate-700">Besaran / Kemasan:</span>
+              <span className="font-bold text-purple-700">
+                {(settings.syncKemasanSize !== false ? (settings.fontSizeNama || 13) : (settings.fontSizeKemasan || 13))} pt
+              </span>
             </div>
             <input
               type="range"
               min="8"
-              max="16"
+              max="20"
               step="0.5"
-              value={settings.fontSizeKemasan || 11}
-              onChange={(e) => onUpdateSettings({ fontSizeKemasan: Number(e.target.value) })}
+              value={settings.syncKemasanSize !== false ? (settings.fontSizeNama || 13) : (settings.fontSizeKemasan || 13)}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                if (settings.syncKemasanSize !== false) {
+                  onUpdateSettings({ fontSizeNama: val, fontSizeKemasan: val });
+                } else {
+                  onUpdateSettings({ fontSizeKemasan: val });
+                }
+              }}
               className="w-full accent-purple-700 cursor-pointer"
             />
-            <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+            <div className="flex items-center justify-between text-[10px] text-slate-400 mt-1">
               <span>8 pt</span>
-              <span>12 pt</span>
-              <span>16 pt</span>
+              <label className="inline-flex items-center gap-1 cursor-pointer font-bold text-purple-700 select-none">
+                <input
+                  type="checkbox"
+                  checked={settings.syncKemasanSize !== false}
+                  onChange={(e) => {
+                    const isSynced = e.target.checked;
+                    onUpdateSettings({
+                      syncKemasanSize: isSynced,
+                      fontSizeKemasan: isSynced ? (settings.fontSizeNama || 13) : settings.fontSizeKemasan
+                    });
+                  }}
+                  className="rounded text-purple-600 focus:ring-purple-500 w-3 h-3 cursor-pointer"
+                />
+                <span>Kunci sama nama</span>
+              </label>
+              <span>20 pt</span>
             </div>
           </div>
 

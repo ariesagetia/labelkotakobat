@@ -280,23 +280,56 @@ export default function PrintSettingsModal({
                     max="20"
                     step="0.5"
                     value={settings.fontSizeNama || 13}
-                    onChange={(e) => onUpdateSettings({ fontSizeNama: Number(e.target.value) })}
+                    onChange={(e) => {
+                      const val = Number(e.target.value);
+                      if (settings.syncKemasanSize !== false) {
+                        onUpdateSettings({ fontSizeNama: val, fontSizeKemasan: val });
+                      } else {
+                        onUpdateSettings({ fontSizeNama: val });
+                      }
+                    }}
                     className="w-full accent-purple-700 cursor-pointer"
                   />
                 </div>
 
                 <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-[11px] font-semibold text-slate-600">Bentuk & Kemasan (@30, @100):</span>
-                    <span className="font-bold text-purple-700">{settings.fontSizeKemasan || 11} pt</span>
+                  <div className="flex justify-between items-center mb-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-semibold text-slate-600">Bentuk, Kemasan & Besaran Obat:</span>
+                      <label className="inline-flex items-center gap-1 cursor-pointer text-[10px] text-purple-700 font-bold bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200 select-none">
+                        <input
+                          type="checkbox"
+                          checked={settings.syncKemasanSize !== false}
+                          onChange={(e) => {
+                            const isSynced = e.target.checked;
+                            onUpdateSettings({
+                              syncKemasanSize: isSynced,
+                              fontSizeKemasan: isSynced ? (settings.fontSizeNama || 13) : settings.fontSizeKemasan
+                            });
+                          }}
+                          className="rounded text-purple-600 focus:ring-purple-500 w-3 h-3"
+                        />
+                        <span>Sama dengan nama obat</span>
+                      </label>
+                    </div>
+                    <span className="font-bold text-purple-700">
+                      {(settings.syncKemasanSize !== false ? (settings.fontSizeNama || 13) : (settings.fontSizeKemasan || 13))} pt
+                    </span>
                   </div>
                   <input
                     type="range"
                     min="8"
-                    max="16"
+                    max="20"
                     step="0.5"
-                    value={settings.fontSizeKemasan || 11}
-                    onChange={(e) => onUpdateSettings({ fontSizeKemasan: Number(e.target.value) })}
+                    value={settings.syncKemasanSize !== false ? (settings.fontSizeNama || 13) : (settings.fontSizeKemasan || 13)}
+                    onChange={(e) => {
+                      const val = Number(e.target.value);
+                      if (settings.syncKemasanSize !== false) {
+                        onUpdateSettings({ fontSizeNama: val, fontSizeKemasan: val });
+                      } else {
+                        onUpdateSettings({ fontSizeKemasan: val });
+                      }
+                    }}
                     className="w-full accent-purple-700 cursor-pointer"
                   />
                 </div>

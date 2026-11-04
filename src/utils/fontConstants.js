@@ -11,10 +11,10 @@ export const AVAILABLE_FONTS = [
 ];
 
 export const FONT_SIZE_PRESETS = [
-  { id: 'compact', name: 'Kompak', nama: 11, kemasan: 9.5, kandungan: 8 },
-  { id: 'standard', name: 'Standar Lampiran 1', nama: 13, kemasan: 11, kandungan: 9 },
-  { id: 'large', name: 'Besar (Jelas)', nama: 15, kemasan: 12.5, kandungan: 10 },
-  { id: 'xlarge', name: 'Ekstra Besar', nama: 17, kemasan: 14, kandungan: 11 }
+  { id: 'compact', name: 'Kompak', nama: 11, kemasan: 11, kandungan: 8 },
+  { id: 'standard', name: 'Standar Lampiran 1', nama: 13, kemasan: 13, kandungan: 9 },
+  { id: 'large', name: 'Besar (Jelas)', nama: 15, kemasan: 15, kandungan: 10 },
+  { id: 'xlarge', name: 'Ekstra Besar', nama: 17, kemasan: 17, kandungan: 11 }
 ];
 
 export const QUICK_FONT_COLORS = [

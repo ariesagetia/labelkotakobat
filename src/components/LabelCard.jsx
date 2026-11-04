@@ -33,7 +33,7 @@ export default function LabelCard({
 
   // Section specific colors (optional overrides)
   const namaColor = settings?.customNamaColor || (isWhiteBg ? '#0f172a' : resolvedTextColor);
-  const kemasanColor = settings?.customKemasanColor || (isWhiteBg ? '#334155' : resolvedTextColor);
+  const kemasanColor = settings?.customKemasanColor || (isWhiteBg ? '#0f172a' : resolvedTextColor);
   const kandunganColor = settings?.customKandunganColor || (isWhiteBg ? '#475569' : resolvedTextColor);
 
   // 3. Resolve Font Family & Style
@@ -42,9 +42,11 @@ export default function LabelCard({
   const fontWeight = settings?.fontWeight || '800';
   const textTransform = settings?.textTransform || 'uppercase';
 
-  // 4. Sizing from user settings
+  // 4. Sizing from user settings: Besaran/Kemasan obat sama persis dengan ukuran nama obat
   const nameSize = settings?.fontSizeNama || 13; // pt
-  const kemasanSize = settings?.fontSizeKemasan || 11; // pt
+  const kemasanSize = (settings?.syncKemasanSize !== false) 
+    ? nameSize 
+    : (settings?.fontSizeKemasan || nameSize); // pt (default sama dengan nama obat)
   const kandunganSize = settings?.fontSizeKandungan || 9; // pt
   const borderStyle = settings?.borderStyle || 'solid'; // 'solid', 'dashed', 'dotted', 'none'
   const borderRadius = settings?.borderRadius !== undefined ? settings.borderRadius : 0; // px
@@ -124,7 +126,7 @@ export default function LabelCard({
       {/* Main Content Area */}
       <div className="w-full h-full flex flex-col justify-between items-center">
         
-        {/* Top Section: Nama Obat + Kekuatan / Dosis & Kemasan */}
+        {/* Top Section: Nama Obat + Kekuatan / Dosis & Kemasan (Besaran) */}
         <div className="w-full flex-1 flex flex-col justify-center items-center px-2 py-1.5">
           {/* Line 1: Nama Obat + Kekuatan / Dosis */}
           <div
@@ -140,17 +142,17 @@ export default function LabelCard({
             {item.nama}
           </div>
 
-          {/* Line 2: Sediaan & Kemasan (e.g. TAB @30, KAP @100) */}
+          {/* Line 2: Sediaan & Kemasan / Besaran Obat (e.g. TAB @30, KAP @100, 120 ML) - Size sama dengan nama obat */}
           {item.kemasan && (
             <div
               style={{ 
                 fontSize: `${kemasanSize}pt`, 
-                lineHeight: '1.25',
+                lineHeight: '1.2',
                 color: kemasanColor,
-                fontWeight: fontWeight === '900' ? '800' : '700',
+                fontWeight: fontWeight,
                 textTransform: textTransform
               }}
-              className="tracking-normal text-center w-full mt-1 px-1 break-words opacity-95"
+              className="tracking-tight text-center w-full mt-1 px-1 break-words opacity-95"
             >
               {item.kemasan}
             </div>

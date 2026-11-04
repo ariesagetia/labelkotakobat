@@ -34,8 +34,9 @@ const DEFAULT_SETTINGS = {
   pageMargin: 8,
   labelGap: 3,
   labelBgMode: 'colored',
+  syncKemasanSize: true,
   fontSizeNama: 13,
-  fontSizeKemasan: 11,
+  fontSizeKemasan: 13,
   fontSizeKandungan: 9,
   fontFamily: 'Montserrat',
   fontWeight: '800',
@@ -80,9 +81,13 @@ export default function App() {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
+        const syncKemasan = parsed.syncKemasanSize !== undefined ? parsed.syncKemasanSize : true;
+        const nameSize = parsed.fontSizeNama || DEFAULT_SETTINGS.fontSizeNama;
         return {
           ...DEFAULT_SETTINGS,
           ...parsed,
+          syncKemasanSize: syncKemasan,
+          fontSizeKemasan: syncKemasan ? nameSize : (parsed.fontSizeKemasan || nameSize),
           labelBgMode: parsed.labelBgMode || 'colored',
           showDivider: parsed.showDivider !== undefined ? parsed.showDivider : true,
           dividerWidth: parsed.dividerWidth === 80 || parsed.dividerWidth === undefined ? 100 : parsed.dividerWidth
