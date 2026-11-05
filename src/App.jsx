@@ -433,6 +433,33 @@ export default function App() {
     }
   };
 
+  // Handler: Sync default data from GitHub (fallback / alternative)
+  const handleSyncFromGitHub = async (silent = false) => {
+    setIsSyncing(true);
+    try {
+      const result = await fetchDefaultDataFromGitHub();
+      if (result && result.items && result.items.length > 0) {
+        setItems(result.items);
+        setSelectedItemIds(new Set(result.items.map(it => it.id)));
+        setDataSource('github');
+        const syncDate = new Date().toLocaleString('id-ID');
+        setLastSyncTime(syncDate);
+        localStorage.setItem('apotek_data_source', 'github');
+        localStorage.setItem('apotek_last_sync', syncDate);
+        if (!silent) {
+          showToast(`Berhasil sinkronisasi ${result.items.length} obat dari GitHub!`);
+        }
+      }
+    } catch (err) {
+      console.warn('Gagal sinkronisasi data dari GitHub:', err);
+      if (!silent) {
+        showToast('Tidak dapat memuat dari GitHub. Menggunakan data tersimpan.');
+      }
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
   // Auto-sync from Google Sheets on initial load when dataSource is 'gsheet'
   useEffect(() => {
     if (dataSource === 'gsheet') {
@@ -779,7 +806,7 @@ export default function App() {
         onClose={() => setIsUploadOpen(false)}
         onDataLoaded={handleDataLoaded}
         onSyncGitHub={handleSyncFromGitHub}
-        isSyncingGitHub={isSyncingGitHub}
+        isSyncingGitHub={isSyncing}
         dataSource={dataSource}
       />
 
