@@ -11,19 +11,57 @@ export const GITHUB_CONFIG = {
 };
 
 /**
- * Fetch default Excel dataset from GitHub repository or local fallback
+ * Fetch default Excel dataset from GitHub repository in real-time
+ * Uses GitHub Contents API to completely bypass Fastly CDN 5-minute caching on raw.githubusercontent.com
  */
 export async function fetchDefaultDataFromGitHub() {
   const timestamp = Date.now();
-  // Try remote raw GitHub URL first, then fallback to relative URL
-  const urls = [
-    `${GITHUB_CONFIG.rawUrl}?t=${timestamp}`,
-    `/data_obat_default.xlsx?t=${timestamp}`
+  const token = getSavedGitHubToken();
+
+  // 1. Primary: Use GitHub REST API which is always real-time and not cached by CDN
+  try {
+    const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.filePath}?ref=${GITHUB_CONFIG.branch}&t=${timestamp}`;
+    const headers = {
+      'Accept': 'application/vnd.github.v3+json'
+    };
+    if (token && token.trim()) {
+      headers['Authorization'] = `Bearer ${token.trim()}`;
+    }
+
+    const apiRes = await fetch(apiUrl, { headers, cache: 'no-store' });
+    if (apiRes.ok) {
+      const data = await apiRes.json();
+      if (data && data.content) {
+        // Decode base64 content
+        const cleanBase64 = data.content.replace(/\s/g, '');
+        const rawBinary = window.atob(cleanBase64);
+        const bytes = new Uint8Array(rawBinary.length);
+        for (let i = 0; i < rawBinary.length; i++) {
+          bytes[i] = rawBinary.charCodeAt(i);
+        }
+
+        const parsed = parseExcelArrayBuffer(bytes.buffer);
+        return {
+          ...parsed,
+          sha: data.sha,
+          sourceUrl: apiUrl,
+          source: 'github-api',
+          fetchedAt: new Date().toISOString()
+        };
+      }
+    }
+  } catch (apiErr) {
+    console.warn('Gagal fetch via GitHub REST API, mencoba fallback direct URL:', apiErr);
+  }
+
+  // 2. Fallbacks: Local server or raw GitHub CDN URL
+  const fallbackUrls = [
+    `/data_obat_default.xlsx?t=${timestamp}`,
+    `${GITHUB_CONFIG.rawUrl}?t=${timestamp}`
   ];
 
   let lastError = null;
-
-  for (const url of urls) {
+  for (const url of fallbackUrls) {
     try {
       const response = await fetch(url, { cache: 'no-store' });
       if (!response.ok) {
@@ -34,11 +72,11 @@ export async function fetchDefaultDataFromGitHub() {
       return {
         ...parsed,
         sourceUrl: url,
-        source: 'github',
+        source: 'github-fallback',
         fetchedAt: new Date().toISOString()
       };
     } catch (err) {
-      console.warn(`Gagal fetch data obat dari ${url}:`, err);
+      console.warn(`Gagal fetch fallback dari ${url}:`, err);
       lastError = err;
     }
   }
