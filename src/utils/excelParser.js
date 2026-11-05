@@ -29,8 +29,8 @@ export function smartParseItem(rawItem, existingKemasan = '') {
     };
   }
 
-  // Check if item ends with a form like TAB, KAP, CAPS, SYR, etc.
-  const formMatch = item.match(/^(.*?)\s+(TAB|KAP|CAPS|SYR|CR|GEL|OINT|INHALER|DROPS|SACH|STRIP|BOX|BTL|PCS|VIALS|DISKUS|SUPP|OVULA|LOT|EMULTION|SUSP|PATCH|AMPLOP|ROLL|TUBE|SPRAY|NEBULES)\s*(.*?)$/i);
+  // Check if item ends with a form like TAB, KAP, CAPS, SYR, etc. with exact word boundaries
+  const formMatch = item.match(/^(.*?)\s+\b(TAB|KAP|CAPS|SYR|CR|GEL|OINT|INHALER|DROPS|SACH|STRIP|BOX|BTL|PCS|VIALS|DISKUS|SUPP|OVULA|LOT|EMULTION|SUSP|PATCH|AMPLOP|ROLL|TUBE|SPRAY|NEBULES)\b\s*(.*?)$/i);
   if (formMatch) {
     const baseName = formMatch[1].trim();
     const form = formMatch[2].trim().toUpperCase();

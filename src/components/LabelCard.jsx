@@ -51,14 +51,18 @@ export default function LabelCard({
   const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default 11 pt)
 
   // Hitung ukuran font nama obat dengan simulasi presisi lebar huruf & baris:
-  // - Obat normal (~88.3%) TETAP ukuran penuh 17 pt (Ekstra Besar)
-  // - Obat dengan kata panjang (e.g. DEXAMETHASONE) atau baris banyak disesuaikan presisi
-  //   agar kata tidak terpotong (tidak split) dan TIDAK PERNAH mepet ke batas kotak / garis tengah
+  // - Obat normal (~88%) TETAP ukuran penuh 17 pt (Ekstra Besar)
+  // - Khusus obat dengan kata panjang (e.g. DEXAMETHASONE) atau baris banyak disesuaikan presisi
+  //   agar kata TIDAK PERNAH terpotong di tengah (DEXAMETHASO-NE) dan TIDAK PERNAH mepet ke batas kotak
   const effectiveNameSize = getOptimalItemFontSize(item.nama, item.kemasan, nameSize);
 
   const effectiveKemasanSize = (settings?.syncKemasanSize !== false)
     ? effectiveNameSize
     : (settings?.fontSizeKemasan || effectiveNameSize);
+
+  // Ganti tanda hubung di dalam kata dengan non-breaking hyphen agar browser tidak memotong kata di tanda hubung
+  const displayNama = (item.nama || '').replace(/(\S)-(\S)/g, '$1\u2011$2');
+  const displayKemasan = (item.kemasan || '').replace(/(\S)-(\S)/g, '$1\u2011$2');
 
   // Kandungan obat: tetap ukuran standar (11 pt), disesuaikan jika teks ekstra panjang
   const kandunganText = (item.kandungan || '').trim();
@@ -162,11 +166,14 @@ export default function LabelCard({
               lineHeight: '1.14',
               color: namaColor,
               fontWeight: fontWeight,
-              textTransform: textTransform
+              textTransform: textTransform,
+              overflowWrap: 'normal',
+              wordBreak: 'normal',
+              hyphens: 'none'
             }}
-            className="tracking-tight text-center w-full px-1 break-words"
+            className="tracking-tight text-center w-full px-1"
           >
-            {item.nama}
+            {displayNama}
           </div>
 
           {/* Line 2: Sediaan & Kemasan / Besaran Obat (e.g. TAB @30, KAP @100, 120 ML) */}
@@ -177,11 +184,14 @@ export default function LabelCard({
                 lineHeight: '1.14',
                 color: kemasanColor,
                 fontWeight: fontWeight,
-                textTransform: textTransform
+                textTransform: textTransform,
+                overflowWrap: 'normal',
+                wordBreak: 'normal',
+                hyphens: 'none'
               }}
-              className="tracking-tight text-center w-full mt-0.5 px-1 break-words opacity-95"
+              className="tracking-tight text-center w-full mt-0.5 px-1 opacity-95"
             >
-              {item.kemasan}
+              {displayKemasan}
             </div>
           )}
         </div>

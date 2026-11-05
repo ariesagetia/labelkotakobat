@@ -9,10 +9,11 @@ const ARIAL_BOLD_UNITS = {
 };
 
 /**
- * Measure pixel width of text rendered in Arial Bold uppercase
+ * Measure pixel width of text rendered in Arial Bold uppercase,
+ * taking into account the 1.07x synthetic bold weight factor in Chromium / browser rendering.
  * @param {string} text 
  * @param {number} sizePt font size in points
- * @returns {number} width in pixels (at standard 96 DPI screen/print resolution)
+ * @returns {number} width in pixels (at standard 96 DPI)
  */
 export function measureTextWidth(text, sizePt) {
   let units = 0;
@@ -21,81 +22,22 @@ export function measureTextWidth(text, sizePt) {
     const ch = str[i];
     units += (ARIAL_BOLD_UNITS[ch] !== undefined ? ARIAL_BOLD_UNITS[ch] : 650);
   }
-  return (units / 1000) * sizePt * (96 / 72);
+  return (units / 1000) * sizePt * (96 / 72) * 1.07;
 }
 
 /**
- * Simulate rendering lines and total height inside the 65mm x 26mm top half container
- * @param {string} nama 
- * @param {string} kemasan 
- * @param {number} sizePt 
- * @returns {{ ok: boolean, totalLines: number, totalHeight: number, reason?: string }}
+ * Safe maximum single word width inside a 65mm card (leaving >= 16px horizontal margin).
+ * This ensures long words like DEXAMETHASONE, PREDNISOLONE, BETAMETHASONE, etc. NEVER get cut off.
  */
-export function simulateTextFit(nama, kemasan, sizePt) {
-  const lineHeightPx = sizePt * (96 / 72) * 1.12;
-  const words = (nama || '').trim().split(/\s+/).filter(Boolean);
-  
-  // 1. Single word width limit: max 200px
-  // Prevents words like DEXAMETHASONE or PREDNISOLONE from splitting mid-word
-  for (const w of words) {
-    if (measureTextWidth(w, sizePt) > 200) {
-      return { ok: false, reason: 'word_too_wide' };
-    }
-  }
-
-  // 2. Wrap nama into lines (max line width 210px inside card)
-  let lines = [];
-  let cur = '';
-  for (const w of words) {
-    const test = cur ? cur + ' ' + w : w;
-    if (measureTextWidth(test, sizePt) <= 210) {
-      cur = test;
-    } else {
-      lines.push(cur);
-      cur = w;
-    }
-  }
-  if (cur) lines.push(cur);
-
-  // 3. Wrap kemasan into lines
-  let kLines = 0;
-  if (kemasan && kemasan.trim()) {
-    const kWords = kemasan.trim().split(/\s+/).filter(Boolean);
-    let kCur = '';
-    for (const kw of kWords) {
-      const testK = kCur ? kCur + ' ' + kw : kw;
-      if (measureTextWidth(testK, sizePt) <= 210) {
-        kCur = testK;
-      } else {
-        kLines++;
-        kCur = kw;
-      }
-    }
-    if (kCur) kLines++;
-  }
-
-  const totalLines = lines.length + kLines;
-  const totalHeight = totalLines * lineHeightPx;
-
-  // Max safe height thresholds to guarantee text NEVER touches top border or divider:
-  // Usable height inside top half is ~89.2px.
-  // For 4+ lines: height must be <= 74px (leaves >= 15px clearance)
-  if (totalLines >= 4 && totalHeight > 74) {
-    return { ok: false, reason: '4lines_too_tall', totalHeight };
-  }
-  // For 1-3 lines: height must be <= 78px (leaves >= 11px clearance)
-  if (totalHeight > 78) {
-    return { ok: false, reason: 'exceeds_max_safe_height', totalHeight };
-  }
-
-  return { ok: true, totalLines, totalHeight, lines };
-}
+const MAX_SAFE_WORD_WIDTH = 185; // px
 
 /**
  * Calculate the optimal font size for a medicine label.
- * - Standard/normal medicines (~88-92%) KEEP FULL baseSize (17 pt Ekstra Besar).
- * - Medicines with long words (e.g. DEXAMETHASONE) or multiple lines step down slightly (16pt, 15pt, 14.5pt)
- *   so they never split awkwardly and never touch the top border or middle divider.
+ * - Standard/normal medicines (~88% of data) KEEP FULL baseSize (17 pt Ekstra Besar) completely untouched.
+ * - ONLY medicines with a long word that would otherwise get cut off (like DEXAMETHASONE)
+ *   or with 4+ lines are stepped down slightly (e.g. 14pt or 14.5pt) so:
+ *   1. No word is EVER split across lines (no 'DEXAMETHASO-NE' cut-off).
+ *   2. Text NEVER touches top border or middle divider.
  * 
  * @param {string} nama 
  * @param {string} kemasan 
@@ -103,13 +45,46 @@ export function simulateTextFit(nama, kemasan, sizePt) {
  * @returns {number} optimal font size in pt
  */
 export function getOptimalItemFontSize(nama = '', kemasan = '', baseSize = 17) {
-  // Gradual step-downs from baseSize
-  const candidateSteps = [17, 16.5, 16, 15.5, 15, 14.5, 14, 13.5, 13, 12.5, 12, 11];
+  const candidateSteps = [17, 16.5, 16, 15.5, 15, 14.5, 14, 13.5, 13, 12.5, 12, 11.5, 11];
+  const allWords = (nama + ' ' + (kemasan || '')).trim().split(/\s+/).filter(Boolean);
+
   for (const sz of candidateSteps) {
     if (sz > baseSize) continue;
-    if (simulateTextFit(nama, kemasan, sz).ok) {
-      return sz;
+
+    // 1. Verify that NO SINGLE WORD in the item exceeds MAX_SAFE_WORD_WIDTH
+    let hasWideWord = false;
+    for (const w of allWords) {
+      if (measureTextWidth(w, sz) > MAX_SAFE_WORD_WIDTH) {
+        hasWideWord = true;
+        break;
+      }
     }
+    if (hasWideWord) continue;
+
+    // 2. Simulate line wrapping inside printable width (max 200px)
+    const lineHeightPx = sz * (96 / 72) * 1.12;
+    let lines = 0;
+    let curLine = '';
+    for (const w of nama.trim().split(/\s+/).filter(Boolean)) {
+      const test = curLine ? curLine + ' ' + w : w;
+      if (measureTextWidth(test, sz) <= 200) {
+        curLine = test;
+      } else {
+        lines++;
+        curLine = w;
+      }
+    }
+    if (curLine) lines++;
+    if (kemasan && kemasan.trim()) lines++;
+
+    const totalHeight = lines * lineHeightPx;
+    // For 4+ lines: height must be <= 74px to avoid crowding borders
+    if (lines >= 4 && totalHeight > 74) continue;
+    // For 1-3 lines: height must be <= 78px
+    if (totalHeight > 78) continue;
+
+    return sz;
   }
+
   return 11;
 }
