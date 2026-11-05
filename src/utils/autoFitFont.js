@@ -26,18 +26,18 @@ export function measureTextWidth(text, sizePt) {
 }
 
 /**
- * Safe maximum single word width inside a 65mm card (leaving >= 16px horizontal margin).
- * This ensures long words like DEXAMETHASONE, PREDNISOLONE, BETAMETHASONE, etc. NEVER get cut off.
+ * Safe maximum single word width inside a 65mm card (leaving >= 30px horizontal margin).
+ * Ensures long words like DEXAMETHASONE, PREDNISOLONE, BETAMETHASONE, etc. NEVER get cut off.
  */
-const MAX_SAFE_WORD_WIDTH = 185; // px
+const MAX_SAFE_WORD_WIDTH = 160; // px
 
 /**
  * Calculate the optimal font size for a medicine label.
- * - Standard/normal medicines (~88% of data) KEEP FULL baseSize (17 pt Ekstra Besar) completely untouched.
+ * - Standard/normal medicines (~86% of data) KEEP FULL baseSize (17 pt Ekstra Besar) completely untouched.
  * - ONLY medicines with a long word that would otherwise get cut off (like DEXAMETHASONE)
- *   or with 4+ lines are stepped down slightly (e.g. 14pt or 14.5pt) so:
- *   1. No word is EVER split across lines (no 'DEXAMETHASO-NE' cut-off).
- *   2. Text NEVER touches top border or middle divider.
+ *   or with 4+ lines are stepped down (e.g. 12pt) so:
+ *   1. The long word fits completely in 1 line without being cut off.
+ *   2. Text NEVER touches top border, side borders, or middle divider.
  * 
  * @param {string} nama 
  * @param {string} kemasan 
@@ -61,13 +61,13 @@ export function getOptimalItemFontSize(nama = '', kemasan = '', baseSize = 17) {
     }
     if (hasWideWord) continue;
 
-    // 2. Simulate line wrapping inside printable width (max 200px)
+    // 2. Simulate line wrapping inside printable width (max 190px)
     const lineHeightPx = sz * (96 / 72) * 1.12;
     let lines = 0;
     let curLine = '';
     for (const w of nama.trim().split(/\s+/).filter(Boolean)) {
       const test = curLine ? curLine + ' ' + w : w;
-      if (measureTextWidth(test, sz) <= 200) {
+      if (measureTextWidth(test, sz) <= 190) {
         curLine = test;
       } else {
         lines++;

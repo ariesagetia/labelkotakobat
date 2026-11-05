@@ -13,6 +13,7 @@ import { SAMPLE_DATA, DEFAULT_CATEGORY_COLORS } from './data/sampleData';
 import { THEME_PRESETS, getOptimalTextColor, getDarkerColor } from './utils/colorUtils';
 import { exportItemsToExcel } from './utils/excelParser';
 import { fetchDefaultDataFromGitHub } from './utils/githubSync';
+import { fetchDataFromGoogleSheet, GSHEET_CONFIG } from './utils/gsheetSync';
 import { 
   Printer, 
   ZoomIn, 
@@ -60,13 +61,13 @@ const DEFAULT_SETTINGS = {
 };
 
 export default function App() {
-  // Data source: 'github' (default cloud repo) vs 'custom' (local browser upload)
+  // Data source: 'gsheet' (default Google Sheet cloud) vs 'github' vs 'custom'
   const [dataSource, setDataSource] = useState(() => {
-    return localStorage.getItem('apotek_data_source') || 'github';
+    return localStorage.getItem('apotek_data_source') || 'gsheet';
   });
-  const [isSyncingGitHub, setIsSyncingGitHub] = useState(false);
+  const [isSyncing, setIsSyncing] = useState(false);
   const [lastSyncTime, setLastSyncTime] = useState(() => {
-    return localStorage.getItem('apotek_github_last_sync') || null;
+    return localStorage.getItem('apotek_last_sync') || null;
   });
 
   // Main Items State (pre-populated with full Lampiran 2 dataset)
@@ -394,37 +395,37 @@ export default function App() {
     showToast('Berhasil memuat 1,118 data obat lengkap dari Lampiran 2!');
   };
 
-  // Handler: Sync default data from GitHub
-  const handleSyncFromGitHub = async (silent = false) => {
-    setIsSyncingGitHub(true);
+  // Handler: Sync data directly from Google Sheets
+  const handleSyncFromGoogleSheet = async (silent = false) => {
+    setIsSyncing(true);
     try {
-      const result = await fetchDefaultDataFromGitHub();
+      const result = await fetchDataFromGoogleSheet();
       if (result && result.items && result.items.length > 0) {
         setItems(result.items);
         setSelectedItemIds(new Set(result.items.map(it => it.id)));
-        setDataSource('github');
+        setDataSource('gsheet');
         const syncDate = new Date().toLocaleString('id-ID');
         setLastSyncTime(syncDate);
-        localStorage.setItem('apotek_data_source', 'github');
-        localStorage.setItem('apotek_github_last_sync', syncDate);
+        localStorage.setItem('apotek_data_source', 'gsheet');
+        localStorage.setItem('apotek_last_sync', syncDate);
         if (!silent) {
-          showToast(`Berhasil sinkronisasi ${result.items.length} obat dari GitHub!`);
+          showToast(`Berhasil sinkronisasi ${result.items.length} obat dari Google Sheets!`);
         }
       }
     } catch (err) {
-      console.warn('Gagal sinkronisasi data dari GitHub:', err);
+      console.warn('Gagal sinkronisasi data dari Google Sheets:', err);
       if (!silent) {
-        showToast('Tidak dapat memuat dari GitHub. Menggunakan data tersimpan di browser.');
+        showToast('Tidak dapat memuat dari Google Sheets. Menggunakan data tersimpan.');
       }
     } finally {
-      setIsSyncingGitHub(false);
+      setIsSyncing(false);
     }
   };
 
-  // Auto-sync from GitHub on initial load when dataSource is 'github'
+  // Auto-sync from Google Sheets on initial load when dataSource is 'gsheet'
   useEffect(() => {
-    if (dataSource === 'github') {
-      handleSyncFromGitHub(true);
+    if (dataSource === 'gsheet') {
+      handleSyncFromGoogleSheet(true);
     }
   }, []);
 
@@ -500,9 +501,9 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         dataSource={dataSource}
-        isSyncingGitHub={isSyncingGitHub}
+        isSyncing={isSyncing}
         lastSyncTime={lastSyncTime}
-        onSyncGitHub={handleSyncFromGitHub}
+        onSync={handleSyncFromGoogleSheet}
       />
 
       {/* Main Content Area */}

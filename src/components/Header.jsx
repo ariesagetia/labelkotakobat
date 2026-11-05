@@ -10,7 +10,8 @@ import {
   PlusCircle,
   Eye,
   RefreshCw,
-  Globe
+  Globe,
+  ExternalLink
 } from 'lucide-react';
 
 export default function Header({
@@ -27,10 +28,10 @@ export default function Header({
   onExportExcel,
   activeTab,
   setActiveTab,
-  dataSource = 'github',
-  isSyncingGitHub = false,
+  dataSource = 'gsheet',
+  isSyncing = false,
   lastSyncTime = null,
-  onSyncGitHub
+  onSync
 }) {
   return (
     <header className="no-print bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
@@ -51,23 +52,45 @@ export default function Header({
                   v2.0 Farmasi
                 </span>
                 
-                {/* Data Source Badge */}
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full border text-[11px] bg-slate-50 border-slate-200">
-                  {dataSource === 'github' ? (
+                {/* Data Source Badge: Google Sheet Live vs Upload Lokal */}
+                <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11px] bg-slate-50 border-slate-200 shadow-xs">
+                  {dataSource === 'gsheet' ? (
                     <>
                       <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                       </span>
-                      <span className="font-semibold text-slate-700">GitHub Default</span>
+                      <a 
+                        href="https://docs.google.com/spreadsheets/d/1A-alpkAGq00dFGag-v_nOK0lRm_xUmF3/edit?usp=sharing"
+                        target="_blank" 
+                        rel="noreferrer"
+                        title="Klik untuk membuka Google Sheet di tab baru"
+                        className="font-bold text-emerald-800 hover:text-emerald-900 hover:underline flex items-center gap-1"
+                      >
+                        <span>Google Sheet Live</span>
+                        <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+                      </a>
                       <button
                         type="button"
-                        onClick={() => onSyncGitHub && onSyncGitHub(false)}
-                        disabled={isSyncingGitHub}
-                        title={lastSyncTime ? `Terakhir disinkronkan: ${lastSyncTime}. Klik untuk update dari GitHub.` : 'Sinkronkan data obat terbaru dari GitHub'}
-                        className="p-0.5 hover:bg-slate-200 text-slate-500 hover:text-slate-800 rounded transition-all"
+                        onClick={() => onSync && onSync(false)}
+                        disabled={isSyncing}
+                        title={lastSyncTime ? `Terakhir disinkronkan: ${lastSyncTime}. Klik untuk update dari Google Sheets.` : 'Sinkronkan data obat terbaru dari Google Sheets'}
+                        className="p-0.5 hover:bg-emerald-100 text-emerald-700 rounded transition-all"
                       >
-                        <RefreshCw className={`w-3 h-3 ${isSyncingGitHub ? 'animate-spin text-purple-600' : ''}`} />
+                        <RefreshCw className={`w-3 h-3 ${isSyncing ? 'animate-spin text-emerald-600' : ''}`} />
+                      </button>
+                    </>
+                  ) : dataSource === 'github' ? (
+                    <>
+                      <span className="h-2 w-2 rounded-full bg-purple-500"></span>
+                      <span className="font-semibold text-purple-800">GitHub Default</span>
+                      <button
+                        type="button"
+                        onClick={() => onSync && onSync(false)}
+                        title="Ganti dan sinkronkan dengan Google Sheets"
+                        className="text-[10px] text-emerald-700 font-bold hover:underline ml-0.5"
+                      >
+                        Pakai GSheet
                       </button>
                     </>
                   ) : (
@@ -76,19 +99,19 @@ export default function Header({
                       <span className="font-semibold text-amber-800">Upload Lokal</span>
                       <button
                         type="button"
-                        onClick={() => onSyncGitHub && onSyncGitHub(false)}
-                        disabled={isSyncingGitHub}
-                        title="Kembali gunakan data default dari repositori GitHub"
-                        className="text-[10px] text-purple-700 font-bold hover:underline ml-0.5"
+                        onClick={() => onSync && onSync(false)}
+                        disabled={isSyncing}
+                        title="Kembali gunakan data dari Google Sheets resmi"
+                        className="text-[10px] text-emerald-700 font-bold hover:underline ml-0.5"
                       >
-                        Pakai GitHub
+                        Pakai GSheet
                       </button>
                     </>
                   )}
                 </div>
               </div>
               <p className="text-xs text-slate-500">
-                Generator & Pencetak Label Kotak Obat Multi-Kategori (Sesuai Lampiran 1 & 2)
+                Generator & Pencetak Label Kotak Obat Multi-Kategori (Terkoneksi Google Sheets)
               </p>
             </div>
           </div>
@@ -138,84 +161,83 @@ export default function Header({
             <button
               onClick={onOpenSettings}
               title="Pengaturan ukuran kertas, layout grid, dan ukuran font"
-              className="p-2 text-slate-600 hover:text-slate-900 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300 transition-colors"
             >
-              <Settings className="w-4 h-4" />
-            </button>
-
-            {/* Print Guide */}
-            <button
-              onClick={onOpenGuide}
-              title="Tips & panduan mencetak agar warna latar belakang keluar"
-              className="p-2 text-slate-600 hover:text-slate-900 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors"
-            >
-              <HelpCircle className="w-4 h-4" />
+              <Settings className="w-3.5 h-3.5 text-slate-600" />
+              <span>Atur Layout</span>
             </button>
 
             {/* Export Excel */}
             <button
               onClick={onExportExcel}
-              title="Unduh data saat ini sebagai file Excel .xlsx"
-              className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-2 text-xs font-medium rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              title="Download daftar obat saat ini ke file Excel (.xlsx)"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300 transition-colors"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>Unduh XLSX</span>
+              <Download className="w-3.5 h-3.5 text-slate-600" />
+              <span>Export</span>
             </button>
 
-            {/* PRIMARY CETAK / PRINT BUTTON */}
+            {/* Print Button */}
             <button
               onClick={onPrint}
-              disabled={selectedCount === 0}
-              className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg shadow-md transition-all ${
-                selectedCount > 0
-                  ? 'bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 text-white shadow-purple-200 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]'
-                  : 'bg-slate-300 text-slate-500 cursor-not-allowed shadow-none'
-              }`}
+              title="Cetak lembar label (Ctrl+P)"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg bg-purple-700 text-white hover:bg-purple-800 shadow-md shadow-purple-200 transition-all hover:scale-102 active:scale-98"
             >
               <Printer className="w-4 h-4" />
-              <span>CETAK LABEL ({selectedCount})</span>
+              <span>Cetak Label ({selectedCount})</span>
             </button>
 
           </div>
+
         </div>
 
-        {/* Sub-navigation Tabs: Preview Lembar vs Pengaturan Warna Kategori */}
-        <div className="flex items-center space-x-1 mt-3 pt-2 border-t border-slate-100">
-          <button
-            onClick={() => setActiveTab('preview')}
-            className={`inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'preview'
-                ? 'bg-purple-100 text-purple-900 border border-purple-200 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <Eye className="w-3.5 h-3.5" />
-            <span>Pratinjau Lembar Cetak ({totalPages} Hal)</span>
-          </button>
+        {/* View Mode Tabs */}
+        <div className="flex items-center justify-between border-t border-slate-100 mt-3 pt-2">
+          <div className="flex items-center space-x-1">
+            <button
+              onClick={() => setActiveTab('preview')}
+              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 ${
+                activeTab === 'preview'
+                  ? 'bg-purple-100 text-purple-800'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+              }`}
+            >
+              <Eye className="w-3.5 h-3.5" />
+              <span>Pratinjau Cetak Lembaran</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('colors')}
+              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 ${
+                activeTab === 'colors'
+                  ? 'bg-purple-100 text-purple-800'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+              }`}
+            >
+              <Palette className="w-3.5 h-3.5" />
+              <span>Warna Kategori ({categoryCount})</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('table')}
+              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 ${
+                activeTab === 'table'
+                  ? 'bg-purple-100 text-purple-800'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+              }`}
+            >
+              <FileSpreadsheet className="w-3.5 h-3.5" />
+              <span>Daftar & Edit Obat ({totalItems})</span>
+            </button>
+          </div>
 
-          <button
-            onClick={() => setActiveTab('colors')}
-            className={`inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'colors'
-                ? 'bg-purple-100 text-purple-900 border border-purple-200 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <Palette className="w-3.5 h-3.5" />
-            <span>Pilihan Warna Kategori ({categoryCount})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('table')}
-            className={`inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'table'
-                ? 'bg-purple-100 text-purple-900 border border-purple-200 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <FileSpreadsheet className="w-3.5 h-3.5" />
-            <span>Daftar Data Obat ({totalItems})</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onOpenGuide}
+              className="text-xs text-slate-500 hover:text-purple-700 flex items-center gap-1 transition-colors"
+            >
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Panduan Standar</span>
+            </button>
+          </div>
         </div>
 
       </div>
