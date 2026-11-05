@@ -42,12 +42,41 @@ export default function LabelCard({
   const fontWeight = settings?.fontWeight || '800';
   const textTransform = settings?.textTransform || 'uppercase';
 
-  // 4. Sizing from user settings: Besaran/Kemasan obat sama persis dengan ukuran nama obat
+  // 4. Sizing from user settings & smart scaling for long medicine names
   const nameSize = settings?.fontSizeNama || 17; // pt (default Ekstra Besar 17 pt)
-  const kemasanSize = (settings?.syncKemasanSize !== false) 
+  const baseKemasanSize = (settings?.syncKemasanSize !== false) 
     ? nameSize 
     : (settings?.fontSizeKemasan || nameSize); // pt
-  const kandunganSize = settings?.fontSizeKandungan || 11; // pt (default Ekstra Besar 11 pt)
+  const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default Ekstra Besar 11 pt)
+
+  // Smart scaling for long names so they never overflow, break awkwardly, or push the divider down
+  const nameText = (item.nama || '').trim();
+  const kemasanText = (item.kemasan || '').trim();
+  const totalTopLength = nameText.length + (kemasanText ? kemasanText.length + 3 : 0);
+  const longestWord = nameText.split(/\s+/).reduce((max, w) => Math.max(max, w.length), 0);
+
+  let effectiveNameSize = nameSize;
+  if (totalTopLength > 30 || longestWord > 12) {
+    effectiveNameSize = Math.min(nameSize, 11.5);
+  } else if (totalTopLength > 22 || longestWord > 10) {
+    effectiveNameSize = Math.min(nameSize, 13.5);
+  } else if (totalTopLength > 16 || longestWord > 8) {
+    effectiveNameSize = Math.min(nameSize, 15);
+  }
+
+  const effectiveKemasanSize = (settings?.syncKemasanSize !== false)
+    ? effectiveNameSize
+    : Math.min(baseKemasanSize, effectiveNameSize);
+
+  // Smart scaling for kandungan
+  const kandunganText = (item.kandungan || '').trim();
+  let effectiveKandunganSize = baseKandunganSize;
+  if (kandunganText.length > 45) {
+    effectiveKandunganSize = Math.min(baseKandunganSize, 8.5);
+  } else if (kandunganText.length > 30) {
+    effectiveKandunganSize = Math.min(baseKandunganSize, 9.5);
+  }
+
   const borderStyle = settings?.borderStyle || 'solid'; // 'solid', 'dashed', 'dotted', 'none'
   const borderRadius = settings?.borderRadius !== undefined ? settings.borderRadius : 0; // px
   const showCategoryTag = settings?.showCategoryTag || false;
@@ -117,22 +146,25 @@ export default function LabelCard({
             color: isWhiteBg ? categoryColor : undefined,
             backgroundColor: isWhiteBg ? `${categoryColor}15` : undefined
           }}
-          className="text-[8px] font-black uppercase tracking-wider opacity-85 pt-1 px-1.5 rounded mt-0.5"
+          className="text-[8px] font-black uppercase tracking-wider opacity-85 pt-1 px-1.5 rounded mt-0.5 shrink-0"
         >
           {item.kategori}
         </div>
       )}
 
-      {/* Main Content Area */}
-      <div className="w-full h-full flex flex-col justify-between items-center">
+      {/* Main Content Area: Locked into exactly 2 equal halves (50% Top, 50% Bottom) */}
+      <div className="w-full h-full flex flex-col justify-between items-center relative overflow-hidden box-border">
         
-        {/* Top Section: Nama Obat + Kekuatan / Dosis & Kemasan (Besaran) */}
-        <div className="w-full flex-1 flex flex-col justify-center items-center px-2 py-1.5">
+        {/* Top Half: Exactly 50% height, locked with min-h-0 and max-h-[50%] so it CANNOT push the divider down */}
+        <div 
+          style={{ height: '50%', maxHeight: '50%' }}
+          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center px-2 py-1 overflow-hidden box-border"
+        >
           {/* Line 1: Nama Obat + Kekuatan / Dosis */}
           <div
             style={{ 
-              fontSize: `${nameSize}pt`, 
-              lineHeight: '1.2',
+              fontSize: `${effectiveNameSize}pt`, 
+              lineHeight: '1.15',
               color: namaColor,
               fontWeight: fontWeight,
               textTransform: textTransform
@@ -142,24 +174,24 @@ export default function LabelCard({
             {item.nama}
           </div>
 
-          {/* Line 2: Sediaan & Kemasan / Besaran Obat (e.g. TAB @30, KAP @100, 120 ML) - Size sama dengan nama obat */}
+          {/* Line 2: Sediaan & Kemasan / Besaran Obat (e.g. TAB @30, KAP @100, 120 ML) */}
           {item.kemasan && (
             <div
               style={{ 
-                fontSize: `${kemasanSize}pt`, 
-                lineHeight: '1.2',
+                fontSize: `${effectiveKemasanSize}pt`, 
+                lineHeight: '1.15',
                 color: kemasanColor,
                 fontWeight: fontWeight,
                 textTransform: textTransform
               }}
-              className="tracking-tight text-center w-full mt-1 px-1 break-words opacity-95"
+              className="tracking-tight text-center w-full mt-0.5 px-1 break-words opacity-95"
             >
               {item.kemasan}
             </div>
           )}
         </div>
 
-        {/* Garis Pemisah Penuh dari Kanan ke Kiri Sepanjang Lebar Kotak (Tetap muncul walaupun kandungan kosong) */}
+        {/* Center Divider: Locked at exactly 50% vertical center */}
         {showDivider && (
           <div
             style={{
@@ -169,17 +201,20 @@ export default function LabelCard({
               borderTopColor: dividerColor,
               opacity: dividerOpacity
             }}
-            className="shrink-0 mx-auto"
+            className="w-full shrink-0 mx-auto"
           />
         )}
 
-        {/* Bottom Section: Kandungan / Komposisi Aktif (tetap mempertahankan ruang bawah agar posisi simetris & garis di tengah) */}
-        <div className="w-full flex-1 flex flex-col justify-center items-center px-2 py-1.5">
+        {/* Bottom Half: Exactly 50% height, locked with min-h-0 and max-h-[50%] */}
+        <div 
+          style={{ height: '50%', maxHeight: '50%' }}
+          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center px-2 py-1 overflow-hidden box-border"
+        >
           {hasKandungan && (
             <div
               style={{ 
-                fontSize: `${kandunganSize}pt`, 
-                lineHeight: '1.2',
+                fontSize: `${effectiveKandunganSize}pt`, 
+                lineHeight: '1.15',
                 color: kandunganColor,
                 fontWeight: fontWeight === '900' ? '700' : (fontWeight === '800' ? '600' : '500'),
                 textTransform: textTransform
