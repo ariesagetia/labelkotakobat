@@ -49,20 +49,25 @@ export default function LabelCard({
     : (settings?.fontSizeKemasan || nameSize); // pt
   const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default 11 pt)
 
-  // Smart scaling HANYA untuk nama obat yang memang sangat panjang (agar tetap besar & tidak kecil banget)
+  // Smart scaling agar teks selalu pas di area 50% tanpa mepet batas atas, samping, atau garis tengah
   const nameText = (item.nama || '').trim();
+  const kemasanText = (item.kemasan || '').trim();
   const nameLen = nameText.length;
+  const longestWord = nameText.split(/\s+/).reduce((max, w) => Math.max(max, w.length), 0);
+  const totalWords = (nameText ? nameText.split(/\s+/).length : 0) + (kemasanText ? 1 : 0);
 
-  let effectiveNameSize = nameSize; // Default: 100% ukuran penuh (17 pt)
-  if (nameLen > 36) {
-    // Nama super panjang (> 36 karakter) -> hanya turun sedikit ke 13.5 pt
+  let effectiveNameSize = nameSize; // Default 17 pt
+  if (nameLen > 32 || totalWords >= 5) {
+    // Nama super panjang (>32 huruf atau 5+ kata, seperti DEXAMETHASONE HARSEN 0.75 MG TAB)
     effectiveNameSize = Math.max(nameSize - 3.5, 13.5);
-  } else if (nameLen > 25) {
-    // Nama panjang (> 25 karakter, seperti DEXAMETHASONE HARSEN 0.75 MG) -> hanya turun sedikit ke 15 pt
-    effectiveNameSize = Math.max(nameSize - 2, 15);
+  } else if (nameLen > 21 || longestWord >= 12 || totalWords >= 4) {
+    // Nama panjang (seperti METHYL PREDNISOLONE 4 MG / 8 MG, EPERISONE-HCL)
+    effectiveNameSize = Math.max(nameSize - 3, 14);
+  } else if (nameLen > 16 || longestWord >= 10 || totalWords >= 3) {
+    // Nama sedang (seperti DEXKETOPROFEN 25 MG TAB)
+    effectiveNameSize = Math.max(nameSize - 1.5, 15.5);
   } else {
-    // Nama normal / standar (seperti EPERISONE-HCL 50 MG, GABAPENTIN 300 MG, DEXKETOPROFEN 25 MG, dll)
-    // Tetap 100% ukuran penuh 17 pt, tidak dikecilkan!
+    // Nama normal / pendek (1-2 baris, seperti ALLERON 4 MG TAB) -> tetap 17 pt penuh
     effectiveNameSize = nameSize;
   }
 
@@ -155,16 +160,20 @@ export default function LabelCard({
       {/* Main Content Area: Locked into exactly 2 equal halves (50% Top, 50% Bottom) */}
       <div className="w-full h-full flex flex-col justify-between items-center relative overflow-hidden box-border">
         
-        {/* Top Half: Exactly 50% height, locked with min-h-0 and max-h-[50%] so it CANNOT push the divider down */}
+        {/* Top Half: Exactly 50% height with safe margins so text NEVER touches top border or middle divider */}
         <div 
-          style={{ height: '50%', maxHeight: '50%' }}
-          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center px-2 py-1 overflow-hidden box-border"
+          style={{ 
+            height: '50%', 
+            maxHeight: '50%',
+            padding: '5px 8px 4px 8px' // Safe buffer from top border and middle divider
+          }}
+          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center overflow-hidden box-border"
         >
           {/* Line 1: Nama Obat + Kekuatan / Dosis */}
           <div
             style={{ 
               fontSize: `${effectiveNameSize}pt`, 
-              lineHeight: '1.15',
+              lineHeight: '1.14',
               color: namaColor,
               fontWeight: fontWeight,
               textTransform: textTransform
@@ -179,7 +188,7 @@ export default function LabelCard({
             <div
               style={{ 
                 fontSize: `${effectiveKemasanSize}pt`, 
-                lineHeight: '1.15',
+                lineHeight: '1.14',
                 color: kemasanColor,
                 fontWeight: fontWeight,
                 textTransform: textTransform
@@ -205,16 +214,20 @@ export default function LabelCard({
           />
         )}
 
-        {/* Bottom Half: Exactly 50% height, locked with min-h-0 and max-h-[50%] */}
+        {/* Bottom Half: Exactly 50% height with safe margins */}
         <div 
-          style={{ height: '50%', maxHeight: '50%' }}
-          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center px-2 py-1 overflow-hidden box-border"
+          style={{ 
+            height: '50%', 
+            maxHeight: '50%',
+            padding: '4px 8px 5px 8px' // Safe buffer from middle divider and bottom border
+          }}
+          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center overflow-hidden box-border"
         >
           {hasKandungan && (
             <div
               style={{ 
                 fontSize: `${effectiveKandunganSize}pt`, 
-                lineHeight: '1.15',
+                lineHeight: '1.14',
                 color: kandunganColor,
                 fontWeight: fontWeight === '900' ? '700' : (fontWeight === '800' ? '600' : '500'),
                 textTransform: textTransform
