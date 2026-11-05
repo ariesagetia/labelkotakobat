@@ -79,11 +79,18 @@ export async function pushExcelToGitHub(fileData, token, commitMessage = 'Update
         'Accept': 'application/vnd.github.v3+json'
       }
     });
+    if (getRes.status === 401) {
+      const errBody = await getRes.json().catch(() => ({}));
+      const err = new Error(errBody.message || 'Bad credentials');
+      err.status = 401;
+      throw err;
+    }
     if (getRes.ok) {
       const getData = await getRes.json();
       existingSha = getData.sha;
     }
   } catch (err) {
+    if (err.status === 401) throw err;
     console.warn('Gagal membaca SHA file eksisting:', err);
   }
 
@@ -109,10 +116,29 @@ export async function pushExcelToGitHub(fileData, token, commitMessage = 'Update
 
   if (!putRes.ok) {
     const errBody = await putRes.json().catch(() => ({}));
-    throw new Error(errBody.message || `Gagal upload ke GitHub (Status ${putRes.status})`);
+    const err = new Error(errBody.message || `Gagal upload ke GitHub (Status ${putRes.status})`);
+    err.status = putRes.status;
+    throw err;
   }
 
   return await putRes.json();
+}
+
+/**
+ * Check if an error indicates that the token is expired or invalid
+ */
+export function isTokenExpiredOrInvalid(err) {
+  if (!err) return false;
+  const status = err.status || 0;
+  const msg = (err.message || '').toLowerCase();
+  return (
+    status === 401 ||
+    msg.includes('bad credentials') ||
+    msg.includes('token expired') ||
+    msg.includes('expired') ||
+    msg.includes('requires authentication') ||
+    msg.includes('personal access token has expired')
+  );
 }
 
 /**

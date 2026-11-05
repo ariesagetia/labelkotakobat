@@ -13,14 +13,16 @@ import {
   ExternalLink,
   Key,
   ShieldCheck,
-  Check
+  Check,
+  AlertTriangle
 } from 'lucide-react';
 import { parseExcelFile, detectColumns } from '../utils/excelParser';
 import { 
   GITHUB_CONFIG, 
   pushExcelToGitHub, 
   getSavedGitHubToken, 
-  saveGitHubToken 
+  saveGitHubToken,
+  isTokenExpiredOrInvalid
 } from '../utils/githubSync';
 
 export default function UploadModal({
@@ -39,13 +41,14 @@ export default function UploadModal({
   const [importMode, setImportMode] = useState('replace'); // 'replace' or 'append'
   const fileInputRef = useRef(null);
 
-  // GitHub Push State
+  // GitHub Push & Token State
   const [showGitHubPush, setShowGitHubPush] = useState(false);
   const [githubToken, setGithubToken] = useState('');
   const [rememberToken, setRememberToken] = useState(true);
   const [isPushingGitHub, setIsPushingGitHub] = useState(false);
   const [pushSuccess, setPushSuccess] = useState(false);
   const [pushError, setPushError] = useState(null);
+  const [isTokenExpired, setIsTokenExpired] = useState(false);
 
   // Auto-sync setting: default true if user has saved a token
   const [autoSyncToGitHub, setAutoSyncToGitHub] = useState(() => {
@@ -61,9 +64,12 @@ export default function UploadModal({
     if (isOpen) {
       const savedToken = getSavedGitHubToken();
       setGithubToken(savedToken);
+      setIsTokenExpired(false);
+      setPushError(null);
+      setPushSuccess(false);
       if (savedToken) {
-        // Automatically default auto-sync to true if token exists
         setAutoSyncToGitHub(true);
+        setShowGitHubPush(false); // keep collapsed when token is present
       }
     }
   }, [isOpen]);
@@ -120,6 +126,7 @@ export default function UploadModal({
         );
 
         setPushSuccess(true);
+        setIsTokenExpired(false);
         // Apply with isGitHubDefault = true
         onDataLoaded(parsedData.items, importMode, true);
         setTimeout(() => {
@@ -128,10 +135,19 @@ export default function UploadModal({
         return;
       } catch (err) {
         console.error('Error auto-push to GitHub:', err);
-        setPushError(err.message || 'Gagal upload otomatis ke GitHub.');
+        const expired = isTokenExpiredOrInvalid(err);
+        if (expired) {
+          // Token is expired or invalid -> prompt for new token
+          setIsTokenExpired(true);
+          setShowGitHubPush(true);
+          setPushError('Token PAT GitHub Anda telah kedaluwarsa (Expired) atau tidak valid lagi. Silakan buat token baru di GitHub dan masukkan di bawah.');
+          saveGitHubToken('');
+          setGithubToken('');
+        } else {
+          setPushError(err.message || 'Gagal upload otomatis ke GitHub.');
+          setShowGitHubPush(true);
+        }
         setIsPushingGitHub(false);
-        // Show push section so user can see what happened
-        setShowGitHubPush(true);
         return;
       }
     }
@@ -151,7 +167,7 @@ export default function UploadModal({
   const handleManualPushToGitHub = async () => {
     if (!file) return;
     if (!githubToken.trim()) {
-      setPushError('Harap masukkan Personal Access Token (PAT) GitHub.');
+      setPushError('Harap masukkan Personal Access Token (PAT) GitHub yang baru.');
       return;
     }
 
@@ -173,13 +189,22 @@ export default function UploadModal({
       );
 
       setPushSuccess(true);
+      setIsTokenExpired(false);
       onDataLoaded(parsedData.items, 'replace', true);
       setTimeout(() => {
         onClose();
       }, 2000);
     } catch (err) {
       console.error(err);
-      setPushError(err.message || 'Gagal mengupload file ke GitHub.');
+      const expired = isTokenExpiredOrInvalid(err);
+      if (expired) {
+        setIsTokenExpired(true);
+        setPushError('Token GitHub (PAT) ini sudah kedaluwarsa (Expired) atau tidak valid lagi.');
+        saveGitHubToken('');
+        setGithubToken('');
+      } else {
+        setPushError(err.message || 'Gagal mengupload file ke GitHub.');
+      }
     } finally {
       setIsPushingGitHub(false);
     }
@@ -325,8 +350,8 @@ export default function UploadModal({
                 </div>
               </div>
 
-              {/* Automatic GitHub Sync Active Banner */}
-              {isTokenConfigured && (
+              {/* Automatic GitHub Sync Active Banner (When token exists & valid) */}
+              {isTokenConfigured && !isTokenExpired && (
                 <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 text-emerald-950 flex flex-col gap-2 shadow-xs animate-in fade-in">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-2">
@@ -370,6 +395,23 @@ export default function UploadModal({
                     />
                     <span>Otomatis upload & perbarui file default GitHub setiap kali upload Excel baru</span>
                   </label>
+                </div>
+              )}
+
+              {/* Expired Token Alert Banner (Shown ONLY when token expires) */}
+              {isTokenExpired && (
+                <div className="p-3.5 rounded-xl bg-amber-50 border-2 border-amber-300 text-amber-900 space-y-2 animate-in fade-in">
+                  <div className="flex items-start gap-2.5">
+                    <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-xs text-amber-950">
+                        Token PAT GitHub Telah Kedaluwarsa (Expired)
+                      </p>
+                      <p className="text-[11px] text-amber-800 mt-0.5">
+                        Masa berlaku token GitHub Anda sebelumnya telah habis. Silakan buat token baru (1 menit) dengan izin <code>repo</code> di GitHub, lalu masukkan ke kolom di bawah ini agar upload otomatis kembali aktif.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -425,9 +467,9 @@ export default function UploadModal({
                 </div>
               </div>
 
-              {/* GitHub Advanced Section */}
+              {/* GitHub Advanced Section (Shown when no token, token expired, or user explicitly opened it) */}
               <div className="pt-2 border-t border-slate-200">
-                {(!isTokenConfigured || showGitHubPush) && (
+                {(!isTokenConfigured || isTokenExpired || showGitHubPush) && (
                   <button
                     type="button"
                     onClick={() => setShowGitHubPush(!showGitHubPush)}
@@ -437,10 +479,18 @@ export default function UploadModal({
                       <CloudUpload className="w-4 h-4 text-purple-700" />
                       <div>
                         <p className="font-bold text-slate-900 text-xs">
-                          {isTokenConfigured ? 'Pengaturan Token GitHub' : 'Hubungkan Token GitHub (Agar Otomatis Tampil di Seluruh Browser & HP)'}
+                          {isTokenExpired 
+                            ? '⚠️ Masukkan Token GitHub Baru (Expired)' 
+                            : isTokenConfigured 
+                              ? 'Pengaturan Token GitHub' 
+                              : 'Hubungkan Token GitHub (Agar Otomatis Tampil di Seluruh Browser & HP)'}
                         </p>
                         <p className="text-[11px] text-slate-500">
-                          {isTokenConfigured ? 'Kelola token atau upload manual ke repositori' : 'Masukkan token sekali saja untuk mengaktifkan upload otomatis'}
+                          {isTokenExpired 
+                            ? 'Token lama telah kedaluwarsa. Masukkan token baru di sini.' 
+                            : isTokenConfigured 
+                              ? 'Token saat ini sudah tersimpan dan aktif.' 
+                              : 'Masukkan token sekali saja untuk mengaktifkan upload otomatis.'}
                         </p>
                       </div>
                     </div>
@@ -458,7 +508,7 @@ export default function UploadModal({
                       <div className="flex items-center justify-between">
                         <label className="font-bold text-slate-800 text-xs flex items-center gap-1.5">
                           <Key className="w-3.5 h-3.5 text-purple-700" />
-                          <span>Cara 1: Upload Otomatis via GitHub Token (PAT)</span>
+                          <span>Cara 1: Input Token GitHub (PAT)</span>
                         </label>
                         <a
                           href="https://github.com/settings/tokens/new?scopes=repo&description=Apotek+Label+Master"
@@ -467,7 +517,7 @@ export default function UploadModal({
                           className="text-[10px] font-semibold text-purple-700 hover:underline inline-flex items-center gap-0.5"
                           title="Buat Classic Token dengan izin 'repo' tercentang otomatis"
                         >
-                          <span>Buat Token (Izin repo)</span>
+                          <span>Buat Token Baru (Izin repo)</span>
                           <ExternalLink className="w-2.5 h-2.5" />
                         </a>
                       </div>
@@ -477,7 +527,7 @@ export default function UploadModal({
                           type="password"
                           value={githubToken}
                           onChange={(e) => setGithubToken(e.target.value)}
-                          placeholder="Masukkan token GitHub (ghp_... atau github_pat_...)"
+                          placeholder="Masukkan token GitHub baru (ghp_... atau github_pat_...)"
                           className="flex-1 px-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white"
                         />
                         <button
@@ -513,7 +563,7 @@ export default function UploadModal({
                       {pushSuccess && (
                         <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2">
                           <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                          <span><strong>Berhasil!</strong> File Excel telah diperbarui di GitHub. Semua browser kini akan memuat data ini sebagai default!</span>
+                          <span><strong>Berhasil!</strong> Token baru disimpan dan file Excel telah diperbarui di GitHub!</span>
                         </div>
                       )}
 
@@ -532,9 +582,6 @@ export default function UploadModal({
                                   <p>
                                     2. <strong>Jika Tokens (classic):</strong> Wajib centang kotak <strong><code>repo</code></strong> (Full control of private repositories).
                                   </p>
-                                  <p className="text-slate-600 pt-0.5">
-                                    💡 <em>Tips:</em> Anda juga bisa gunakan <strong>Cara 2</strong> di bawah (tinggal drag & drop file ke web GitHub, tanpa perlu token).
-                                  </p>
                                 </div>
                               )}
                             </div>
@@ -546,7 +593,7 @@ export default function UploadModal({
                     {/* Method 2: Manual Drag & Drop via Web */}
                     <div className="pt-3 border-t border-slate-200/80 space-y-2">
                       <p className="font-bold text-slate-800 text-xs">
-                        Cara 2: Upload Manual via Web GitHub (Tanpa Token)
+                        Cara 2: Upload Manual via Web GitHub (Tanpa Perlu Token)
                       </p>
                       <p className="text-[11px] text-slate-600">
                         1. Unduh file ini dengan nama <code>data_obat_default.xlsx</code>.<br/>
@@ -614,7 +661,7 @@ export default function UploadModal({
             >
               Batal
             </button>
-            {isTokenConfigured && autoSyncToGitHub && parsedData && (
+            {isTokenConfigured && !isTokenExpired && autoSyncToGitHub && parsedData && (
               <button
                 type="button"
                 onClick={handleApplyLocalOnly}
@@ -631,7 +678,7 @@ export default function UploadModal({
             onClick={handleApply}
             disabled={!parsedData || !parsedData.items.length || isPushingGitHub}
             className={`inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold rounded-xl text-white shadow-md transition-all ${
-              isTokenConfigured && autoSyncToGitHub
+              isTokenConfigured && !isTokenExpired && autoSyncToGitHub
                 ? 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-700 hover:to-teal-800 shadow-emerald-200 hover:shadow-lg hover:scale-[1.01]'
                 : 'bg-purple-700 hover:bg-purple-800 shadow-purple-200'
             } disabled:opacity-50 disabled:cursor-not-allowed`}
@@ -641,7 +688,7 @@ export default function UploadModal({
                 <RefreshCw className="w-4 h-4 animate-spin" />
                 <span>Mengupload ke GitHub & Menerapkan...</span>
               </>
-            ) : isTokenConfigured && autoSyncToGitHub ? (
+            ) : isTokenConfigured && !isTokenExpired && autoSyncToGitHub ? (
               <>
                 <CloudUpload className="w-4 h-4" />
                 <span>Terapkan & Otomatis Push ke GitHub</span>
