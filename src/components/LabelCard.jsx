@@ -1,7 +1,7 @@
 import React from 'react';
 import { Edit2, Copy } from 'lucide-react';
 import { AVAILABLE_FONTS } from '../utils/fontConstants';
-import { getOptimalItemFontSize } from '../utils/autoFitFont';
+import { getOptimalItemFontSize, getOptimalKandunganFontSize } from '../utils/autoFitFont';
 
 export default function LabelCard({
   item,
@@ -64,12 +64,9 @@ export default function LabelCard({
   const displayNama = (item.nama || '').replace(/(\S)-(\S)/g, '$1\u2011$2');
   const displayKemasan = (item.kemasan || '').replace(/(\S)-(\S)/g, '$1\u2011$2');
 
-  // Kandungan obat: tetap ukuran standar (11 pt), disesuaikan jika teks ekstra panjang
-  const kandunganText = (item.kandungan || '').trim();
-  let effectiveKandunganSize = baseKandunganSize;
-  if (kandunganText.length > 55) {
-    effectiveKandunganSize = Math.max(baseKandunganSize - 2, 9.5);
-  }
+  // Kandungan obat: dihitung presisi agar komponen panjang (misal DEXCHLORPHENIRAMINE)
+  // tidak pernah terpotong dengan tanda titik-titik (...) dan muat nyaman tanpa overflow
+  const effectiveKandunganSize = getOptimalKandunganFontSize(item.kandungan, baseKandunganSize);
 
   const borderStyle = settings?.borderStyle || 'solid'; // 'solid', 'dashed', 'dotted', 'none'
   const borderRadius = settings?.borderRadius !== undefined ? settings.borderRadius : 0; // px
@@ -226,9 +223,12 @@ export default function LabelCard({
                 lineHeight: '1.14',
                 color: kandunganColor,
                 fontWeight: fontWeight === '900' ? '700' : (fontWeight === '800' ? '600' : '500'),
-                textTransform: textTransform
+                textTransform: textTransform,
+                overflowWrap: 'normal',
+                wordBreak: 'normal',
+                hyphens: 'none'
               }}
-              className="tracking-tighter text-center w-full px-1 break-words opacity-90 line-clamp-3"
+              className="tracking-tighter text-center w-full px-1 opacity-90"
             >
               {item.kandungan}
             </div>

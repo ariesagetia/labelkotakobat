@@ -26,18 +26,44 @@ export function measureTextWidth(text, sizePt) {
 }
 
 /**
+ * Helper to simulate line breaking inside a given max pixel width.
+ * @param {string} text 
+ * @param {number} sz font size in pt
+ * @param {number} maxW max width in px
+ * @param {number} weightFactor multiplier for font weight (e.g. 1.0 for bold, 0.9 for semibold)
+ * @returns {number} count of lines
+ */
+function countLines(text, sz, maxW, weightFactor = 1.0) {
+  if (!text || !text.trim()) return 0;
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  let lines = 0;
+  let cur = '';
+  for (const w of words) {
+    const test = cur ? cur + ' ' + w : w;
+    if (measureTextWidth(test, sz) * weightFactor <= maxW) {
+      cur = test;
+    } else {
+      lines++;
+      cur = w;
+    }
+  }
+  if (cur) lines++;
+  return lines;
+}
+
+/**
  * Safe maximum single word width inside a 65mm card (leaving >= 30px horizontal margin).
  * Ensures long words like DEXAMETHASONE, PREDNISOLONE, BETAMETHASONE, etc. NEVER get cut off.
  */
 const MAX_SAFE_WORD_WIDTH = 160; // px
 
 /**
- * Calculate the optimal font size for a medicine label.
- * - Standard/normal medicines (~86% of data) KEEP FULL baseSize (17 pt Ekstra Besar) completely untouched.
- * - ONLY medicines with a long word that would otherwise get cut off (like DEXAMETHASONE)
- *   or with 4+ lines are stepped down (e.g. 12pt) so:
- *   1. The long word fits completely in 1 line without being cut off.
- *   2. Text NEVER touches top border, side borders, or middle divider.
+ * Calculate the optimal font size for a medicine label item (Nama + Kemasan).
+ * - Standard/normal medicines (~81% of data) KEEP FULL baseSize (17 pt Ekstra Besar) completely untouched.
+ * - ONLY medicines that would wrap into 4+ lines (like PROCOLD FLU & BATUK (BIRU) STRIP)
+ *   or have long words (like DEXAMETHASONE) are stepped down gracefully so:
+ *   1. The item fits completely in the top half without colliding into the middle divider or borders.
+ *   2. No word is ever split or cut off.
  * 
  * @param {string} nama 
  * @param {string} kemasan 
@@ -45,13 +71,13 @@ const MAX_SAFE_WORD_WIDTH = 160; // px
  * @returns {number} optimal font size in pt
  */
 export function getOptimalItemFontSize(nama = '', kemasan = '', baseSize = 17) {
-  const candidateSteps = [17, 16.5, 16, 15.5, 15, 14.5, 14, 13.5, 13, 12.5, 12, 11.5, 11];
+  const candidateSteps = [17, 16.5, 16, 15.5, 15, 14.5, 14, 13.5, 13, 12.5, 12, 11.5, 11, 10.5, 10, 9.5];
   const allWords = (nama + ' ' + (kemasan || '')).trim().split(/\s+/).filter(Boolean);
 
   for (const sz of candidateSteps) {
     if (sz > baseSize) continue;
 
-    // 1. Verify that NO SINGLE WORD in the item exceeds MAX_SAFE_WORD_WIDTH
+    // 1. Verify that NO SINGLE WORD exceeds MAX_SAFE_WORD_WIDTH (160px)
     let hasWideWord = false;
     for (const w of allWords) {
       if (measureTextWidth(w, sz) > MAX_SAFE_WORD_WIDTH) {
@@ -61,30 +87,76 @@ export function getOptimalItemFontSize(nama = '', kemasan = '', baseSize = 17) {
     }
     if (hasWideWord) continue;
 
-    // 2. Simulate line wrapping inside printable width (max 190px)
-    const lineHeightPx = sz * (96 / 72) * 1.12;
-    let lines = 0;
-    let curLine = '';
-    for (const w of nama.trim().split(/\s+/).filter(Boolean)) {
-      const test = curLine ? curLine + ' ' + w : w;
-      if (measureTextWidth(test, sz) <= 190) {
-        curLine = test;
-      } else {
-        lines++;
-        curLine = w;
-      }
-    }
-    if (curLine) lines++;
-    if (kemasan && kemasan.trim()) lines++;
+    // 2. Count lines at safe line wrap width (160px)
+    const linesNama = countLines(nama, sz, 160, 1.0);
+    const linesKemasan = countLines(kemasan, sz, 160, 1.0);
+    const totalLines = linesNama + linesKemasan;
 
-    const totalHeight = lines * lineHeightPx;
-    // For 4+ lines: height must be <= 74px to avoid crowding borders
-    if (lines >= 4 && totalHeight > 74) continue;
-    // For 1-3 lines: height must be <= 78px
+    const lineHeightPx = sz * (96 / 72) * 1.12;
+    const totalHeight = totalLines * lineHeightPx;
+
+    // Usable top half height is ~89px.
+    // If 4 lines or more: totalHeight must be <= 62px so it NEVER touches the middle divider!
+    if (totalLines >= 4 && totalHeight > 62) continue;
+    // If 3 lines (e.g. CERINI / 10 MG / KAP): totalHeight 76px fits comfortably with >13px clearance
+    if (totalLines === 3 && totalHeight > 78) continue;
+    // If 1-2 lines: height is well within range
     if (totalHeight > 78) continue;
 
     return sz;
   }
 
-  return 11;
+  return 9.5;
+}
+
+/**
+ * Calculate the optimal font size for the bottom half (Kandungan / Komposisi Obat).
+ * - Standard kandungans (~62% of data) stay at the default baseSize (11 pt).
+ * - Multi-component or long-word kandungans (like 'DEXAMETHASONE 0.5MG, DEXCHLORPHENIRAMINE 2MG')
+ *   are stepped down (e.g. 9.5pt or 9pt) so:
+ *   1. No word is EVER truncated with ellipsis (no '...').
+ *   2. All text fits completely in the bottom half with ample padding from the divider and bottom border.
+ * 
+ * @param {string} kandungan 
+ * @param {number} baseSize default 11 pt
+ * @returns {number} optimal font size in pt
+ */
+export function getOptimalKandunganFontSize(kandungan = '', baseSize = 11) {
+  if (!kandungan || !kandungan.trim()) return baseSize;
+  const text = kandungan.trim();
+  const candidateSteps = [11, 10.5, 10, 9.5, 9, 8.5, 8];
+  const words = text.split(/\s+/).filter(Boolean);
+  const MAX_SAFE_KANDUNGAN_WORD_WIDTH = 150; // px (leaving >= 35px side margin)
+
+  for (const sz of candidateSteps) {
+    if (sz > baseSize) continue;
+
+    // 1. Longest single word check (e.g. DEXCHLORPHENIRAMINE)
+    let hasWideWord = false;
+    for (const w of words) {
+      const cleanW = w.replace(/[,.;:()]/g, '');
+      if (measureTextWidth(cleanW, sz) * 0.9 > MAX_SAFE_KANDUNGAN_WORD_WIDTH) {
+        hasWideWord = true;
+        break;
+      }
+    }
+    if (hasWideWord) continue;
+
+    // 2. Wrap lines check at safe width (180px)
+    const lines = countLines(text, sz, 180, 0.9);
+    const lineHeightPx = sz * (96 / 72) * 1.14;
+    const totalHeight = lines * lineHeightPx;
+
+    // Usable height inside bottom half is ~89px.
+    // Total text height must not exceed 58px to leave generous buffer from divider & bottom
+    if (totalHeight > 58) continue;
+
+    // If 4 lines, totalHeight must be <= 48px
+    if (lines > 3 && totalHeight > 48) continue;
+    if (lines > 4) continue;
+
+    return sz;
+  }
+
+  return 8;
 }
