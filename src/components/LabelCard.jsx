@@ -42,39 +42,39 @@ export default function LabelCard({
   const fontWeight = settings?.fontWeight || '800';
   const textTransform = settings?.textTransform || 'uppercase';
 
-  // 4. Sizing from user settings & smart scaling for long medicine names
-  const nameSize = settings?.fontSizeNama || 17; // pt (default Ekstra Besar 17 pt)
+  // 4. Sizing from user settings: default Ekstra Besar (17 pt)
+  const nameSize = settings?.fontSizeNama || 17; // pt (default 17 pt)
   const baseKemasanSize = (settings?.syncKemasanSize !== false) 
     ? nameSize 
     : (settings?.fontSizeKemasan || nameSize); // pt
-  const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default Ekstra Besar 11 pt)
+  const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default 11 pt)
 
-  // Smart scaling for long names so they never overflow, break awkwardly, or push the divider down
+  // Smart scaling HANYA untuk nama obat yang memang sangat panjang (agar tetap besar & tidak kecil banget)
   const nameText = (item.nama || '').trim();
-  const kemasanText = (item.kemasan || '').trim();
-  const totalTopLength = nameText.length + (kemasanText ? kemasanText.length + 3 : 0);
-  const longestWord = nameText.split(/\s+/).reduce((max, w) => Math.max(max, w.length), 0);
+  const nameLen = nameText.length;
 
-  let effectiveNameSize = nameSize;
-  if (totalTopLength > 30 || longestWord > 12) {
-    effectiveNameSize = Math.min(nameSize, 11.5);
-  } else if (totalTopLength > 22 || longestWord > 10) {
-    effectiveNameSize = Math.min(nameSize, 13.5);
-  } else if (totalTopLength > 16 || longestWord > 8) {
-    effectiveNameSize = Math.min(nameSize, 15);
+  let effectiveNameSize = nameSize; // Default: 100% ukuran penuh (17 pt)
+  if (nameLen > 36) {
+    // Nama super panjang (> 36 karakter) -> hanya turun sedikit ke 13.5 pt
+    effectiveNameSize = Math.max(nameSize - 3.5, 13.5);
+  } else if (nameLen > 25) {
+    // Nama panjang (> 25 karakter, seperti DEXAMETHASONE HARSEN 0.75 MG) -> hanya turun sedikit ke 15 pt
+    effectiveNameSize = Math.max(nameSize - 2, 15);
+  } else {
+    // Nama normal / standar (seperti EPERISONE-HCL 50 MG, GABAPENTIN 300 MG, DEXKETOPROFEN 25 MG, dll)
+    // Tetap 100% ukuran penuh 17 pt, tidak dikecilkan!
+    effectiveNameSize = nameSize;
   }
 
   const effectiveKemasanSize = (settings?.syncKemasanSize !== false)
     ? effectiveNameSize
-    : Math.min(baseKemasanSize, effectiveNameSize);
+    : (settings?.fontSizeKemasan || effectiveNameSize);
 
-  // Smart scaling for kandungan
+  // Kandungan obat: tetap ukuran standar (11 pt), hanya disesuaikan jika teks ekstra panjang
   const kandunganText = (item.kandungan || '').trim();
   let effectiveKandunganSize = baseKandunganSize;
-  if (kandunganText.length > 45) {
-    effectiveKandunganSize = Math.min(baseKandunganSize, 8.5);
-  } else if (kandunganText.length > 30) {
-    effectiveKandunganSize = Math.min(baseKandunganSize, 9.5);
+  if (kandunganText.length > 55) {
+    effectiveKandunganSize = Math.max(baseKandunganSize - 2, 9.5);
   }
 
   const borderStyle = settings?.borderStyle || 'solid'; // 'solid', 'dashed', 'dotted', 'none'
