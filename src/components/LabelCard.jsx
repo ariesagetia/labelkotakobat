@@ -159,8 +159,8 @@ export default function LabelCard({
           )}
         </div>
 
-        {/* Garis Pemisah Penuh dari Kanan ke Kiri Sepanjang Lebar Kotak */}
-        {hasKandungan && showDivider && (
+        {/* Garis Pemisah Penuh dari Kanan ke Kiri Sepanjang Lebar Kotak (Tetap muncul walaupun kandungan kosong) */}
+        {showDivider && (
           <div
             style={{
               width: `${dividerWidth}%`,
@@ -173,9 +173,9 @@ export default function LabelCard({
           />
         )}
 
-        {/* Bottom Section: Kandungan / Komposisi Aktif */}
-        {hasKandungan && (
-          <div className="w-full flex-1 flex flex-col justify-center items-center px-2 py-1.5">
+        {/* Bottom Section: Kandungan / Komposisi Aktif (tetap mempertahankan ruang bawah agar posisi simetris & garis di tengah) */}
+        <div className="w-full flex-1 flex flex-col justify-center items-center px-2 py-1.5">
+          {hasKandungan && (
             <div
               style={{ 
                 fontSize: `${kandunganSize}pt`, 
@@ -188,8 +188,8 @@ export default function LabelCard({
             >
               {item.kandungan}
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
       </div>
 
