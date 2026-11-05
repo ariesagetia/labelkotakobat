@@ -63,19 +63,28 @@ const DEFAULT_SETTINGS = {
 export default function App() {
   // Data source: 'gsheet' (default Google Sheet cloud) vs 'github' vs 'custom'
   const [dataSource, setDataSource] = useState(() => {
-    return localStorage.getItem('apotek_data_source') || 'gsheet';
+    const savedSource = localStorage.getItem('apotek_data_source');
+    if (!savedSource || savedSource === 'github') {
+      localStorage.setItem('apotek_data_source', 'gsheet');
+      return 'gsheet';
+    }
+    return savedSource;
   });
   const [isSyncing, setIsSyncing] = useState(false);
   const [lastSyncTime, setLastSyncTime] = useState(() => {
     return localStorage.getItem('apotek_last_sync') || null;
   });
 
-  // Main Items State (pre-populated with full Lampiran 2 dataset)
+  // Main Items State (pre-populated with 501 items from Google Sheet)
   const [items, setItems] = useState(() => {
+    const hasGSheetVersion = localStorage.getItem('apotek_gsheet_version_v1');
     const saved = localStorage.getItem('apotek_label_items');
-    if (saved) {
+    if (saved && hasGSheetVersion === '501') {
       try { return JSON.parse(saved); } catch {}
     }
+    localStorage.setItem('apotek_label_items', JSON.stringify(SAMPLE_DATA));
+    localStorage.setItem('apotek_gsheet_version_v1', '501');
+    localStorage.setItem('apotek_data_source', 'gsheet');
     return SAMPLE_DATA;
   });
 
@@ -392,7 +401,7 @@ export default function App() {
     setSelectedItemIds(new Set(SAMPLE_DATA.map(it => it.id)));
     setSettings(DEFAULT_SETTINGS);
     setPreviewCategoryFilter('ALL');
-    showToast('Berhasil memuat 1,118 data obat lengkap dari Lampiran 2!');
+    showToast('Berhasil memuat 501 data obat resmi dari Google Sheets!');
   };
 
   // Handler: Sync data directly from Google Sheets
@@ -406,6 +415,8 @@ export default function App() {
         setDataSource('gsheet');
         const syncDate = new Date().toLocaleString('id-ID');
         setLastSyncTime(syncDate);
+        localStorage.setItem('apotek_label_items', JSON.stringify(result.items));
+        localStorage.setItem('apotek_gsheet_version_v1', '501');
         localStorage.setItem('apotek_data_source', 'gsheet');
         localStorage.setItem('apotek_last_sync', syncDate);
         if (!silent) {

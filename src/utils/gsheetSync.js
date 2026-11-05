@@ -11,35 +11,47 @@ export const GSHEET_CONFIG = {
  */
 export async function fetchDataFromGoogleSheet() {
   const timestamp = Date.now();
-  const url = `${GSHEET_CONFIG.exportUrl}&t=${timestamp}`;
+  const rawExportUrl = `${GSHEET_CONFIG.exportUrl}&t=${timestamp}`;
 
-  try {
-    const response = await fetch(url, { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+  // Priority URLs to bypass CORS restrictions on Google Drive downloads in browser
+  const candidateUrls = [
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(rawExportUrl)}`,
+    `https://corsproxy.io/?url=${encodeURIComponent(rawExportUrl)}`,
+    rawExportUrl,
+    `/data_obat_default.xlsx?t=${timestamp}`
+  ];
+
+  let lastError = null;
+
+  for (const url of candidateUrls) {
+    try {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      const arrayBuffer = await response.arrayBuffer();
+      // Ensure we actually received an XLSX file (ZIP header: 0x50, 0x4B)
+      const bytes = new Uint8Array(arrayBuffer);
+      if (bytes.length < 100 || bytes[0] !== 0x50 || bytes[1] !== 0x4B) {
+        throw new Error('Respons bukan file spreadsheet XLSX yang valid');
+      }
+
+      const parsed = parseExcelArrayBuffer(arrayBuffer);
+      if (!parsed.items || parsed.items.length === 0) {
+        throw new Error('Data spreadsheet kosong');
+      }
+
+      return {
+        ...parsed,
+        sourceUrl: GSHEET_CONFIG.viewUrl,
+        source: 'gsheet',
+        fetchedAt: new Date().toISOString()
+      };
+    } catch (err) {
+      console.warn(`Gagal fetch dari ${url}:`, err.message);
+      lastError = err;
     }
-    const arrayBuffer = await response.arrayBuffer();
-    const parsed = parseExcelArrayBuffer(arrayBuffer);
-    return {
-      ...parsed,
-      sourceUrl: GSHEET_CONFIG.viewUrl,
-      source: 'gsheet',
-      fetchedAt: new Date().toISOString()
-    };
-  } catch (err) {
-    console.warn('Gagal fetch dari Google Sheets, mencoba fallback lokal:', err);
-    // Fallback: local public/data_obat_default.xlsx
-    const fallbackRes = await fetch(`/data_obat_default.xlsx?t=${timestamp}`, { cache: 'no-store' });
-    if (!fallbackRes.ok) {
-      throw err;
-    }
-    const arrayBuffer = await fallbackRes.arrayBuffer();
-    const parsed = parseExcelArrayBuffer(arrayBuffer);
-    return {
-      ...parsed,
-      sourceUrl: '/data_obat_default.xlsx',
-      source: 'gsheet-fallback',
-      fetchedAt: new Date().toISOString()
-    };
   }
+
+  throw lastError || new Error('Gagal mengunduh data dari Google Sheets');
 }

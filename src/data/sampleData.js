@@ -1,10 +1,10 @@
-// Sample data extracted from Lampiran 2 with formatting matching Lampiran 1
+// 501 Items from Google Sheet: https://docs.google.com/spreadsheets/d/1A-alpkAGq00dFGag-v_nOK0lRm_xUmF3
 export const SAMPLE_DATA = [
   {
     "id": "item-1",
     "rawItem": "AERIUS 5 MG TAB",
     "nama": "AERIUS 5 MG",
-    "kemasan": "TAB  @30",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DESLORATADIN 5MG"
   },
@@ -12,7 +12,7 @@ export const SAMPLE_DATA = [
     "id": "item-2",
     "rawItem": "ALLERON 4 MG TAB",
     "nama": "ALLERON 4 MG",
-    "kemasan": "TAB  @200",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "CHLORPHENAMINE MALEATE 4MG"
   },
@@ -20,7 +20,7 @@ export const SAMPLE_DATA = [
     "id": "item-3",
     "rawItem": "ALLORIS 10 MG TAB",
     "nama": "ALLORIS 10 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "LORATADINE 10MG"
   },
@@ -28,15 +28,15 @@ export const SAMPLE_DATA = [
     "id": "item-4",
     "rawItem": "CARBIDU 0.5 MG TAB",
     "nama": "CARBIDU 0.5 MG",
-    "kemasan": "TAB  @200",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
-    "kandungan": ""
+    "kandungan": "DEXAMETHASONE 0.5MG"
   },
   {
     "id": "item-5",
     "rawItem": "CARBIDU 0.75 MG TAB",
     "nama": "CARBIDU 0.75 MG",
-    "kemasan": "TAB  @200",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETHASONE 0.75MG"
   },
@@ -44,7 +44,7 @@ export const SAMPLE_DATA = [
     "id": "item-6",
     "rawItem": "CERINI 10 MG KAP",
     "nama": "CERINI 10 MG",
-    "kemasan": "KAP  @20",
+    "kemasan": "KAP",
     "kategori": "ALERGI",
     "kandungan": "CETIRIZINE 10MG"
   },
@@ -52,7 +52,7 @@ export const SAMPLE_DATA = [
     "id": "item-7",
     "rawItem": "CETIRGI 10 MG TAB",
     "nama": "CETIRGI 10 MG",
-    "kemasan": "TAB  @30",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "CETIRIZINE 10MG"
   },
@@ -60,7 +60,7 @@ export const SAMPLE_DATA = [
     "id": "item-8",
     "rawItem": "CLARITIN 10 MG TAB",
     "nama": "CLARITIN 10 MG",
-    "kemasan": "TAB  @30",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "LORATADINE 10MG"
   },
@@ -68,7 +68,7 @@ export const SAMPLE_DATA = [
     "id": "item-9",
     "rawItem": "CORTIDEX 0.5 MG TAB",
     "nama": "CORTIDEX 0.5 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETASONE 0.5MG"
   },
@@ -76,7 +76,7 @@ export const SAMPLE_DATA = [
     "id": "item-10",
     "rawItem": "DEXTAMINE KAP",
     "nama": "DEXTAMINE",
-    "kemasan": "KAP  @100",
+    "kemasan": "KAP",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETHASONE 0.5MG, DEXCHLORPHENIRAMINE 2MG"
   },
@@ -92,7 +92,7 @@ export const SAMPLE_DATA = [
     "id": "item-12",
     "rawItem": "GRAFACHLOR TAB",
     "nama": "GRAFACHLOR",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETHASONE, DEXCHLORPHENIRAMINE"
   },
@@ -100,7 +100,7 @@ export const SAMPLE_DATA = [
     "id": "item-13",
     "rawItem": "HISTAPAN 50 MG TAB",
     "nama": "HISTAPAN 50 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "MEBHIDROLIN NAPADISILAT"
   },
@@ -108,7 +108,7 @@ export const SAMPLE_DATA = [
     "id": "item-14",
     "rawItem": "INCIDAL OD 10 MG STRIP",
     "nama": "INCIDAL OD 10 MG",
-    "kemasan": "STRIP  @8",
+    "kemasan": "STRIP",
     "kategori": "ALERGI",
     "kandungan": "CETIRIZINE 10MG"
   },
@@ -116,7 +116,7 @@ export const SAMPLE_DATA = [
     "id": "item-15",
     "rawItem": "INDEXON 0.5 MG TAB",
     "nama": "INDEXON 0.5 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETHASONE 0.5MG"
   },
@@ -124,7 +124,7 @@ export const SAMPLE_DATA = [
     "id": "item-16",
     "rawItem": "INTERHISTIN 50 MG TAB",
     "nama": "INTERHISTIN 50 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "MEBHIDROLIN NAPADISILAT"
   },
@@ -132,7 +132,7 @@ export const SAMPLE_DATA = [
     "id": "item-17",
     "rawItem": "INTRIZIN 10 MG TAB",
     "nama": "INTRIZIN 10 MG",
-    "kemasan": "TAB  @30",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "CETIRIZINE 10MG"
   },
@@ -140,7 +140,7 @@ export const SAMPLE_DATA = [
     "id": "item-18",
     "rawItem": "LAMESON 4 MG TAB",
     "nama": "LAMESON 4 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "METHYLPREDNISOLONE 4MG"
   },
@@ -148,7 +148,7 @@ export const SAMPLE_DATA = [
     "id": "item-19",
     "rawItem": "LAMESON 8 MG TAB",
     "nama": "LAMESON 8 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "METHYLPREDNISOLONE 8MG"
   },
@@ -156,7 +156,7 @@ export const SAMPLE_DATA = [
     "id": "item-20",
     "rawItem": "MOLACORT 0.5 MG TAB",
     "nama": "MOLACORT 0.5 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETHASONE 0.5MG"
   },
@@ -164,7 +164,7 @@ export const SAMPLE_DATA = [
     "id": "item-21",
     "rawItem": "MOLACORT 0.75 MG TAB",
     "nama": "MOLACORT 0.75 MG",
-    "kemasan": "TAB  @200",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "DEXAMETHASONE 0.75MG"
   },
@@ -172,7 +172,7 @@ export const SAMPLE_DATA = [
     "id": "item-22",
     "rawItem": "ORPHEN 4 MG TAB",
     "nama": "ORPHEN 4 MG",
-    "kemasan": "TAB  @200",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "CHLORPHENAMINE MALEATE 4MG"
   },
@@ -180,7 +180,7 @@ export const SAMPLE_DATA = [
     "id": "item-23",
     "rawItem": "RHEMAFAR 4 MG TAB",
     "nama": "RHEMAFAR 4 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "METHYLPREDNISOLONE 4MG"
   },
@@ -188,7 +188,7 @@ export const SAMPLE_DATA = [
     "id": "item-24",
     "rawItem": "RHEMAFAR 8 MG KAP",
     "nama": "RHEMAFAR 8 MG",
-    "kemasan": "KAP  @50",
+    "kemasan": "KAP",
     "kategori": "ALERGI",
     "kandungan": "METHYLPREDNISOLONE 8MG"
   },
@@ -196,7 +196,7 @@ export const SAMPLE_DATA = [
     "id": "item-25",
     "rawItem": "SANEXON 4 MG TAB",
     "nama": "SANEXON 4 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "METHYLPREDNISOLONE 4MG"
   },
@@ -204,7 +204,7 @@ export const SAMPLE_DATA = [
     "id": "item-26",
     "rawItem": "SANEXON 8 MG TAB",
     "nama": "SANEXON 8 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "METHYLPREDNISOLONE 8MG"
   },
@@ -212,7 +212,7 @@ export const SAMPLE_DATA = [
     "id": "item-27",
     "rawItem": "TELFAST HD 180 MG TAB",
     "nama": "TELFAST HD 180 MG",
-    "kemasan": "TAB  @10",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "FEXOFENADINE HYDROCHLORIDE"
   },
@@ -220,7 +220,7 @@ export const SAMPLE_DATA = [
     "id": "item-28",
     "rawItem": "TELFAST OD 120 MG TAB",
     "nama": "TELFAST OD 120 MG",
-    "kemasan": "TAB  @10",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "FEXOFENADINE HYDROCHLORIDE"
   },
@@ -228,7 +228,7 @@ export const SAMPLE_DATA = [
     "id": "item-29",
     "rawItem": "TIRIZ 10 MG KAP",
     "nama": "TIRIZ 10 MG",
-    "kemasan": "KAP  @30",
+    "kemasan": "KAP",
     "kategori": "ALERGI",
     "kandungan": "CETIRIZINE 10MG"
   },
@@ -236,7 +236,7 @@ export const SAMPLE_DATA = [
     "id": "item-30",
     "rawItem": "WINATIN 10 MG TAB",
     "nama": "WINATIN 10 MG",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ALERGI",
     "kandungan": "LORATADINE 10MG"
   },
@@ -246,7 +246,7 @@ export const SAMPLE_DATA = [
     "nama": "ACIFAR 400 MG",
     "kemasan": "KAP",
     "kategori": "ANTIBIOTIK",
-    "kandungan": ""
+    "kandungan": "ACICLOVIR 400MG"
   },
   {
     "id": "item-32",
@@ -388,7 +388,7 @@ export const SAMPLE_DATA = [
     "id": "item-49",
     "rawItem": "SANPRIMA FORTE TAB",
     "nama": "SANPRIMA FORTE",
-    "kemasan": "TAB  @100",
+    "kemasan": "TAB",
     "kategori": "ANTIBIOTIK",
     "kandungan": "SULFAMETHOXAZOLE 800MG, TRIMETHORPRIM 160MG"
   },
@@ -1675,8 +1675,8 @@ export const SAMPLE_DATA = [
   {
     "id": "item-210",
     "rawItem": "MICROLAX ENEMA 5 ML",
-    "nama": "MICROLAX ENEMA 5 ML",
-    "kemasan": "",
+    "nama": "MICROLAX ENEMA",
+    "kemasan": "5 ML",
     "kategori": "OBAT BEBAS",
     "kandungan": ""
   },
@@ -1915,8 +1915,8 @@ export const SAMPLE_DATA = [
   {
     "id": "item-240",
     "rawItem": "COMBANTRIN JERUK SYR 10 ML",
-    "nama": "COMBANTRIN JERUK",
-    "kemasan": "SYR 10 ML",
+    "nama": "COMBANTRIN JERUK SYR",
+    "kemasan": "10 ML",
     "kategori": "PENCERNAAN",
     "kandungan": "PIRANTEL PAMOAT"
   },
@@ -2323,776 +2323,776 @@ export const SAMPLE_DATA = [
   {
     "id": "item-291",
     "rawItem": "ACIFAR CR 5 GR",
-    "nama": "ACIFAR",
-    "kemasan": "CR 5 GR",
+    "nama": "ACIFAR CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "ACICLOVIR"
   },
   {
     "id": "item-292",
     "rawItem": "ACYCLOVIR CR 5 GR",
-    "nama": "ACYCLOVIR",
-    "kemasan": "CR 5 GR",
+    "nama": "ACYCLOVIR CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-293",
     "rawItem": "APOLAR CR 10 GR",
-    "nama": "APOLAR",
-    "kemasan": "CR 10 GR",
+    "nama": "APOLAR CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "DESONIDE 0.5MG"
   },
   {
     "id": "item-294",
     "rawItem": "AZA 20% CR 10 GR",
-    "nama": "AZA 20%",
-    "kemasan": "CR 10 GR",
+    "nama": "AZA 20% CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "AZELAIC ACID 200MG"
   },
   {
     "id": "item-295",
     "rawItem": "BAYCUTEN-N CR 5 GR",
-    "nama": "BAYCUTEN-N",
-    "kemasan": "CR 5 GR",
+    "nama": "BAYCUTEN-N CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "DEXAMETHASONE, CLOTRIMAZOLE"
   },
   {
     "id": "item-296",
     "rawItem": "BENOSON CR 15 GR",
-    "nama": "BENOSON",
-    "kemasan": "CR 15 GR",
+    "nama": "BENOSON CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE"
   },
   {
     "id": "item-297",
     "rawItem": "BENOSON CR 5 GR",
-    "nama": "BENOSON",
-    "kemasan": "CR 5 GR",
+    "nama": "BENOSON CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE"
   },
   {
     "id": "item-298",
     "rawItem": "BENOSON-G CR 10 GR",
-    "nama": "BENOSON-G",
-    "kemasan": "CR 10 GR",
+    "nama": "BENOSON-G CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE, GENTAMICIN"
   },
   {
     "id": "item-299",
     "rawItem": "BENOSON-N CR 15 GR",
-    "nama": "BENOSON-N",
-    "kemasan": "CR 15 GR",
+    "nama": "BENOSON-N CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE, NEOMISIN"
   },
   {
     "id": "item-300",
     "rawItem": "BENOSON-N CR 5 GR",
-    "nama": "BENOSON-N",
-    "kemasan": "CR 5 GR",
+    "nama": "BENOSON-N CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-301",
     "rawItem": "BENZOLAC 2.5% CR 5 GR",
-    "nama": "BENZOLAC 2.5%",
-    "kemasan": "CR 5 GR",
+    "nama": "BENZOLAC 2.5% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-302",
     "rawItem": "BENZOLAC 5% CR 5 GR",
-    "nama": "BENZOLAC 5%",
-    "kemasan": "CR 5 GR",
+    "nama": "BENZOLAC 5% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "BENZOYL PEROXIDE 5%"
   },
   {
     "id": "item-303",
     "rawItem": "BETAMETHASONE 0.1% CR 5 GR",
-    "nama": "BETAMETHASONE 0.1%",
-    "kemasan": "CR 5 GR",
+    "nama": "BETAMETHASONE 0.1% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-304",
     "rawItem": "BETASON CR 5 GR",
-    "nama": "BETASON",
-    "kemasan": "CR 5 GR",
+    "nama": "BETASON CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE"
   },
   {
     "id": "item-305",
     "rawItem": "BETASON-N CR 5 GR",
-    "nama": "BETASON-N",
-    "kemasan": "CR 5 GR",
+    "nama": "BETASON-N CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE, NEOMISIN"
   },
   {
     "id": "item-306",
     "rawItem": "BIOPLACENTON GEL 15 GR",
-    "nama": "BIOPLACENTON",
-    "kemasan": "GEL 15 GR",
+    "nama": "BIOPLACENTON GEL",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "PLACENTA EXTRACT, NEOMYCIN"
   },
   {
     "id": "item-307",
     "rawItem": "BORRAGINOL-S OINT 15 GR",
-    "nama": "BORRAGINOL-S",
-    "kemasan": "OINT 15 GR",
+    "nama": "BORRAGINOL-S OINT",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "LITHOSPERMI, PREDNISOLON, LIDOCAIN, CETRIMIDE, AETHYLIS"
   },
   {
     "id": "item-308",
     "rawItem": "BUFACOMB CR 5 GR",
-    "nama": "BUFACOMB",
-    "kemasan": "CR 5 GR",
+    "nama": "BUFACOMB CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "TRIAMCINOLON ACETONIDE"
   },
   {
     "id": "item-309",
     "rawItem": "BUFACORT-N CR 5 GR",
-    "nama": "BUFACORT-N",
-    "kemasan": "CR 5 GR",
+    "nama": "BUFACORT-N CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "SALMETEROL, FLUTICASONE PROPIONATE"
   },
   {
     "id": "item-310",
     "rawItem": "BURNAZIN CR 35 GR",
-    "nama": "BURNAZIN",
-    "kemasan": "CR 35 GR",
+    "nama": "BURNAZIN CR",
+    "kemasan": "35 GR",
     "kategori": "SALEP",
     "kandungan": "SILVER SULFADIAZINE"
   },
   {
     "id": "item-311",
     "rawItem": "BURNAZIN PLUS CR 25 GR",
-    "nama": "BURNAZIN PLUS",
-    "kemasan": "CR 25 GR",
+    "nama": "BURNAZIN PLUS CR",
+    "kemasan": "25 GR",
     "kategori": "SALEP",
     "kandungan": "SILVER SULFADIAZINE, HYALURONIC"
   },
   {
     "id": "item-312",
     "rawItem": "CANESTEN CR 10 GR",
-    "nama": "CANESTEN",
-    "kemasan": "CR 10 GR",
+    "nama": "CANESTEN CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-313",
     "rawItem": "CANESTEN CR 5 GR",
-    "nama": "CANESTEN",
-    "kemasan": "CR 5 GR",
+    "nama": "CANESTEN CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-314",
     "rawItem": "CANESTEN PRO CR 15 GR",
-    "nama": "CANESTEN PRO",
-    "kemasan": "CR 15 GR",
+    "nama": "CANESTEN PRO CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "BIFONAZOL"
   },
   {
     "id": "item-315",
     "rawItem": "CANESTEN PRO CR 5 GR",
-    "nama": "CANESTEN PRO",
-    "kemasan": "CR 5 GR",
+    "nama": "CANESTEN PRO CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "BIFONAZOL"
   },
   {
     "id": "item-316",
     "rawItem": "CARMED 10% CR 40 GR",
-    "nama": "CARMED 10%",
-    "kemasan": "CR 40 GR",
+    "nama": "CARMED 10% CR",
+    "kemasan": "40 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-317",
     "rawItem": "CARMED 20% CR 40 GR",
-    "nama": "CARMED 20%",
-    "kemasan": "CR 40 GR",
+    "nama": "CARMED 20% CR",
+    "kemasan": "40 GR",
     "kategori": "SALEP",
     "kandungan": "UREA 20%"
   },
   {
     "id": "item-318",
     "rawItem": "CINOLON CR 10 GR",
-    "nama": "CINOLON",
-    "kemasan": "CR 10 GR",
+    "nama": "CINOLON CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "FLUOCINOLONE ACETONIDE"
   },
   {
     "id": "item-319",
     "rawItem": "CINOLON-N CR 5 GR",
-    "nama": "CINOLON-N",
-    "kemasan": "CR 5 GR",
+    "nama": "CINOLON-N CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "FLUOCINOLONE, NEOMYCIN"
   },
   {
     "id": "item-320",
     "rawItem": "DAKTARIN CR 10 GR",
-    "nama": "DAKTARIN",
-    "kemasan": "CR 10 GR",
+    "nama": "DAKTARIN CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "MIKONAZOLE"
   },
   {
     "id": "item-321",
     "rawItem": "DAKTARIN CR 5 GR",
-    "nama": "DAKTARIN",
-    "kemasan": "CR 5 GR",
+    "nama": "DAKTARIN CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "MIKONAZOLE"
   },
   {
     "id": "item-322",
     "rawItem": "DENOMIX CR 10 GR",
-    "nama": "DENOMIX",
-    "kemasan": "CR 10 GR",
+    "nama": "DENOMIX CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "DESOXIMETHASONE, NEOMYCIN"
   },
   {
     "id": "item-323",
     "rawItem": "DERMATIX ULTRA CR 9 GR",
-    "nama": "DERMATIX ULTRA",
-    "kemasan": "CR 9 GR",
+    "nama": "DERMATIX ULTRA CR",
+    "kemasan": "9 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-324",
     "rawItem": "DERMATIX WOUND CARE CR 20 GR",
-    "nama": "DERMATIX WOUND CARE",
-    "kemasan": "CR 20 GR",
+    "nama": "DERMATIX WOUND CARE CR",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-325",
     "rawItem": "DESOLEX-N CR 10 GR",
-    "nama": "DESOLEX-N",
-    "kemasan": "CR 10 GR",
+    "nama": "DESOLEX-N CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "DESONIDE, NEOMYCIN"
   },
   {
     "id": "item-326",
     "rawItem": "DESOXIMETHASONE 0.25% CR 15 GR",
-    "nama": "DESOXIMETHASONE 0.25%",
-    "kemasan": "CR 15 GR",
+    "nama": "DESOXIMETHASONE 0.25% CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-327",
     "rawItem": "DEXIGEN 0.25% CR 5 GR",
-    "nama": "DEXIGEN 0.25%",
-    "kemasan": "CR 5 GR",
+    "nama": "DEXIGEN 0.25% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "DESOXIMETHASONE"
   },
   {
     "id": "item-328",
     "rawItem": "DIGENTA CR 10 GR",
-    "nama": "DIGENTA",
-    "kemasan": "CR 10 GR",
+    "nama": "DIGENTA CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE, GENTAMICIN"
   },
   {
     "id": "item-329",
     "rawItem": "ELOCON CR 10 GR",
-    "nama": "ELOCON",
-    "kemasan": "CR 10 GR",
+    "nama": "ELOCON CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "MOMETASONE"
   },
   {
     "id": "item-330",
     "rawItem": "ELOCON CR 5 GR",
-    "nama": "ELOCON",
-    "kemasan": "CR 5 GR",
+    "nama": "ELOCON CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "MOMETASONE"
   },
   {
     "id": "item-331",
     "rawItem": "ESPERSON 0.25% CR 15 GR",
-    "nama": "ESPERSON 0.25%",
-    "kemasan": "CR 15 GR",
+    "nama": "ESPERSON 0.25% CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "DESOXIMETASONE"
   },
   {
     "id": "item-332",
     "rawItem": "ESPERSON 0.25% CR 5 GR",
-    "nama": "ESPERSON 0.25%",
-    "kemasan": "CR 5 GR",
+    "nama": "ESPERSON 0.25% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "DESOXIMETASONE"
   },
   {
     "id": "item-333",
     "rawItem": "FLAMAR EMULGEL 20 GR",
-    "nama": "FLAMAR EMULGEL 20 GR",
-    "kemasan": "",
+    "nama": "FLAMAR EMULGEL",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": "NATRIUM DIKLOFENAK"
   },
   {
     "id": "item-334",
     "rawItem": "FORMYCO CR 10 GR",
-    "nama": "FORMYCO",
-    "kemasan": "CR 10 GR",
+    "nama": "FORMYCO CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "KETOCONAZOLE"
   },
   {
     "id": "item-335",
     "rawItem": "FULADIC CR 5 GR",
-    "nama": "FULADIC",
-    "kemasan": "CR 5 GR",
+    "nama": "FULADIC CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "FUCIDIC ACID"
   },
   {
     "id": "item-336",
     "rawItem": "FUSYCOM CR 5 GR",
-    "nama": "FUSYCOM",
-    "kemasan": "CR 5 GR",
+    "nama": "FUSYCOM CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "FUSIDIC ACID"
   },
   {
     "id": "item-337",
     "rawItem": "GENALTEN CR 5 GR",
-    "nama": "GENALTEN",
-    "kemasan": "CR 5 GR",
+    "nama": "GENALTEN CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "GENTAMICIN"
   },
   {
     "id": "item-338",
     "rawItem": "GENOINT OINT 15 GR",
-    "nama": "GENOINT",
-    "kemasan": "OINT 15 GR",
+    "nama": "GENOINT OINT",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "GENTAMICIN"
   },
   {
     "id": "item-339",
     "rawItem": "GENTAMYCIN 0.1% OINT 5 GR",
-    "nama": "GENTAMYCIN 0.1%",
-    "kemasan": "OINT 5 GR",
+    "nama": "GENTAMYCIN 0.1% OINT",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-340",
     "rawItem": "HYDROCORTISONE 1% CR 5 GR",
-    "nama": "HYDROCORTISONE 1%",
-    "kemasan": "CR 5 GR",
+    "nama": "HYDROCORTISONE 1% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-341",
     "rawItem": "HYDROCORTISONE 2.5% CR 5 GR",
-    "nama": "HYDROCORTISONE 2.5%",
-    "kemasan": "CR 5 GR",
+    "nama": "HYDROCORTISONE 2.5% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-342",
     "rawItem": "INERSON CR 15 GR",
-    "nama": "INERSON",
-    "kemasan": "CR 15 GR",
+    "nama": "INERSON CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "DESOXIMETASONE"
   },
   {
     "id": "item-343",
     "rawItem": "INTERBI CR 5 GR",
-    "nama": "INTERBI",
-    "kemasan": "CR 5 GR",
+    "nama": "INTERBI CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "TERBINAFINE HCL 1%"
   },
   {
     "id": "item-344",
     "rawItem": "INTERZOL CR 5 GR",
-    "nama": "INTERZOL",
-    "kemasan": "CR 5 GR",
+    "nama": "INTERZOL CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "KETOCONAZOLE"
   },
   {
     "id": "item-345",
     "rawItem": "KALCINOL-N CR 5 GR",
-    "nama": "KALCINOL-N",
-    "kemasan": "CR 5 GR",
+    "nama": "KALCINOL-N CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "FLUOCINOLON, NEOMYCIN"
   },
   {
     "id": "item-346",
     "rawItem": "KALMICETINE CR 15 GR",
-    "nama": "KALMICETINE",
-    "kemasan": "CR 15 GR",
+    "nama": "KALMICETINE CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "CHLORAMPHENICOL"
   },
   {
     "id": "item-347",
     "rawItem": "KALPANAX K CR 10 GR",
-    "nama": "KALPANAX K",
-    "kemasan": "CR 10 GR",
+    "nama": "KALPANAX K CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "MICONAZOLE"
   },
   {
     "id": "item-348",
     "rawItem": "KALPANAX K CR 5 GR",
-    "nama": "KALPANAX K",
-    "kemasan": "CR 5 GR",
+    "nama": "KALPANAX K CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "MICONAZOLE"
   },
   {
     "id": "item-349",
     "rawItem": "KALPANAX OINT 6 GR",
-    "nama": "KALPANAX",
-    "kemasan": "OINT 6 GR",
+    "nama": "KALPANAX OINT",
+    "kemasan": "6 GR",
     "kategori": "SALEP",
     "kandungan": "MICONAZOLE"
   },
   {
     "id": "item-350",
     "rawItem": "KENALOG CR 5 GR",
-    "nama": "KENALOG",
-    "kemasan": "CR 5 GR",
+    "nama": "KENALOG CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "TRIAMCINOLON ACETONIDE"
   },
   {
     "id": "item-351",
     "rawItem": "KETOCONAZOLE CR 15 GR",
-    "nama": "KETOCONAZOLE",
-    "kemasan": "CR 15 GR",
+    "nama": "KETOCONAZOLE CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-352",
     "rawItem": "KETOMED CR 15 GR",
-    "nama": "KETOMED",
-    "kemasan": "CR 15 GR",
+    "nama": "KETOMED CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "KETOKONAZOLE 2%"
   },
   {
     "id": "item-353",
     "rawItem": "KLODERMA CR 10 GR",
-    "nama": "KLODERMA",
-    "kemasan": "CR 10 GR",
+    "nama": "KLODERMA CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "CLOBETASOL PROPIONATE"
   },
   {
     "id": "item-354",
     "rawItem": "KLODERMA OINT 10 GR",
-    "nama": "KLODERMA",
-    "kemasan": "OINT 10 GR",
+    "nama": "KLODERMA OINT",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "CLOBETASOL PROPIONATE"
   },
   {
     "id": "item-355",
     "rawItem": "LAFALOS CR 20 GR",
-    "nama": "LAFALOS",
-    "kemasan": "CR 20 GR",
+    "nama": "LAFALOS CR",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-356",
     "rawItem": "LESPAIN CR 15 GR",
-    "nama": "LESPAIN",
-    "kemasan": "CR 15 GR",
+    "nama": "LESPAIN CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-357",
     "rawItem": "LOTASBAT 0.05% CR 10 GR",
-    "nama": "LOTASBAT 0.05%",
-    "kemasan": "CR 10 GR",
+    "nama": "LOTASBAT 0.05% CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "CLOBETASOL PROPIONATE"
   },
   {
     "id": "item-358",
     "rawItem": "MEDI-KLIN GEL 15 GR",
-    "nama": "MEDI-KLIN",
-    "kemasan": "GEL 15 GR",
+    "nama": "MEDI-KLIN GEL",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "CLINDAMYCIN"
   },
   {
     "id": "item-359",
     "rawItem": "MEDI-KLIN TR GEL 15 GR",
-    "nama": "MEDI-KLIN TR",
-    "kemasan": "GEL 15 GR",
+    "nama": "MEDI-KLIN TR GEL",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "CLINDAMYCIN, TRETINOIN"
   },
   {
     "id": "item-360",
     "rawItem": "MICONAZOLE CR 10 GR",
-    "nama": "MICONAZOLE",
-    "kemasan": "CR 10 GR",
+    "nama": "MICONAZOLE CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-361",
     "rawItem": "MOMETASONE 0.1% CR 10 GR",
-    "nama": "MOMETASONE 0.1%",
-    "kemasan": "CR 10 GR",
+    "nama": "MOMETASONE 0.1% CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-362",
     "rawItem": "MUPICOR CR 5 GR",
-    "nama": "MUPICOR",
-    "kemasan": "CR 5 GR",
+    "nama": "MUPICOR CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "MUPIROCIN 2%"
   },
   {
     "id": "item-363",
     "rawItem": "MYCORAL CR 5 GR",
-    "nama": "MYCORAL",
-    "kemasan": "CR 5 GR",
+    "nama": "MYCORAL CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "KETOCONAZOLE"
   },
   {
     "id": "item-364",
     "rawItem": "MYCO-Z OINT 10 GR",
-    "nama": "MYCO-Z",
-    "kemasan": "OINT 10 GR",
+    "nama": "MYCO-Z OINT",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "NYSATIN, ZN OXIDE"
   },
   {
     "id": "item-365",
     "rawItem": "NEO ULTRASILINE CR 5 GR",
-    "nama": "NEO ULTRASILINE",
-    "kemasan": "CR 5 GR",
+    "nama": "NEO ULTRASILINE CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "CLOTRIMAZOLE"
   },
   {
     "id": "item-366",
     "rawItem": "NEW ASTAR CR 15 GR",
-    "nama": "NEW ASTAR",
-    "kemasan": "CR 15 GR",
+    "nama": "NEW ASTAR CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "ASAM UDESILENAT, SULFUR, DIPHENYDRAMINE"
   },
   {
     "id": "item-367",
     "rawItem": "NISAGON CR 5 GR",
-    "nama": "NISAGON",
-    "kemasan": "CR 5 GR",
+    "nama": "NISAGON CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE, NEOMISIN"
   },
   {
     "id": "item-368",
     "rawItem": "OVISKIN CR 10 GR",
-    "nama": "OVISKIN",
-    "kemasan": "CR 10 GR",
+    "nama": "OVISKIN CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "BETAMETHASONE"
   },
   {
     "id": "item-369",
     "rawItem": "PIBAKSIN OINT 10 GR",
-    "nama": "PIBAKSIN",
-    "kemasan": "OINT 10 GR",
+    "nama": "PIBAKSIN OINT",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "MUPIROCIN"
   },
   {
     "id": "item-370",
     "rawItem": "REFAQUIN CR 15 GR",
-    "nama": "REFAQUIN",
-    "kemasan": "CR 15 GR",
+    "nama": "REFAQUIN CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "HYDROQUINON 4%, TRERINOIN 0.05%, FLUOCINOLONE 0.01%"
   },
   {
     "id": "item-371",
     "rawItem": "SAGESTAM 1% CR 10 GR",
-    "nama": "SAGESTAM 1%",
-    "kemasan": "CR 10 GR",
+    "nama": "SAGESTAM 1% CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "GENTAMICIN"
   },
   {
     "id": "item-372",
     "rawItem": "SALTICIN CR 5 GR",
-    "nama": "SALTICIN",
-    "kemasan": "CR 5 GR",
+    "nama": "SALTICIN CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "GENTAMICIN"
   },
   {
     "id": "item-373",
     "rawItem": "SCABIMITE 5% CR 10 GR",
-    "nama": "SCABIMITE 5%",
-    "kemasan": "CR 10 GR",
+    "nama": "SCABIMITE 5% CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "PERMETHRIN"
   },
   {
     "id": "item-374",
     "rawItem": "SCABIMITE 5% CR 30 GR",
-    "nama": "SCABIMITE 5%",
-    "kemasan": "CR 30 GR",
+    "nama": "SCABIMITE 5% CR",
+    "kemasan": "30 GR",
     "kategori": "SALEP",
     "kandungan": "PERMETHRIN"
   },
   {
     "id": "item-375",
     "rawItem": "SOLINFEC 2% CR 5 GR",
-    "nama": "SOLINFEC 2%",
-    "kemasan": "CR 5 GR",
+    "nama": "SOLINFEC 2% CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "KETOCONAZOLE 2%"
   },
   {
     "id": "item-376",
     "rawItem": "SRITI / SALEP BURUNG WALET CR 10 GR",
-    "nama": "SRITI / SALEP BURUNG WALET",
-    "kemasan": "CR 10 GR",
+    "nama": "SRITI / SALEP BURUNG WALET CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-377",
     "rawItem": "THECORT CR 5GR",
-    "nama": "THECORT",
-    "kemasan": "CR 5GR",
+    "nama": "THECORT CR",
+    "kemasan": "5GR",
     "kategori": "SALEP",
     "kandungan": "MICONAZOLE, HYDROCORTISONE"
   },
   {
     "id": "item-378",
     "rawItem": "THROMBOGEL GEL 10 GR",
-    "nama": "THROMBOGEL",
-    "kemasan": "GEL 10 GR",
+    "nama": "THROMBOGEL GEL",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": ""
   },
   {
     "id": "item-379",
     "rawItem": "THROMBOPHOB GEL 20 GR",
-    "nama": "THROMBOPHOB",
-    "kemasan": "GEL 20 GR",
+    "nama": "THROMBOPHOB GEL",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": "HEPARIN SODIUM"
   },
   {
     "id": "item-380",
     "rawItem": "TOPCORT CR 10 GR",
-    "nama": "TOPCORT",
-    "kemasan": "CR 10 GR",
+    "nama": "TOPCORT CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "DESOXIMETASONE"
   },
   {
     "id": "item-381",
     "rawItem": "VITACID 0.025% CR 15 GR",
-    "nama": "VITACID 0.025%",
-    "kemasan": "CR 15 GR",
+    "nama": "VITACID 0.025% CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "TRETINOIN"
   },
   {
     "id": "item-382",
     "rawItem": "VITACID 0.025% GEL 20 GR",
-    "nama": "VITACID 0.025%",
-    "kemasan": "GEL 20 GR",
+    "nama": "VITACID 0.025% GEL",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": "TRETINOIN"
   },
   {
     "id": "item-383",
     "rawItem": "VITACID 0.05% CR 20 GR",
-    "nama": "VITACID 0.05%",
-    "kemasan": "CR 20 GR",
+    "nama": "VITACID 0.05% CR",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": "TRETINOIN"
   },
   {
     "id": "item-384",
     "rawItem": "VITACID 0.1% CR 20 GR",
-    "nama": "VITACID 0.1%",
-    "kemasan": "CR 20 GR",
+    "nama": "VITACID 0.1% CR",
+    "kemasan": "20 GR",
     "kategori": "SALEP",
     "kandungan": "TRETINOIN"
   },
   {
     "id": "item-385",
     "rawItem": "VITAQUIN 5% CR 15 GR",
-    "nama": "VITAQUIN 5%",
-    "kemasan": "CR 15 GR",
+    "nama": "VITAQUIN 5% CR",
+    "kemasan": "15 GR",
     "kategori": "SALEP",
     "kandungan": "HYDROQUINONE"
   },
   {
     "id": "item-386",
     "rawItem": "ZENSODERM CR 10 GR",
-    "nama": "ZENSODERM",
-    "kemasan": "CR 10 GR",
+    "nama": "ZENSODERM CR",
+    "kemasan": "10 GR",
     "kategori": "SALEP",
     "kandungan": "GENTAMICIN, BETAMETHASONE"
   },
   {
     "id": "item-387",
     "rawItem": "ZOTER CR 5 GR",
-    "nama": "ZOTER",
-    "kemasan": "CR 5 GR",
+    "nama": "ZOTER CR",
+    "kemasan": "5 GR",
     "kategori": "SALEP",
     "kandungan": "ACICLOVIR"
   },
@@ -3195,8 +3195,8 @@ export const SAMPLE_DATA = [
   {
     "id": "item-400",
     "rawItem": "INTERLAC DROPS 5 ML",
-    "nama": "INTERLAC",
-    "kemasan": "DROPS 5 ML",
+    "nama": "INTERLAC DROPS",
+    "kemasan": "5 ML",
     "kategori": "SUPPOSITORIA",
     "kandungan": ""
   },
@@ -3266,5510 +3266,14 @@ export const SAMPLE_DATA = [
   },
   {
     "id": "item-409",
-    "rawItem": "ULTRAFIX 5 CM X 5 M BOX",
-    "nama": "ULTRAFIX 5 CM X 5 M",
-    "kemasan": "BOX",
-    "kategori": "T",
-    "kandungan": ""
-  },
-  {
-    "id": "item-410",
-    "rawItem": "VESPERUM SYR 60 ML",
-    "nama": "VESPERUM",
-    "kemasan": "SYR 60 ML",
-    "kategori": "T",
-    "kandungan": ""
-  },
-  {
-    "id": "item-411",
-    "rawItem": "ACITRAL SYR 120 ML",
-    "nama": "ACITRAL",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-412",
-    "rawItem": "ACNES SEALING GEL 9 GR",
-    "nama": "ACNES SEALING",
-    "kemasan": "GEL 9 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-413",
-    "rawItem": "ACNOL GEL 10 GR",
-    "nama": "ACNOL",
-    "kemasan": "GEL 10 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-414",
-    "rawItem": "ACNOL LOT 10 ML",
-    "nama": "ACNOL",
-    "kemasan": "LOT 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-415",
-    "rawItem": "ACTIFED COUGH (MERAH) SYR 60 ML",
-    "nama": "ACTIFED COUGH (MERAH)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-416",
-    "rawItem": "ACTIFED EXP (HIJAU) SYR 60 ML",
-    "nama": "ACTIFED EXP (HIJAU)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-417",
-    "rawItem": "ACTIFED FLU (KUNING) SYR 60 ML",
-    "nama": "ACTIFED FLU (KUNING)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-418",
-    "rawItem": "ADEM SARI SACH",
-    "nama": "ADEM SARI",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-419",
-    "rawItem": "ALCO DROPS 15 ML",
-    "nama": "ALCO",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-420",
-    "rawItem": "ALCO FLU + BATUK SYR 100 ML",
-    "nama": "ALCO FLU + BATUK",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-421",
-    "rawItem": "ALOCLAIR PLUS GEL 8 ML",
-    "nama": "ALOCLAIR PLUS",
-    "kemasan": "GEL 8 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-422",
-    "rawItem": "ALOCLAIR PLUS ORAL RINSE 60 ML",
-    "nama": "ALOCLAIR PLUS ORAL RINSE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-423",
-    "rawItem": "ALOCLAIR PLUS SPRAY 15 ML",
-    "nama": "ALOCLAIR PLUS",
-    "kemasan": "SPRAY 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-424",
-    "rawItem": "AMOXSAN DRY SYR 60 ML",
-    "nama": "AMOXSAN DRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-425",
-    "rawItem": "ANAKONIDIN (MERAH) SYR 60 ML",
-    "nama": "ANAKONIDIN (MERAH)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-426",
-    "rawItem": "ANAKONIDIN (PINK) OBH SYR 60 ML",
-    "nama": "ANAKONIDIN (PINK) OBH",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-427",
-    "rawItem": "ANTANGIN GINGER MINT+ MADU SACH",
-    "nama": "ANTANGIN GINGER MINT+ MADU",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-428",
-    "rawItem": "ANTANGIN JRG SACH",
-    "nama": "ANTANGIN JRG",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-429",
-    "rawItem": "ANTIS JASMINE TEA SPRAY 55 ML",
-    "nama": "ANTIS JASMINE TEA",
-    "kemasan": "SPRAY 55 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-430",
-    "rawItem": "APIALYS DROPS 10 ML",
-    "nama": "APIALYS",
-    "kemasan": "DROPS 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-431",
-    "rawItem": "APIALYS SYR 100 ML",
-    "nama": "APIALYS",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-432",
-    "rawItem": "ASAM URAT STRIP",
-    "nama": "ASAM URAT",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-433",
-    "rawItem": "AVAIL HIJAU PCS",
-    "nama": "AVAIL HIJAU",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-434",
-    "rawItem": "BALSEM CAP KAKI TIGA 20 GR",
-    "nama": "BALSEM CAP KAKI TIGA 20 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-435",
-    "rawItem": "BALSEM GELIGA 10 GR",
-    "nama": "BALSEM",
-    "kemasan": "GEL IGA 10 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-436",
-    "rawItem": "BALSEM GELIGA 20 GR",
-    "nama": "BALSEM",
-    "kemasan": "GEL IGA 20 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-437",
-    "rawItem": "BALSEM GELIGA 40 GR",
-    "nama": "BALSEM",
-    "kemasan": "GEL IGA 40 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-438",
-    "rawItem": "BALSEM LANG 10 GR",
-    "nama": "BALSEM LANG 10 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-439",
-    "rawItem": "BALSEM LANG 40 GR",
-    "nama": "BALSEM LANG 40 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-440",
-    "rawItem": "BANANA BOAT ALOE VERA GEL 230 ML",
-    "nama": "BANANA BOAT ALOE VERA",
-    "kemasan": "GEL 230 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-441",
-    "rawItem": "BANANA BOAT ALOE VERA GEL 90 ML",
-    "nama": "BANANA BOAT ALOE VERA",
-    "kemasan": "GEL 90 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-442",
-    "rawItem": "BANANA BOAT AQUA SPF 50+ LOT 50 ML",
-    "nama": "BANANA BOAT AQUA SPF 50+",
-    "kemasan": "LOT 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-443",
-    "rawItem": "BANANA BOAT DEEP TANNING OIL SPF 4 SPRAY 236 ML",
-    "nama": "BANANA BOAT DEEP TANNING OIL SPF 4",
-    "kemasan": "SPRAY 236 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-444",
-    "rawItem": "BANANA BOAT KIDS SPF 50 LOT 90 ML",
-    "nama": "BANANA BOAT KIDS SPF 50",
-    "kemasan": "LOT 90 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-445",
-    "rawItem": "BANANA BOAT PROTECTIVE TANNING OIL SPF 15 LOT 236 ML",
-    "nama": "BANANA BOAT PROTECTIVE TANNING OIL SPF 15",
-    "kemasan": "LOT 236 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-446",
-    "rawItem": "BANANA BOAT PROTECTIVE TANNING OIL SPF 8 LOT 236 ML",
-    "nama": "BANANA BOAT PROTECTIVE TANNING OIL SPF 8",
-    "kemasan": "LOT 236 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-447",
-    "rawItem": "BANANA BOAT SPORT SPF 30 LOT 90 ML",
-    "nama": "BANANA BOAT SPORT SPF 30",
-    "kemasan": "LOT 90 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-448",
-    "rawItem": "BANANA BOAT SPORT ULTRA SPF 50 LOT 90 ML",
-    "nama": "BANANA BOAT SPORT ULTRA SPF 50",
-    "kemasan": "LOT 90 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-449",
-    "rawItem": "BANANA BOAT SPORT ULTRA SPF 50+ LOT 90 ML",
-    "nama": "BANANA BOAT SPORT ULTRA SPF 50+",
-    "kemasan": "LOT 90 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-450",
-    "rawItem": "BANANA BOAT ULTRA PROTECT SPF 50 LOT 90 ML",
-    "nama": "BANANA BOAT ULTRA PROTECT SPF 50",
-    "kemasan": "LOT 90 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-451",
-    "rawItem": "BANANA BOAT ULTRAMIST SPF 50 SPRAY 170 GR",
-    "nama": "BANANA BOAT ULTRAMIST SPF 50",
-    "kemasan": "SPRAY 170 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-452",
-    "rawItem": "BATUGIN SYR 300 ML",
-    "nama": "BATUGIN",
-    "kemasan": "SYR 300 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-453",
-    "rawItem": "BEDAK HEROCYN 150 GR",
-    "nama": "BEDAK HEROCYN 150 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-454",
-    "rawItem": "BEDAK HEROCYN 85 GR",
-    "nama": "BEDAK HEROCYN 85 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-455",
-    "rawItem": "BEDAK HEROCYN BABY 100 GR",
-    "nama": "BEDAK HEROCYN BABY 100 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-456",
-    "rawItem": "BEDAK HEROCYN BABY 200 GR",
-    "nama": "BEDAK HEROCYN BABY 200 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-457",
-    "rawItem": "BEDAK SALICYL NELLCO (BIRU) NON MENTHOL 60 GR",
-    "nama": "BEDAK SALICYL NELLCO (BIRU) NON MENTHOL 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-458",
-    "rawItem": "BEDAK SALICYL NELLCO (MERAH) MENTHOL 60 GR",
-    "nama": "BEDAK SALICYL NELLCO (MERAH) MENTHOL 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-459",
-    "rawItem": "BENANG GIGI MINT (DENTAL FLOSS)",
-    "nama": "BENANG GIGI MINT (DENTAL FLOSS)",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-460",
-    "rawItem": "BEPANTHEN OINT 10 GR",
-    "nama": "BEPANTHEN",
-    "kemasan": "OINT 10 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-461",
-    "rawItem": "BEPANTHEN OINT 20 GR",
-    "nama": "BEPANTHEN",
-    "kemasan": "OINT 20 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-462",
-    "rawItem": "BETADINE FEMINIME 60 ML",
-    "nama": "BETADINE FEMINIME 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-463",
-    "rawItem": "BETADINE MOUTHWASH 100 ML",
-    "nama": "BETADINE MOUTHWASH 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-464",
-    "rawItem": "BETADINE MOUTHWASH 190 ML",
-    "nama": "BETADINE MOUTHWASH 190 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-465",
-    "rawItem": "BETADINE OINT 10 GR",
-    "nama": "BETADINE",
-    "kemasan": "OINT 10 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-466",
-    "rawItem": "BETADINE OINT 5 GR",
-    "nama": "BETADINE",
-    "kemasan": "OINT 5 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-467",
-    "rawItem": "BETADINE SOL 15 ML",
-    "nama": "BETADINE SOL 15 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-468",
-    "rawItem": "BETADINE SOL 30 ML",
-    "nama": "BETADINE SOL 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": "KETOCONAZOLE"
-  },
-  {
-    "id": "item-469",
-    "rawItem": "BETADINE SOL 5 ML",
-    "nama": "BETADINE SOL 5 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-470",
-    "rawItem": "BETADINE SOL 60 ML",
-    "nama": "BETADINE SOL 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-471",
-    "rawItem": "BETADINE VAGINAL DOUCHE+ APLIKATOR 100 ML",
-    "nama": "BETADINE VAGINAL DOUCHE+ APLIKATOR 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-472",
-    "rawItem": "BEXCE PLUS DROPS 15 ML",
-    "nama": "BEXCE PLUS",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-473",
-    "rawItem": "BIO OIL 25 ML",
-    "nama": "BIO OIL 25 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-474",
-    "rawItem": "BIO OIL 60 ML",
-    "nama": "BIO OIL 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-475",
-    "rawItem": "BIO OIL DRY SKIN GEL 50 ML",
-    "nama": "BIO OIL DRY SKIN",
-    "kemasan": "GEL 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-476",
-    "rawItem": "BIOSTRUM SYR 100 ML",
-    "nama": "BIOSTRUM",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-477",
-    "rawItem": "BISOLVON EXTRA SYR 60 ML",
-    "nama": "BISOLVON EXTRA",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-478",
-    "rawItem": "BISOLVON KIDS SYR 60 ML",
-    "nama": "BISOLVON KIDS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-479",
-    "rawItem": "BISOLVON SOL SYR 50 ML",
-    "nama": "BISOLVON SOL",
-    "kemasan": "SYR 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-480",
-    "rawItem": "BLACKMORES BIO C 1000 MG BTL",
-    "nama": "BLACKMORES BIO C 1000 MG",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-481",
-    "rawItem": "BLACKMORES CALCIMAG MULTI BTL",
-    "nama": "BLACKMORES CALCIMAG MULTI",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-482",
-    "rawItem": "BLACKMORES DAILY IMMUNE C 500 MG BTL",
-    "nama": "BLACKMORES DAILY IMMUNE C 500 MG",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-483",
-    "rawItem": "BLACKMORES I-FOLIC BTL",
-    "nama": "BLACKMORES I-FOLIC",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-484",
-    "rawItem": "BLACKMORES KOALA KIDS BODY SHIELD BTL",
-    "nama": "BLACKMORES KOALA KIDS BODY SHIELD",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-485",
-    "rawItem": "BLACKMORES KOALA KIDS MULTI CHEWABLES BTL",
-    "nama": "BLACKMORES KOALA KIDS MULTI CHEWABLES",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-486",
-    "rawItem": "BLACKMORES MULTIVITAMIN & MINERALS BTL",
-    "nama": "BLACKMORES MULTIVITAMIN & MINERALS",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-487",
-    "rawItem": "BLACKMORES ODOURLESS FISH OIL 1000 BTL",
-    "nama": "BLACKMORES ODOURLESS FISH OIL 1000",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-488",
-    "rawItem": "BLACKMORES PREGNANCY & BF GOLD BTL",
-    "nama": "BLACKMORES PREGNANCY & BF GOLD",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-489",
-    "rawItem": "BLOOD LANCET ONEMED 26 G PCS",
-    "nama": "BLOOD LANCET ONEMED 26 G",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-490",
-    "rawItem": "BODREXIN DEMAM SYR 60 ML",
-    "nama": "BODREXIN DEMAM",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": "HYDROQUINON 4%, TRETINOIN 0.05%, FLUOCINOLON 0.01%"
-  },
-  {
-    "id": "item-491",
-    "rawItem": "BOKASHI 12 ML",
-    "nama": "BOKASHI 12 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-492",
-    "rawItem": "BOKASHI 140 ML",
-    "nama": "BOKASHI 140 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-493",
-    "rawItem": "BOKASHI 35 ML",
-    "nama": "BOKASHI 35 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-494",
-    "rawItem": "BOKASHI 65 ML",
-    "nama": "BOKASHI 65 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-495",
-    "rawItem": "BREATHY TETES HIDUNG 30 ML",
-    "nama": "BREATHY TETES HIDUNG 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-496",
-    "rawItem": "BUFECT SYR 60 ML",
-    "nama": "BUFECT",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": "MUPIROCIN"
-  },
-  {
-    "id": "item-497",
-    "rawItem": "BYEBYE-FEVER ANAK SACH",
-    "nama": "BYEBYE-FEVER ANAK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-498",
-    "rawItem": "BYEBYE-FEVER BAYI SACH",
-    "nama": "BYEBYE-FEVER BAYI",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-499",
-    "rawItem": "BYEBYE-FEVER DWS SACH",
-    "nama": "BYEBYE-FEVER DWS",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-500",
-    "rawItem": "CALADINE BABY POWDER 100 GR",
-    "nama": "CALADINE BABY POWDER 100 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-501",
-    "rawItem": "CALADINE LOT 60 ML",
-    "nama": "CALADINE",
-    "kemasan": "LOT 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-502",
-    "rawItem": "CALADINE LOT 95 ML",
-    "nama": "CALADINE",
-    "kemasan": "LOT 95 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-503",
-    "rawItem": "CALADINE POWDER 100 GR",
-    "nama": "CALADINE POWDER 100 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-504",
-    "rawItem": "CALADINE POWDER 60 GR",
-    "nama": "CALADINE POWDER 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-505",
-    "rawItem": "CALLUSOL 10 ML",
-    "nama": "CALLUSOL 10 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-506",
-    "rawItem": "CDR FORTOS EFF BOX",
-    "nama": "CDR FORTOS EFF",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-507",
-    "rawItem": "CDR JERUK EFF BOX",
-    "nama": "CDR JERUK EFF",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-508",
-    "rawItem": "CDR JERUK EFF BOX",
-    "nama": "CDR JERUK EFF",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-509",
-    "rawItem": "CDR JERUK EFF BOX",
-    "nama": "CDR JERUK EFF",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-510",
-    "rawItem": "CEREBROFORT MARINE GUMMY STRAWBERRY SACH",
-    "nama": "CEREBROFORT MARINE GUMMY STRAWBERRY",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-511",
-    "rawItem": "CERINI DROPS 20 ML",
-    "nama": "CERINI",
-    "kemasan": "DROPS 20 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-512",
-    "rawItem": "CERINI SYR 60 ML",
-    "nama": "CERINI",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-513",
-    "rawItem": "CESSA BABY BIRU (FLU & BATUK) 8 ML",
-    "nama": "CESSA BABY BIRU (FLU & BATUK) 8 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-514",
-    "rawItem": "CESSA BABY KUNING (REWEL) 8 ML",
-    "nama": "CESSA BABY KUNING (REWEL) 8 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-515",
-    "rawItem": "CESSA BABY MERAH (DEMAM) 8 ML",
-    "nama": "CESSA BABY MERAH (DEMAM) 8 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-516",
-    "rawItem": "CESSA KIDS BIRU (FLU & BATUK) 8 ML",
-    "nama": "CESSA KIDS BIRU (FLU & BATUK) 8 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-517",
-    "rawItem": "CESSA KIDS MERAH (DEMAM) 8 ML",
-    "nama": "CESSA KIDS MERAH (DEMAM) 8 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-518",
-    "rawItem": "CINDERELLA COTTON BUDS DWS BTL",
-    "nama": "CINDERELLA COTTON BUDS DWS",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-519",
-    "rawItem": "CLANEKSI FORTE DRY SYR 60 ML",
-    "nama": "CLANEKSI FORTE DRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-520",
-    "rawItem": "COLDREXIN SYR 60 ML",
-    "nama": "COLDREXIN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-521",
-    "rawItem": "COOLING 5 CHERY SPRAY 15 ML",
-    "nama": "COOLING 5 CHERY",
-    "kemasan": "SPRAY 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-522",
-    "rawItem": "COOLING 5 COOL MINT SPRAY 15 ML",
-    "nama": "COOLING 5 COOL MINT",
-    "kemasan": "SPRAY 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-523",
-    "rawItem": "COOLING 5 PLUS (ORANYE) SPRAY 15 ML",
-    "nama": "COOLING 5 PLUS (ORANYE)",
-    "kemasan": "SPRAY 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-524",
-    "rawItem": "COPARCETIN SYR 60 ML",
-    "nama": "COPARCETIN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-525",
-    "rawItem": "CORTAMINE SYR 60 ML",
-    "nama": "CORTAMINE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-526",
-    "rawItem": "COUNTERPAIN COOL GEL 15 GR",
-    "nama": "COUNTERPAIN COOL",
-    "kemasan": "GEL 15 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-527",
-    "rawItem": "COUNTERPAIN COOL GEL 30 GR",
-    "nama": "COUNTERPAIN COOL",
-    "kemasan": "GEL 30 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-528",
-    "rawItem": "COUNTERPAIN COOL GEL 60 GR",
-    "nama": "COUNTERPAIN COOL",
-    "kemasan": "GEL 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-529",
-    "rawItem": "COUNTERPAIN CR 120 GR",
-    "nama": "COUNTERPAIN",
-    "kemasan": "CR 120 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-530",
-    "rawItem": "COUNTERPAIN CR 15 GR",
-    "nama": "COUNTERPAIN",
-    "kemasan": "CR 15 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-531",
-    "rawItem": "COUNTERPAIN CR 30 GR",
-    "nama": "COUNTERPAIN",
-    "kemasan": "CR 30 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-532",
-    "rawItem": "COUNTERPAIN CR 5 GR",
-    "nama": "COUNTERPAIN",
-    "kemasan": "CR 5 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-533",
-    "rawItem": "COUNTERPAIN CR 60 GR",
-    "nama": "COUNTERPAIN",
-    "kemasan": "CR 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-534",
-    "rawItem": "COUNTERPAIN PXM CR 25 GR",
-    "nama": "COUNTERPAIN PXM",
-    "kemasan": "CR 25 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-535",
-    "rawItem": "CURCUMA+ GROW (EMULTION) JERUK SYR 200 ML",
-    "nama": "CURCUMA+ GROW (EMULTION) JERUK",
-    "kemasan": "SYR 200 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-536",
-    "rawItem": "CURCUMA+ GROW (EMULTION) STRAWBERRY SYR 200 ML",
-    "nama": "CURCUMA+ GROW (EMULTION) STRAWBERRY",
-    "kemasan": "SYR 200 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-537",
-    "rawItem": "CURCUMA+ IMUNS JERUK SYR 60 ML",
-    "nama": "CURCUMA+ IMUNS JERUK",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-538",
-    "rawItem": "CURCUMA+ SHARPY ORANGE SYR 60 ML",
-    "nama": "CURCUMA+ SHARPY ORANGE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-539",
-    "rawItem": "CURCUMA+ SHARPY STRAWBERRY SYR 60 ML",
-    "nama": "CURCUMA+ SHARPY STRAWBERRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-540",
-    "rawItem": "CURCUMA+ SUPPORT APPETITE JERUK SYR 60 ML",
-    "nama": "CURCUMA+",
-    "kemasan": "SUPP ORT APPETITE JERUK SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-541",
-    "rawItem": "CURVIT CL EMULTION SYR 175 ML",
-    "nama": "CURVIT CL",
-    "kemasan": "EMULTION SYR 175 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-542",
-    "rawItem": "CUTICELL CLASSIC 10 CM X 10 CM PCS",
-    "nama": "CUTICELL CLASSIC 10 CM X 10 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-543",
-    "rawItem": "CUTICELL CLASSIC 10 CM X 10 CM PCS",
-    "nama": "CUTICELL CLASSIC 10 CM X 10 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-544",
-    "rawItem": "DARYANT-TULLE PCS",
-    "nama": "DARYANT-TULLE",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-545",
-    "rawItem": "DECADRYL SYR 120 ML",
-    "nama": "DECADRYL",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-546",
-    "rawItem": "DECADRYL SYR 60 ML",
-    "nama": "DECADRYL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-547",
-    "rawItem": "DEMACOLIN SYR 60 ML",
-    "nama": "DEMACOLIN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-548",
-    "rawItem": "DERMAFIX 10 X 25 CM PCS",
-    "nama": "DERMAFIX 10 X 25 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-549",
-    "rawItem": "DERMAFIX 10 X 25 CM PCS",
-    "nama": "DERMAFIX 10 X 25 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-550",
-    "rawItem": "DETTOL 245 ML",
-    "nama": "DETTOL 245 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-551",
-    "rawItem": "DETTOL 45 ML",
-    "nama": "DETTOL 45 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-552",
-    "rawItem": "DETTOL 95 ML",
-    "nama": "DETTOL 95 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-553",
-    "rawItem": "DETTOL WET WIPES SENSITIVE BOX",
-    "nama": "DETTOL WET WIPES SENSITIVE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-554",
-    "rawItem": "DETTOL WET WIPES SENSITIVE BOX",
-    "nama": "DETTOL WET WIPES SENSITIVE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-555",
-    "rawItem": "DIAPET ANAK SYR 60 ML",
-    "nama": "DIAPET ANAK",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-556",
-    "rawItem": "DIE DA YAO JING 30 ML",
-    "nama": "DIE DA YAO JING 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-557",
-    "rawItem": "DR. KOOL ADULT SACH",
-    "nama": "DR. KOOL ADULT",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-558",
-    "rawItem": "DR. KOOL KIDS SACH",
-    "nama": "DR. KOOL KIDS",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-559",
-    "rawItem": "DULCOLACTOL SYR 60 ML",
-    "nama": "DULCOLACTOL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-560",
-    "rawItem": "DUREX CLOSE FIT BOX",
-    "nama": "DUREX CLOSE FIT",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-561",
-    "rawItem": "DUREX EXTRA SAFE BOX",
-    "nama": "DUREX EXTRA SAFE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-562",
-    "rawItem": "DUREX EXTRA SAFE BOX",
-    "nama": "DUREX EXTRA SAFE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-563",
-    "rawItem": "DUREX FETHERLITE BOX",
-    "nama": "DUREX FETHERLITE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-564",
-    "rawItem": "DUREX FETHERLITE BOX",
-    "nama": "DUREX FETHERLITE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-565",
-    "rawItem": "DUREX INVISIBLE BOX",
-    "nama": "DUREX INVISIBLE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-566",
-    "rawItem": "DUREX INVISIBLE BOX",
-    "nama": "DUREX INVISIBLE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-567",
-    "rawItem": "DUREX LOVE JEANS BOX",
-    "nama": "DUREX LOVE JEANS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-568",
-    "rawItem": "DUREX LOVE JEANS BOX",
-    "nama": "DUREX LOVE JEANS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-569",
-    "rawItem": "DUREX PERFORMA BOX",
-    "nama": "DUREX PERFORMA",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-570",
-    "rawItem": "DUREX PERFORMA BOX",
-    "nama": "DUREX PERFORMA",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-571",
-    "rawItem": "DUREX PLAY GEL 100 ML",
-    "nama": "DUREX PLAY",
-    "kemasan": "GEL 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-572",
-    "rawItem": "DUREX PLAY GEL 50 ML",
-    "nama": "DUREX PLAY",
-    "kemasan": "GEL 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-573",
-    "rawItem": "DUREX PLAY SWEET STRAWBERRY GEL 50 ML",
-    "nama": "DUREX PLAY SWEET STRAWBERRY",
-    "kemasan": "GEL 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-574",
-    "rawItem": "DUREX PLEASUREMAX BOX",
-    "nama": "DUREX PLEASUREMAX",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-575",
-    "rawItem": "EAR PLUGS SILICON BOX",
-    "nama": "EAR PLUGS SILICON",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-576",
-    "rawItem": "EAR PLUGS SILICON BOX",
-    "nama": "EAR PLUGS SILICON",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-577",
-    "rawItem": "EGOJI CHEWY GUMMY BLACKCURRANT SACH",
-    "nama": "EGOJI CHEWY GUMMY BLACKCURRANT",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-578",
-    "rawItem": "EGOJI CHEWY GUMMY JERUK SACH",
-    "nama": "EGOJI CHEWY GUMMY JERUK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-579",
-    "rawItem": "EGOJI CHEWY GUMMY STRAWBERRY SACH",
-    "nama": "EGOJI CHEWY GUMMY STRAWBERRY",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-580",
-    "rawItem": "ELASTOMULL 10 CM X 4 M",
-    "nama": "ELASTOMULL 10 CM X 4 M",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-581",
-    "rawItem": "ELASTOMULL 10 CM X 4 M",
-    "nama": "ELASTOMULL 10 CM X 4 M",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-582",
-    "rawItem": "ELASTOMULL 12 CM X 4 M",
-    "nama": "ELASTOMULL 12 CM X 4 M",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-583",
-    "rawItem": "ELASTOMULL 12 CM X 4 M",
-    "nama": "ELASTOMULL 12 CM X 4 M",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-584",
-    "rawItem": "ELASTOMULL 8 CM X 4 M",
-    "nama": "ELASTOMULL 8 CM X 4 M",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-585",
-    "rawItem": "ELASTOMULL 8 CM X 4 M",
-    "nama": "ELASTOMULL 8 CM X 4 M",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-586",
-    "rawItem": "ELLIPS (COKLAT) HAIR VITALITY STRIP",
-    "nama": "ELLIPS (COKLAT) HAIR VITALITY",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-587",
-    "rawItem": "ELLIPS (COKLAT) HAIR VITALITY STRIP",
-    "nama": "ELLIPS (COKLAT) HAIR VITALITY",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-588",
-    "rawItem": "ELLIPS (HITAM) SHINY BLACK STRIP",
-    "nama": "ELLIPS (HITAM) SHINY BLACK",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-589",
-    "rawItem": "ELLIPS (KUNING) SMOOTH & SHINY STRIP",
-    "nama": "ELLIPS (KUNING) SMOOTH & SHINY",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-590",
-    "rawItem": "ELLIPS (MERAH) HAIR REPAIR STRIP",
-    "nama": "ELLIPS (MERAH) HAIR REPAIR",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-591",
-    "rawItem": "ELLIPS (PINK) HAIR TREATMENT STRIP",
-    "nama": "ELLIPS (PINK) HAIR TREATMENT",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-592",
-    "rawItem": "ELLIPS (UNGU) NUTRI COLOR STRIP",
-    "nama": "ELLIPS (UNGU) NUTRI COLOR",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-593",
-    "rawItem": "EM KAPSUL BOX",
-    "nama": "EM",
-    "kemasan": "KAP SUL BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-594",
-    "rawItem": "ENERVON C ACTIVE BTL",
-    "nama": "ENERVON C ACTIVE",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-595",
-    "rawItem": "ENERVON C BTL",
-    "nama": "ENERVON C",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-596",
-    "rawItem": "EPEXOL DROPS 20 ML",
-    "nama": "EPEXOL",
-    "kemasan": "DROPS 20 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-597",
-    "rawItem": "EPEXOL FORTE SYR 60 ML",
-    "nama": "EPEXOL FORTE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-598",
-    "rawItem": "EPEXOL SYR 120 ML",
-    "nama": "EPEXOL",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-599",
-    "rawItem": "ESTER C BTL",
-    "nama": "ESTER C",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-600",
-    "rawItem": "EVER E 250 IU BOX",
-    "nama": "EVER E 250 IU",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-601",
-    "rawItem": "EVER E 250 IU BOX",
-    "nama": "EVER E 250 IU",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-602",
-    "rawItem": "FASIDOL SYR 60 ML",
-    "nama": "FASIDOL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-603",
-    "rawItem": "FIESTA BUBBLE GUM BOX",
-    "nama": "FIESTA BUBBLE GUM",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-604",
-    "rawItem": "FIESTA MAX DOTTED BOX",
-    "nama": "FIESTA MAX DOTTED",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-605",
-    "rawItem": "FIESTA STRAWBERRY BOX",
-    "nama": "FIESTA STRAWBERRY",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-606",
-    "rawItem": "FIESTA ULTRA THIN BOX",
-    "nama": "FIESTA ULTRA THIN",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-607",
-    "rawItem": "FITKOM ANGGUR BTL",
-    "nama": "FITKOM ANGGUR",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-608",
-    "rawItem": "FLIMTY BLACKCURRANT SACH",
-    "nama": "FLIMTY BLACKCURRANT",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-609",
-    "rawItem": "FLUIMUCIL DRY SYR 75 ML",
-    "nama": "FLUIMUCIL DRY",
-    "kemasan": "SYR 75 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-610",
-    "rawItem": "FRESH CARE CITRUS ROLL ON 10 ML",
-    "nama": "FRESH CARE CITRUS",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-611",
-    "rawItem": "FRESH CARE GREENTEA ROLL ON 10 ML",
-    "nama": "FRESH CARE GREENTEA",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-612",
-    "rawItem": "FRESH CARE KAYU PUTIH ROLL ON 10 ML",
-    "nama": "FRESH CARE KAYU PUTIH",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-613",
-    "rawItem": "FRESH CARE LAVENDER ROLL ON 10 ML",
-    "nama": "FRESH CARE LAVENDER",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-614",
-    "rawItem": "FRESH CARE SANDALWOOD ROLL ON 10 ML",
-    "nama": "FRESH CARE SANDALWOOD",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-615",
-    "rawItem": "FRESH CARE SPLASH FRUITY ROLL ON 10 ML",
-    "nama": "FRESH CARE SPLASH FRUITY",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-616",
-    "rawItem": "FRESH CARE SPORT ROLL ON 10 ML",
-    "nama": "FRESH CARE SPORT",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-617",
-    "rawItem": "FRESH CARE STRONG ROLL ON 10 ML",
-    "nama": "FRESH CARE STRONG",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-618",
-    "rawItem": "FRESH CARE VAPOBALM SAKURA 10 GR",
-    "nama": "FRESH CARE VAPOBALM SAKURA 10 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-619",
-    "rawItem": "FUFANG EJIAO JIANG 20 ML BTL",
-    "nama": "FUFANG EJIAO JIANG 20 ML",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-620",
-    "rawItem": "FUNGIDERM CR 10 GR",
-    "nama": "FUNGIDERM",
-    "kemasan": "CR 10 GR",
-    "kategori": "TANPA",
-    "kandungan": "CLOTRIMAZOLE"
-  },
-  {
-    "id": "item-621",
-    "rawItem": "FUNGIDERM CR 5 GR",
-    "nama": "FUNGIDERM",
-    "kemasan": "CR 5 GR",
-    "kategori": "TANPA",
-    "kandungan": "CLOTRIMAZOLE"
-  },
-  {
-    "id": "item-622",
-    "rawItem": "GASTRUCID SYR 60 ML",
-    "nama": "GASTRUCID",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-623",
-    "rawItem": "GELIGA CR 60 GR",
-    "nama": "GELIGA",
-    "kemasan": "CR 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-624",
-    "rawItem": "GLYCORE 10% CR 10 GR",
-    "nama": "GLYCORE 10%",
-    "kemasan": "CR 10 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-625",
-    "rawItem": "GPU CREAM SEREH (ORANYE) 150 GR",
-    "nama": "GPU",
-    "kemasan": "CR EAM SEREH (ORANYE) 150 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-626",
-    "rawItem": "GPU CREAM SEREH (ORANYE) 250 GR",
-    "nama": "GPU",
-    "kemasan": "CR EAM SEREH (ORANYE) 250 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-627",
-    "rawItem": "GPU CREAM SEREH (ORANYE) 60 GR",
-    "nama": "GPU",
-    "kemasan": "CR EAM SEREH (ORANYE) 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-628",
-    "rawItem": "GUANISTREP SYR 60 ML",
-    "nama": "GUANISTREP",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-629",
-    "rawItem": "GULA DARAH STRIP",
-    "nama": "GULA DARAH",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-630",
-    "rawItem": "HAND SCOON ALTAMED SIZE L PCS",
-    "nama": "HAND SCOON ALTAMED SIZE L",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-631",
-    "rawItem": "HAND SCOON ALTAMED SIZE M PCS",
-    "nama": "HAND SCOON ALTAMED SIZE M",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-632",
-    "rawItem": "HANSAPLAST 1.25 CM X 4.5 M ROLL",
-    "nama": "HANSAPLAST 1.25 CM X 4.5 M",
-    "kemasan": "ROLL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-633",
-    "rawItem": "HANSAPLAST AQUA PROTECT AMPLOP",
-    "nama": "HANSAPLAST AQUA PROTECT",
-    "kemasan": "AMPLOP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-634",
-    "rawItem": "HANSAPLAST AQUA PROTECT STERIL 3XL PCS",
-    "nama": "HANSAPLAST AQUA PROTECT STERIL 3XL",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-635",
-    "rawItem": "HANSAPLAST AQUA PROTECT STERIL XL PCS",
-    "nama": "HANSAPLAST AQUA PROTECT STERIL XL",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-636",
-    "rawItem": "HANSAPLAST DISNEY FROZEN 2 AMPLOP",
-    "nama": "HANSAPLAST DISNEY FROZEN 2",
-    "kemasan": "AMPLOP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-637",
-    "rawItem": "HANSAPLAST ELASTIS PCS",
-    "nama": "HANSAPLAST ELASTIS",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-638",
-    "rawItem": "HANSAPLAST FUN KIDS AMPLOP",
-    "nama": "HANSAPLAST FUN KIDS",
-    "kemasan": "AMPLOP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-639",
-    "rawItem": "HANSAPLAST JUMBO PCS",
-    "nama": "HANSAPLAST JUMBO",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-640",
-    "rawItem": "HANSAPLAST KAIN ELASTIS AMPLOP",
-    "nama": "HANSAPLAST KAIN ELASTIS",
-    "kemasan": "AMPLOP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-641",
-    "rawItem": "HANSAPLAST SALEP LUKA 20 GR",
-    "nama": "HANSAPLAST SALEP LUKA 20 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-642",
-    "rawItem": "HANSAPLAST SENSITIVE XXL PCS",
-    "nama": "HANSAPLAST SENSITIVE XXL",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-643",
-    "rawItem": "HANSAPLAST SPRAY 40 ML",
-    "nama": "HANSAPLAST",
-    "kemasan": "SPRAY 40 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-644",
-    "rawItem": "HANSAPLAST TRANSPARAN AMPLOP",
-    "nama": "HANSAPLAST TRANSPARAN",
-    "kemasan": "AMPLOP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-645",
-    "rawItem": "H-BOOSTER SYR 50 ML",
-    "nama": "H-BOOSTER",
-    "kemasan": "SYR 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-646",
-    "rawItem": "HECOSAN HERBAL KIDS SYR 60 ML",
-    "nama": "HECOSAN HERBAL KIDS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-647",
-    "rawItem": "HECOSAN HERBAL SYR 120 ML",
-    "nama": "HECOSAN HERBAL",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-648",
-    "rawItem": "HERBABLEND COUGH & FLU SYR 100 ML",
-    "nama": "HERBABLEND COUGH & FLU",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-649",
-    "rawItem": "HERBAKOF SYR 100 ML",
-    "nama": "HERBAKOF",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-650",
-    "rawItem": "HERBAKOF SYR 60 ML",
-    "nama": "HERBAKOF",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-651",
-    "rawItem": "HOTIN (PUTIH) ROLL 120 ML",
-    "nama": "HOTIN (PUTIH)",
-    "kemasan": "ROLL 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-652",
-    "rawItem": "HOTIN (PUTIH) ROLL 60 ML",
-    "nama": "HOTIN (PUTIH)",
-    "kemasan": "ROLL 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-653",
-    "rawItem": "HOTIN AROMATHERAPY (HIJAU) TUBE CR 120 GR",
-    "nama": "HOTIN AROMATHERAPY (HIJAU)",
-    "kemasan": "TUBE CR 120 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-654",
-    "rawItem": "HOTIN AROMATHERAPY (HIJAU) TUBE CR 60 GR",
-    "nama": "HOTIN AROMATHERAPY (HIJAU)",
-    "kemasan": "TUBE CR 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-655",
-    "rawItem": "HOTIN CREAM TUBE 120 GR",
-    "nama": "HOTIN",
-    "kemasan": "CR EAM TUBE 120 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-656",
-    "rawItem": "HOTIN CREAM TUBE 60 GR",
-    "nama": "HOTIN",
-    "kemasan": "CR EAM TUBE 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-657",
-    "rawItem": "HOTIN DCL TUBE 120 GR",
-    "nama": "HOTIN DCL",
-    "kemasan": "TUBE 120 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-658",
-    "rawItem": "HOTIN DCL TUBE 30 GR",
-    "nama": "HOTIN DCL",
-    "kemasan": "TUBE 30 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-659",
-    "rawItem": "HOTIN DCL TUBE 60 GR",
-    "nama": "HOTIN DCL",
-    "kemasan": "TUBE 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-660",
-    "rawItem": "HOTIN STRONG (MERAH) BTL 120 GR",
-    "nama": "HOTIN STRONG (MERAH)",
-    "kemasan": "BTL 120 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-661",
-    "rawItem": "HOTIN STRONG (MERAH) TUBE 120 GR",
-    "nama": "HOTIN STRONG (MERAH)",
-    "kemasan": "TUBE 120 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-662",
-    "rawItem": "HOTIN STRONG (MERAH) TUBE 60 GR",
-    "nama": "HOTIN STRONG (MERAH)",
-    "kemasan": "TUBE 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-663",
-    "rawItem": "HUFAGRIP BP (HIJAU) SYR 60 ML",
-    "nama": "HUFAGRIP BP (HIJAU)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-664",
-    "rawItem": "HUFAGRIP DEMAM (MERAH) SYR 60 ML",
-    "nama": "HUFAGRIP DEMAM (MERAH)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-665",
-    "rawItem": "HUFAGRIP FLU BATUK (KUNING) SYR 60 ML",
-    "nama": "HUFAGRIP FLU BATUK (KUNING)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-666",
-    "rawItem": "HUFAGRIP PILEK (BIRU) SYR 60 ML",
-    "nama": "HUFAGRIP PILEK (BIRU)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-667",
-    "rawItem": "HYPAFIX 10 CM X 5 M BOX",
-    "nama": "HYPAFIX 10 CM X 5 M",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-668",
-    "rawItem": "HYPAFIX 5 CM X 1 M BOX",
-    "nama": "HYPAFIX 5 CM X 1 M",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-669",
-    "rawItem": "HYPAFIX 5 CM X 5 M BOX",
-    "nama": "HYPAFIX 5 CM X 5 M",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-670",
-    "rawItem": "ICHTYOL 15 GR",
-    "nama": "ICHTYOL 15 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-671",
-    "rawItem": "IFREE PCS",
-    "nama": "IFREE",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-672",
-    "rawItem": "IFREE PCS",
-    "nama": "IFREE",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-673",
-    "rawItem": "ILIADIN 0.025% ANAK DROPS 10 ML",
-    "nama": "ILIADIN 0.025% ANAK",
-    "kemasan": "DROPS 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-674",
-    "rawItem": "ILIADIN 0.05% DWS SPRAY 10 ML",
-    "nama": "ILIADIN 0.05% DWS",
-    "kemasan": "SPRAY 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-675",
-    "rawItem": "IMBOOST FORCE COUGH KIDS SYR 60 ML",
-    "nama": "IMBOOST FORCE COUGH KIDS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-676",
-    "rawItem": "IMBOOST FORCE KIDS SYR 120 ML",
-    "nama": "IMBOOST FORCE KIDS",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-677",
-    "rawItem": "IMBOOST FORCE KIDS SYR 60 ML",
-    "nama": "IMBOOST FORCE KIDS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-678",
-    "rawItem": "IMBOOST KIDS EXTRA VIT C & D3 MIXBERRY BOX",
-    "nama": "IMBOOST KIDS EXTRA VIT C & D3 MIXBERRY",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-679",
-    "rawItem": "IMBOOST KIDS SYR 120 ML",
-    "nama": "IMBOOST KIDS",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-680",
-    "rawItem": "IMBOOST KIDS SYR 60 ML",
-    "nama": "IMBOOST KIDS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-681",
-    "rawItem": "IMUNPED DROPS 15 ML",
-    "nama": "IMUNPED",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-682",
-    "rawItem": "IMUNPED SYR 60 ML",
-    "nama": "IMUNPED",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-683",
-    "rawItem": "INFUS RL SATORIA 500 ML",
-    "nama": "INFUS RL SATORIA 500 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-684",
-    "rawItem": "INFUSET ONEMED DWS PCS",
-    "nama": "INFUSET ONEMED DWS",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-685",
-    "rawItem": "INPEPSA SUSP 100 ML",
-    "nama": "INPEPSA",
-    "kemasan": "SUSP 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-686",
-    "rawItem": "INPEPSA SUSP 200 ML",
-    "nama": "INPEPSA",
-    "kemasan": "SUSP 200 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-687",
-    "rawItem": "INSTO COOL 7.5 ML",
-    "nama": "INSTO COOL 7.5 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-688",
-    "rawItem": "INSTO DRY EYES 7.5 ML",
-    "nama": "INSTO DRY EYES 7.5 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-689",
-    "rawItem": "INSTO REGULAR 15 ML",
-    "nama": "INSTO REGULAR 15 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-690",
-    "rawItem": "INSTO REGULAR 7.5 ML",
-    "nama": "INSTO REGULAR 7.5 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-691",
-    "rawItem": "INTERZINC SYR 60 ML",
-    "nama": "INTERZINC",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-692",
-    "rawItem": "INTRIZIN DROPS 15 ML",
-    "nama": "INTRIZIN",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-693",
-    "rawItem": "INTRIZIN SYR 60 ML",
-    "nama": "INTRIZIN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-694",
-    "rawItem": "IPI VITAMIN B1 BTL",
-    "nama": "IPI VITAMIN B1",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-695",
-    "rawItem": "ITRABAT SYR 100 ML",
-    "nama": "ITRABAT",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-696",
-    "rawItem": "JOHNSON BABY OIL 125 ML",
-    "nama": "JOHNSON BABY OIL 125 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-697",
-    "rawItem": "JOHNSON BABY OIL 50 ML",
-    "nama": "JOHNSON BABY OIL 50 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-698",
-    "rawItem": "KAPAS MEDISOFT 75 GR",
-    "nama": "KAPAS MEDISOFT 75 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-699",
-    "rawItem": "KAPAS SELECTION 35 GR",
-    "nama": "KAPAS SELECTION 35 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-700",
-    "rawItem": "KAPAS SELECTION 50 GR",
-    "nama": "KAPAS SELECTION 50 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-701",
-    "rawItem": "KAPAS SELECTION 75 GR",
-    "nama": "KAPAS SELECTION 75 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-702",
-    "rawItem": "KAPAS SELECTION 75 GR",
-    "nama": "KAPAS SELECTION 75 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-703",
-    "rawItem": "KAPSIDA BOX",
-    "nama": "KAPSIDA",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-704",
-    "rawItem": "KETOMED 2% SCALP SOL 60 ML",
-    "nama": "KETOMED 2% SCALP SOL 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-705",
-    "rawItem": "KINOKI BOX",
-    "nama": "KINOKI",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-706",
-    "rawItem": "KOLESTEROL STRIP",
-    "nama": "KOLESTEROL",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-707",
-    "rawItem": "KOLESTEROL STRIP",
-    "nama": "KOLESTEROL",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-708",
-    "rawItem": "KOMIX HERBAL ORIG BTL",
-    "nama": "KOMIX HERBAL ORIG",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-709",
-    "rawItem": "KOOL FEVER ADULT PCS",
-    "nama": "KOOL FEVER ADULT",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-710",
-    "rawItem": "KOOL FEVER ANAK PCS",
-    "nama": "KOOL FEVER ANAK",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-711",
-    "rawItem": "KOOL FEVER BAYI PCS",
-    "nama": "KOOL FEVER BAYI",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-712",
-    "rawItem": "KOYO CABE PATCH",
-    "nama": "KOYO CABE",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-713",
-    "rawItem": "KOYO CABE PATCH",
-    "nama": "KOYO CABE",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-714",
-    "rawItem": "KOYO SALONPAS 5X2 PATCH",
-    "nama": "KOYO SALONPAS 5X2",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-715",
-    "rawItem": "KOYO SALONPAS 5X2 PATCH",
-    "nama": "KOYO SALONPAS 5X2",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-716",
-    "rawItem": "KOYO SALONPAS HOT PATCH",
-    "nama": "KOYO SALONPAS HOT",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-717",
-    "rawItem": "KOYO SALONPAS HOT PATCH",
-    "nama": "KOYO SALONPAS HOT",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-718",
-    "rawItem": "KOYO SALONPAS PAIN RELIEF PATCH",
-    "nama": "KOYO SALONPAS PAIN RELIEF",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-719",
-    "rawItem": "KOYO SALONPAS PAIN RELIEF PATCH",
-    "nama": "KOYO SALONPAS PAIN RELIEF",
-    "kemasan": "PATCH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-720",
-    "rawItem": "LACTACYD ALL DAY CARE 150 ML",
-    "nama": "LACTACYD ALL DAY CARE 150 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-721",
-    "rawItem": "LACTACYD ALL DAY CARE 60 ML",
-    "nama": "LACTACYD ALL DAY CARE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-722",
-    "rawItem": "LACTACYD BABY 150 ML",
-    "nama": "LACTACYD BABY 150 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-723",
-    "rawItem": "LACTACYD BABY 250 ML",
-    "nama": "LACTACYD BABY 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-724",
-    "rawItem": "LACTACYD BABY 60 ML",
-    "nama": "LACTACYD BABY 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-725",
-    "rawItem": "LACTULAX SUSP 120 ML",
-    "nama": "LACTULAX",
-    "kemasan": "SUSP 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-726",
-    "rawItem": "LACTULAX SUSP 60 ML",
-    "nama": "LACTULAX",
-    "kemasan": "SUSP 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-727",
-    "rawItem": "LAMESON SYR 30 ML",
-    "nama": "LAMESON",
-    "kemasan": "SYR 30 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-728",
-    "rawItem": "LAPIFED DM SYR 100 ML",
-    "nama": "LAPIFED DM",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-729",
-    "rawItem": "LAPIFED EXP SYR 60 ML",
-    "nama": "LAPIFED EXP",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-730",
-    "rawItem": "LAPIFED SYR 60 ML",
-    "nama": "LAPIFED",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-731",
-    "rawItem": "LAPISIV SYR 100 ML",
-    "nama": "LAPISIV",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-732",
-    "rawItem": "LASAL EXP SYR 100 ML",
-    "nama": "LASAL EXP",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-733",
-    "rawItem": "LASERIN SYR 110 ML",
-    "nama": "LASERIN",
-    "kemasan": "SYR 110 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-734",
-    "rawItem": "LASERIN SYR 60 ML",
-    "nama": "LASERIN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-735",
-    "rawItem": "LAXADINE SYR 60 ML",
-    "nama": "LAXADINE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-736",
-    "rawItem": "LERZIN SYR 60 ML",
-    "nama": "LERZIN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-737",
-    "rawItem": "LEUKOPLAST 1622 (2.5 CM X 4.5 M) PCS",
-    "nama": "LEUKOPLAST 1622 (2.5 CM X 4.5 M)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-738",
-    "rawItem": "LEUKOPLAST 1624 (5 CM X 4.5 M) PCS",
-    "nama": "LEUKOPLAST 1624 (5 CM X 4.5 M)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-739",
-    "rawItem": "LEUKOPLAST 1624 (5 CM X 4.5 M) PCS",
-    "nama": "LEUKOPLAST 1624 (5 CM X 4.5 M)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-740",
-    "rawItem": "LISTERINE COOL MINT 100 ML",
-    "nama": "LISTERINE COOL MINT 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-741",
-    "rawItem": "LISTERINE FRESH BURST 250 ML",
-    "nama": "LISTERINE FRESH BURST 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-742",
-    "rawItem": "LISTERINE GREEN TEA 100 ML",
-    "nama": "LISTERINE GREEN TEA 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-743",
-    "rawItem": "LISTERINE ZERO 250 ML",
-    "nama": "LISTERINE ZERO 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-744",
-    "rawItem": "LO HAN KUO INFUSION BOX",
-    "nama": "LO HAN KUO INFUSION",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-745",
-    "rawItem": "L-VIT D3 400 DROPS 15 ML",
-    "nama": "L-VIT D3 400",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-746",
-    "rawItem": "MADU FRESHMAG 200 ML",
-    "nama": "MADU FRESHMAG 200 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-747",
-    "rawItem": "MADU KURMA TJ 250 GR",
-    "nama": "MADU KURMA TJ 250 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-748",
-    "rawItem": "MADU MURNI NUSANTARA 100 ML",
-    "nama": "MADU MURNI NUSANTARA 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-749",
-    "rawItem": "MADU MURNI NUSANTARA 100 ML",
-    "nama": "MADU MURNI NUSANTARA 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-750",
-    "rawItem": "MADU MURNI NUSANTARA 250 ML",
-    "nama": "MADU MURNI NUSANTARA 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-751",
-    "rawItem": "MADU MURNI NUSANTARA 250 ML",
-    "nama": "MADU MURNI NUSANTARA 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-752",
-    "rawItem": "MADU MURNI NUSANTARA 650 ML",
-    "nama": "MADU MURNI NUSANTARA 650 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-753",
-    "rawItem": "MADU MURNI NUSANTARA 650 ML",
-    "nama": "MADU MURNI NUSANTARA 650 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-754",
-    "rawItem": "MADU SUPER NUSANTARA 100 ML",
-    "nama": "MADU SUPER NUSANTARA 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-755",
-    "rawItem": "MADU SUPER NUSANTARA 100 ML",
-    "nama": "MADU SUPER NUSANTARA 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-756",
-    "rawItem": "MADU SUPER NUSANTARA 250 ML",
-    "nama": "MADU SUPER NUSANTARA 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-757",
-    "rawItem": "MADU SUPER NUSANTARA 250 ML",
-    "nama": "MADU SUPER NUSANTARA 250 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-758",
-    "rawItem": "MADU SUPER NUSANTARA 650 ML",
-    "nama": "MADU SUPER NUSANTARA 650 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-759",
-    "rawItem": "MADU SUPER NUSANTARA 650 ML",
-    "nama": "MADU SUPER NUSANTARA 650 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-760",
-    "rawItem": "MADU TJ JAHE MERAH MINT 150 GR",
-    "nama": "MADU TJ JAHE MERAH MINT 150 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-761",
-    "rawItem": "MADU TJ JERUK SACH",
-    "nama": "MADU TJ JERUK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-762",
-    "rawItem": "MADU TJ MURNI 150 GR",
-    "nama": "MADU TJ MURNI 150 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-763",
-    "rawItem": "MADU TJ MURNI 250 GR",
-    "nama": "MADU TJ MURNI 250 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-764",
-    "rawItem": "MADU TJ MURNI 500 GR",
-    "nama": "MADU TJ MURNI 500 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-765",
-    "rawItem": "MADU TJ PANAS DALAM 150 GR",
-    "nama": "MADU TJ PANAS DALAM 150 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-766",
-    "rawItem": "MAGIC POWER SPRAY 15 ML",
-    "nama": "MAGIC POWER",
-    "kemasan": "SPRAY 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-767",
-    "rawItem": "MAGIC POWER SPRAY 15 ML",
-    "nama": "MAGIC POWER",
-    "kemasan": "SPRAY 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-768",
-    "rawItem": "MAGTRAL SUSP 120 ML",
-    "nama": "MAGTRAL",
-    "kemasan": "SUSP 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-769",
-    "rawItem": "MALTOFER DROPS 30 ML",
-    "nama": "MALTOFER",
-    "kemasan": "DROPS 30 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-770",
-    "rawItem": "MALTOFER SYR 150 ML",
-    "nama": "MALTOFER",
-    "kemasan": "SYR 150 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-771",
-    "rawItem": "MEDICATED OIL 20 ML",
-    "nama": "MEDICATED OIL 20 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-772",
-    "rawItem": "MEDICATED OIL 40 ML",
-    "nama": "MEDICATED OIL 40 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-773",
-    "rawItem": "MEDICREPE 4' (10 CM X 4.5 M) PCS",
-    "nama": "MEDICREPE 4' (10 CM X 4.5 M)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-774",
-    "rawItem": "MEDICREPE 4' (10 CM X 4.5 M) PCS",
-    "nama": "MEDICREPE 4' (10 CM X 4.5 M)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-775",
-    "rawItem": "MEDISIO SOL 10 ML",
-    "nama": "MEDISIO SOL 10 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-776",
-    "rawItem": "MINOSEP 0.1% MILD MOUTHWASH 200 ML",
-    "nama": "MINOSEP 0.1% MILD MOUTHWASH 200 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-777",
-    "rawItem": "MINOSEP 0.2% RED MOUTHWASH 200 ML",
-    "nama": "MINOSEP 0.2% RED MOUTHWASH 200 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-778",
-    "rawItem": "MINOSEP 0.2% RED MOUTHWASH 60 ML",
-    "nama": "MINOSEP 0.2% RED MOUTHWASH 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-779",
-    "rawItem": "MINYAK ADAS CAP LOWO 40 ML",
-    "nama": "MINYAK ADAS CAP LOWO 40 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-780",
-    "rawItem": "MINYAK ANGIN CAP KAPAK 10 ML",
-    "nama": "MINYAK ANGIN CAP",
-    "kemasan": "KAP AK 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-781",
-    "rawItem": "MINYAK ANGIN CAP KAPAK 28 ML",
-    "nama": "MINYAK ANGIN CAP",
-    "kemasan": "KAP AK 28 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-782",
-    "rawItem": "MINYAK ANGIN CAP KAPAK 5 ML",
-    "nama": "MINYAK ANGIN CAP",
-    "kemasan": "KAP AK 5 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-783",
-    "rawItem": "MINYAK ANGIN CAP LANG 12 ML",
-    "nama": "MINYAK ANGIN CAP LANG 12 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-784",
-    "rawItem": "MINYAK ANGIN CAP LANG 6 ML",
-    "nama": "MINYAK ANGIN CAP LANG 6 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-785",
-    "rawItem": "MINYAK GANDAPURA CAP LANG 30 ML",
-    "nama": "MINYAK GANDAPURA CAP LANG 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-786",
-    "rawItem": "MINYAK GANDAPURA CAP LANG 60 ML",
-    "nama": "MINYAK GANDAPURA CAP LANG 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-787",
-    "rawItem": "MINYAK RED FLOWER 40 ML",
-    "nama": "MINYAK RED FLOWER 40 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-788",
-    "rawItem": "MINYAK SANHONG 12 ML",
-    "nama": "MINYAK SANHONG 12 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-789",
-    "rawItem": "MINYAK SANHONG 50 ML",
-    "nama": "MINYAK SANHONG 50 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-790",
-    "rawItem": "MINYAK TAWON CC 20 ML",
-    "nama": "MINYAK TAWON CC 20 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-791",
-    "rawItem": "MINYAK TAWON DD 30 ML",
-    "nama": "MINYAK TAWON DD 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-792",
-    "rawItem": "MINYAK TAWON EE 60 ML",
-    "nama": "MINYAK TAWON EE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-793",
-    "rawItem": "MINYAK TAWON FF 90 ML",
-    "nama": "MINYAK TAWON FF 90 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-794",
-    "rawItem": "MINYAK TELON KONICARE 125 ML",
-    "nama": "MINYAK TELON KONICARE 125 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-795",
-    "rawItem": "MINYAK TELON KONICARE 30 ML",
-    "nama": "MINYAK TELON KONICARE 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-796",
-    "rawItem": "MINYAK TELON KONICARE 60 ML",
-    "nama": "MINYAK TELON KONICARE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-797",
-    "rawItem": "MINYAK TELON LANG 100 ML",
-    "nama": "MINYAK TELON LANG 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-798",
-    "rawItem": "MINYAK TELON LANG 30 ML",
-    "nama": "MINYAK TELON LANG 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-799",
-    "rawItem": "MINYAK TELON LANG 60 ML",
-    "nama": "MINYAK TELON LANG 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-800",
-    "rawItem": "MINYAK TELON LOWO 40 ML",
-    "nama": "MINYAK TELON LOWO 40 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-801",
-    "rawItem": "MINYAK TELON MY BABY PLUS (HIJAU) 150 ML",
-    "nama": "MINYAK TELON MY BABY PLUS (HIJAU) 150 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-802",
-    "rawItem": "MINYAK TELON MY BABY PLUS (HIJAU) 60 ML",
-    "nama": "MINYAK TELON MY BABY PLUS (HIJAU) 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-803",
-    "rawItem": "MINYAK TELON MY BABY PLUS (HIJAU) 90 ML",
-    "nama": "MINYAK TELON MY BABY PLUS (HIJAU) 90 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-804",
-    "rawItem": "MINYAK TELON MY BABY PLUS (ORANGE) 90 ML",
-    "nama": "MINYAK TELON MY BABY PLUS (ORANGE) 90 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-805",
-    "rawItem": "MINYAK TELON MY BABY PLUS LAVENDER (UNGU) 150 ML",
-    "nama": "MINYAK TELON MY BABY PLUS LAVENDER (UNGU) 150 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-806",
-    "rawItem": "MINYAK TELON MY BABY PLUS LAVENDER (UNGU) 90 ML",
-    "nama": "MINYAK TELON MY BABY PLUS LAVENDER (UNGU) 90 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-807",
-    "rawItem": "MINYAK TELON PLUS KONICARE 30 ML",
-    "nama": "MINYAK TELON PLUS KONICARE 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-808",
-    "rawItem": "MINYAK TELON PLUS KONICARE 60 ML",
-    "nama": "MINYAK TELON PLUS KONICARE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-809",
-    "rawItem": "MINYAK URUT GPU JAHE (COKLAT) 60 ML",
-    "nama": "MINYAK URUT GPU JAHE (COKLAT) 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-810",
-    "rawItem": "MINYAK URUT GPU PALA (KUNING) 60 ML",
-    "nama": "MINYAK URUT GPU PALA (KUNING) 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-811",
-    "rawItem": "MINYAK URUT GPU SEREH (ORANYE) 100 ML",
-    "nama": "MINYAK URUT GPU SEREH (ORANYE) 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-812",
-    "rawItem": "MINYAK URUT GPU SEREH (ORANYE) 30 ML",
-    "nama": "MINYAK URUT GPU SEREH (ORANYE) 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-813",
-    "rawItem": "MINYAK URUT GPU SEREH (ORANYE) 60 ML",
-    "nama": "MINYAK URUT GPU SEREH (ORANYE) 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-814",
-    "rawItem": "MKP CAP GAJAH 30 ML",
-    "nama": "MKP CAP GAJAH 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-815",
-    "rawItem": "MKP CAP LANG 120 ML",
-    "nama": "MKP CAP LANG 120 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-816",
-    "rawItem": "MKP CAP LANG 15 ML",
-    "nama": "MKP CAP LANG 15 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-817",
-    "rawItem": "MKP CAP LANG 210 ML",
-    "nama": "MKP CAP LANG 210 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-818",
-    "rawItem": "MKP CAP LANG 30 ML",
-    "nama": "MKP CAP LANG 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-819",
-    "rawItem": "MKP CAP LANG 60 ML",
-    "nama": "MKP CAP LANG 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-820",
-    "rawItem": "MKP KONICARE 30 ML",
-    "nama": "MKP KONICARE 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-821",
-    "rawItem": "MKP KONICARE 60 ML",
-    "nama": "MKP KONICARE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-822",
-    "rawItem": "MKP PLUS CAP LANG 15 ML",
-    "nama": "MKP PLUS CAP LANG 15 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-823",
-    "rawItem": "MKP PLUS CAP LANG 30 ML",
-    "nama": "MKP PLUS CAP LANG 30 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-824",
-    "rawItem": "MKP PLUS CAP LANG 60 ML",
-    "nama": "MKP PLUS CAP LANG 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-825",
-    "rawItem": "MUCERA DROPS 15 ML",
-    "nama": "MUCERA",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-826",
-    "rawItem": "MUCERA FORTE SYR 60 ML",
-    "nama": "MUCERA FORTE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-827",
-    "rawItem": "MUCERA SYR 60 ML",
-    "nama": "MUCERA",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-828",
-    "rawItem": "MUCOPECT (15 MG/5 ML) SYR 60 ML",
-    "nama": "MUCOPECT (15 MG/5 ML)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-829",
-    "rawItem": "MUCOS DROPS 20 ML",
-    "nama": "MUCOS",
-    "kemasan": "DROPS 20 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-830",
-    "rawItem": "MUCOS SYR 60 ML",
-    "nama": "MUCOS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-831",
-    "rawItem": "MY WELL VITAMIN D3 1000 IU BTL",
-    "nama": "MY WELL VITAMIN D3 1000 IU",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-832",
-    "rawItem": "MYCOSTATIN ORAL DROPS 12 ML",
-    "nama": "MYCOSTATIN ORAL",
-    "kemasan": "DROPS 12 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-833",
-    "rawItem": "MYLANTA SYR 150 ML",
-    "nama": "MYLANTA",
-    "kemasan": "SYR 150 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-834",
-    "rawItem": "MYLANTA SYR 50 ML",
-    "nama": "MYLANTA",
-    "kemasan": "SYR 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-835",
-    "rawItem": "NACL SATORIA 100 ML",
-    "nama": "NACL SATORIA 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-836",
-    "rawItem": "NACL SATORIA 500 ML",
-    "nama": "NACL SATORIA 500 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-837",
-    "rawItem": "NATESH BIRU (DAY USE) PCS",
-    "nama": "NATESH BIRU (DAY USE)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-838",
-    "rawItem": "NATESH HIJAU (NIGHT EXTRA LONG) PCS",
-    "nama": "NATESH HIJAU (NIGHT EXTRA LONG)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-839",
-    "rawItem": "NATESH PINK (PANTYLINER) PCS",
-    "nama": "NATESH PINK (PANTYLINER)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-840",
-    "rawItem": "NATESH UNGU (NIGHT) PCS",
-    "nama": "NATESH UNGU (NIGHT)",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-841",
-    "rawItem": "NATRACARE MATERNITY PADS NON WINGS BOX",
-    "nama": "NATRACARE MATERNITY PADS NON WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-842",
-    "rawItem": "NATRACARE PANTY LINER LONG BOX",
-    "nama": "NATRACARE PANTY LINER LONG",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-843",
-    "rawItem": "NATRACARE PANTY LINER NORMAL BOX",
-    "nama": "NATRACARE PANTY LINER NORMAL",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-844",
-    "rawItem": "NATRACARE TAMPON REGULAR NORMAL BOX",
-    "nama": "NATRACARE TAMPON REGULAR NORMAL",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-845",
-    "rawItem": "NATRACARE TAMPON REGULAR NORMAL BOX",
-    "nama": "NATRACARE TAMPON REGULAR NORMAL",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-846",
-    "rawItem": "NATRACARE TAMPON REGULAR NORMAL BOX",
-    "nama": "NATRACARE TAMPON REGULAR NORMAL",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-847",
-    "rawItem": "NATRACARE TAMPON REGULAR NORMAL BOX",
-    "nama": "NATRACARE TAMPON REGULAR NORMAL",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-848",
-    "rawItem": "NATRACARE TAMPON REGULAR NORMAL BOX",
-    "nama": "NATRACARE TAMPON REGULAR NORMAL",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-849",
-    "rawItem": "NATRACARE TAMPON SUPER BOX",
-    "nama": "NATRACARE TAMPON SUPER",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-850",
-    "rawItem": "NATRACARE TAMPON SUPER BOX",
-    "nama": "NATRACARE TAMPON SUPER",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-851",
-    "rawItem": "NATRACARE TAMPON SUPER BOX",
-    "nama": "NATRACARE TAMPON SUPER",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-852",
-    "rawItem": "NATRACARE TAMPON SUPER BOX",
-    "nama": "NATRACARE TAMPON SUPER",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-853",
-    "rawItem": "NATRACARE TAMPON SUPER BOX",
-    "nama": "NATRACARE TAMPON SUPER",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-854",
-    "rawItem": "NATRACARE TAMPON SUPER BOX",
-    "nama": "NATRACARE TAMPON SUPER",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-855",
-    "rawItem": "NATRACARE ULTRA EXTRA PADS LONG WINGS BOX",
-    "nama": "NATRACARE ULTRA EXTRA PADS LONG WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-856",
-    "rawItem": "NATRACARE ULTRA EXTRA PADS REGULER WINGS BOX",
-    "nama": "NATRACARE ULTRA EXTRA PADS REGULER WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-857",
-    "rawItem": "NATRACARE ULTRA EXTRA PADS SUPER WINGS BOX",
-    "nama": "NATRACARE ULTRA EXTRA PADS SUPER WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-858",
-    "rawItem": "NATRACARE ULTRA PADS LONG WINGS BOX",
-    "nama": "NATRACARE ULTRA PADS LONG WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-859",
-    "rawItem": "NATRACARE ULTRA PADS REGULER PACK",
-    "nama": "NATRACARE ULTRA PADS REGULER PACK",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-860",
-    "rawItem": "NATRACARE ULTRA PADS REGULER WINGS BOX",
-    "nama": "NATRACARE ULTRA PADS REGULER WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-861",
-    "rawItem": "NATRACARE ULTRA PADS SUPER PACK",
-    "nama": "NATRACARE ULTRA PADS SUPER PACK",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-862",
-    "rawItem": "NATRACARE ULTRA PADS SUPER WINGS BOX",
-    "nama": "NATRACARE ULTRA PADS SUPER WINGS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-863",
-    "rawItem": "NATUR E 100 IU BOX",
-    "nama": "NATUR E 100 IU",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-864",
-    "rawItem": "NATUR E 100 IU BOX",
-    "nama": "NATUR E 100 IU",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-865",
-    "rawItem": "NATUR E 300 IU BOX",
-    "nama": "NATUR E 300 IU",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-866",
-    "rawItem": "NATUR E 300 IU BOX",
-    "nama": "NATUR E 300 IU",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-867",
-    "rawItem": "NATUR E ADVANCED BOX",
-    "nama": "NATUR E ADVANCED",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-868",
-    "rawItem": "NATUR E ADVANCED BOX",
-    "nama": "NATUR E ADVANCED",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-869",
-    "rawItem": "NATUR E WHITE BOX",
-    "nama": "NATUR E WHITE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-870",
-    "rawItem": "NATUR E WHITE BOX",
-    "nama": "NATUR E WHITE",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-871",
-    "rawItem": "NATURES PLUS B COMPLEX BTL",
-    "nama": "NATURES PLUS B COMPLEX",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-872",
-    "rawItem": "NATURES PLUS CAL/MAG/ZINC BTL",
-    "nama": "NATURES PLUS CAL/MAG/ZINC",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-873",
-    "rawItem": "NELLCO SPECIAL PE MENTHOL SYR 100 ML",
-    "nama": "NELLCO SPECIAL PE MENTHOL",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-874",
-    "rawItem": "NELLCO SPECIAL PE MENTHOL SYR 55 ML",
-    "nama": "NELLCO SPECIAL PE MENTHOL",
-    "kemasan": "SYR 55 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-875",
-    "rawItem": "NEW BAMBOO GOLD SACH",
-    "nama": "NEW BAMBOO GOLD",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-876",
-    "rawItem": "NEW BAMBOO GOLD SACH",
-    "nama": "NEW BAMBOO GOLD",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-877",
-    "rawItem": "NICORETTE FRESHMINT 2 MG BOX",
-    "nama": "NICORETTE FRESHMINT 2 MG",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-878",
-    "rawItem": "NICORETTE FRESHMINT 4 MG BOX",
-    "nama": "NICORETTE FRESHMINT 4 MG",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-879",
-    "rawItem": "NIFURAL SYR 60 ML",
-    "nama": "NIFURAL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-880",
-    "rawItem": "NIVEA AFTER SUN MOISTURE SPRAY 200 ML",
-    "nama": "NIVEA AFTER SUN MOISTURE",
-    "kemasan": "SPRAY 200 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-881",
-    "rawItem": "NIVEA PROTECT & MOISTURE SPF 30 LOT 75 ML",
-    "nama": "NIVEA PROTECT & MOISTURE SPF 30",
-    "kemasan": "LOT 75 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-882",
-    "rawItem": "NIVEA PROTECT & MOISTURE SPF 50 LOT 75 ML",
-    "nama": "NIVEA PROTECT & MOISTURE SPF 50",
-    "kemasan": "LOT 75 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-883",
-    "rawItem": "NO COUGH SYR 120 ML",
-    "nama": "NO COUGH",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-884",
-    "rawItem": "NOROID SOOTHING CR 80 ML",
-    "nama": "NOROID SOOTHING",
-    "kemasan": "CR 80 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-885",
-    "rawItem": "NOROID SOOTHING LOT 200 ML",
-    "nama": "NOROID SOOTHING",
-    "kemasan": "LOT 200 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-886",
-    "rawItem": "NYMIKO DROPS 12 ML",
-    "nama": "NYMIKO",
-    "kemasan": "DROPS 12 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-887",
-    "rawItem": "OB HERBAL JUNIOR SYR 60 ML",
-    "nama": "OB HERBAL JUNIOR",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-888",
-    "rawItem": "OB HERBAL SYR 100 ML",
-    "nama": "OB HERBAL",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-889",
-    "rawItem": "OB HERBAL SYR 60 ML",
-    "nama": "OB HERBAL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-890",
-    "rawItem": "OBAT BATUK IBU DAN ANAK SYR 150 ML",
-    "nama": "OBAT BATUK IBU DAN ANAK",
-    "kemasan": "SYR 150 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-891",
-    "rawItem": "OBAT BATUK IBU DAN ANAK SYR 75 ML",
-    "nama": "OBAT BATUK IBU DAN ANAK",
-    "kemasan": "SYR 75 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-892",
-    "rawItem": "OBH COMBI ANAK APEL SYR 60 ML",
-    "nama": "OBH COMBI ANAK APEL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-893",
-    "rawItem": "OBH COMBI ANAK JERUK SYR 60 ML",
-    "nama": "OBH COMBI ANAK JERUK",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-894",
-    "rawItem": "OBH COMBI ANAK MADU SYR 60 ML",
-    "nama": "OBH COMBI ANAK MADU",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-895",
-    "rawItem": "OBH COMBI ANAK STRAWBERRY SYR 60 ML",
-    "nama": "OBH COMBI ANAK STRAWBERRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-896",
-    "rawItem": "OBH COMBI BATUK BERDAHAK JAHE SYR 100 ML",
-    "nama": "OBH COMBI BATUK BERDAHAK JAHE",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-897",
-    "rawItem": "OBH COMBI BATUK BERDAHAK MENTHOL SYR 100 ML",
-    "nama": "OBH COMBI BATUK BERDAHAK MENTHOL",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-898",
-    "rawItem": "OBH COMBI DWS BATUK & FLU JAHE SYR 100 ML",
-    "nama": "OBH COMBI DWS BATUK & FLU JAHE",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-899",
-    "rawItem": "OBH COMBI DWS BATUK & FLU JAHE SYR 60 ML",
-    "nama": "OBH COMBI DWS BATUK & FLU JAHE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-900",
-    "rawItem": "OBH COMBI DWS BATUK & FLU MADU SYR 100 ML",
-    "nama": "OBH COMBI DWS BATUK & FLU MADU",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-901",
-    "rawItem": "OBH COMBI DWS BATUK & FLU MADU SYR 60 ML",
-    "nama": "OBH COMBI DWS BATUK & FLU MADU",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-902",
-    "rawItem": "OBH COMBI DWS BATUK & FLU MENTHOL SYR 100 ML",
-    "nama": "OBH COMBI DWS BATUK & FLU MENTHOL",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-903",
-    "rawItem": "OBH COMBI DWS BATUK & FLU MENTHOL SYR 60 ML",
-    "nama": "OBH COMBI DWS BATUK & FLU MENTHOL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-904",
-    "rawItem": "ODR SYR 60 ML",
-    "nama": "ODR",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-905",
-    "rawItem": "OM3HEART BTL",
-    "nama": "OM3HEART",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-906",
-    "rawItem": "OMRON NEBULIZER NE-C101",
-    "nama": "OMRON NEBULIZER NE-C101",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-907",
-    "rawItem": "OMRON NEBULIZER NE-C101",
-    "nama": "OMRON NEBULIZER NE-C101",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-908",
-    "rawItem": "ONEMED U-PAD 60 X 90 CM BOX",
-    "nama": "ONEMED U-PAD 60 X 90 CM",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-909",
-    "rawItem": "ONEMED U-PAD 60 X 90 CM BOX",
-    "nama": "ONEMED U-PAD 60 X 90 CM",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-910",
-    "rawItem": "OPSITE 15.5 X 8.5 CM PCS",
-    "nama": "OPSITE 15.5 X 8.5 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-911",
-    "rawItem": "OPSITE 6.5 X 5 CM PCS",
-    "nama": "OPSITE 6.5 X 5 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-912",
-    "rawItem": "OSAGI KAKAK TUA BTL 2 ML",
-    "nama": "OSAGI KAKAK TUA",
-    "kemasan": "BTL 2 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-913",
-    "rawItem": "OTTOPAN DROPS 15 ML",
-    "nama": "OTTOPAN",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-914",
-    "rawItem": "OTTOPAN SYR 60 ML",
-    "nama": "OTTOPAN",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-915",
-    "rawItem": "OVUTEST STRIP",
-    "nama": "OVUTEST",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-916",
-    "rawItem": "OXYCAN KALENG 500 CC",
-    "nama": "OXYCAN KALENG 500 CC",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-917",
-    "rawItem": "OXYCAN KALENG 500 CC",
-    "nama": "OXYCAN KALENG 500 CC",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-918",
-    "rawItem": "PAMOL DROPS 15 ML",
-    "nama": "PAMOL",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-919",
-    "rawItem": "PAMOL SYR 60 ML",
-    "nama": "PAMOL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-920",
-    "rawItem": "PARATUSIN DMP SYR 60 ML",
-    "nama": "PARATUSIN DMP",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-921",
-    "rawItem": "PEDIALYTE PUTIH 500 ML",
-    "nama": "PEDIALYTE PUTIH 500 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-922",
-    "rawItem": "PEDITOX 50 ML",
-    "nama": "PEDITOX 50 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-923",
-    "rawItem": "PERBAN ONEMED 10 CM PCS",
-    "nama": "PERBAN ONEMED 10 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-924",
-    "rawItem": "PERBAN ONEMED 10 CM PCS",
-    "nama": "PERBAN ONEMED 10 CM",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-925",
-    "rawItem": "PERMEN STREPSILS BIRU SACH",
-    "nama": "PERMEN STREPSILS BIRU",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-926",
-    "rawItem": "PERMEN STREPSILS HIJAU SACH",
-    "nama": "PERMEN STREPSILS HIJAU",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-927",
-    "rawItem": "PERMEN STREPSILS KUNING SACH",
-    "nama": "PERMEN STREPSILS KUNING",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-928",
-    "rawItem": "PERMEN STREPSILS MERAH SACH",
-    "nama": "PERMEN STREPSILS MERAH",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-929",
-    "rawItem": "PERMEN STREPSILS ORANGE SACH",
-    "nama": "PERMEN STREPSILS ORANGE",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-930",
-    "rawItem": "PERMEN TOLAK ANGIN SACH",
-    "nama": "PERMEN TOLAK ANGIN",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-931",
-    "rawItem": "PERMEN WOODS ORIG SACH",
-    "nama": "PERMEN WOODS ORIG",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-932",
-    "rawItem": "PERMEN YOUVIT CURCUMA & VITAMIN ANAK SACH",
-    "nama": "PERMEN YOUVIT CURCUMA & VITAMIN ANAK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-933",
-    "rawItem": "PERMEN YOUVIT MULTIVITAMIN ANAK SACH",
-    "nama": "PERMEN YOUVIT MULTIVITAMIN ANAK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-934",
-    "rawItem": "PERMEN YOUVIT MULTIVITAMIN DWS SACH",
-    "nama": "PERMEN YOUVIT MULTIVITAMIN DWS",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-935",
-    "rawItem": "PERMEN YOUVIT OMEGA ANAK SACH",
-    "nama": "PERMEN YOUVIT OMEGA ANAK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-936",
-    "rawItem": "PERMEN YOUVIT OMEGA-3 ANAK SACH",
-    "nama": "PERMEN YOUVIT OMEGA-3 ANAK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-937",
-    "rawItem": "PIL TUNTAS BOX",
-    "nama": "PIL TUNTAS",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-938",
-    "rawItem": "PIM-TRA-KOL CHERRY SYR 60 ML",
-    "nama": "PIM-TRA-KOL CHERRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-939",
-    "rawItem": "PIM-TRA-KOL LEMON SYR 60 ML",
-    "nama": "PIM-TRA-KOL LEMON",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-940",
-    "rawItem": "PLANTACID SYR 100 ML",
-    "nama": "PLANTACID",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-941",
-    "rawItem": "PLOSSA (BIRU) ROLL ON 10 ML",
-    "nama": "PLOSSA (BIRU)",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-942",
-    "rawItem": "PLOSSA (HIJAU) ROLL ON 10 ML",
-    "nama": "PLOSSA (HIJAU)",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-943",
-    "rawItem": "PLOSSA (KUNING) ROLL ON 10 ML",
-    "nama": "PLOSSA (KUNING)",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-944",
-    "rawItem": "PLOSSA (MERAH) ROLL ON 10 ML",
-    "nama": "PLOSSA (MERAH)",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-945",
-    "rawItem": "POLIDENT LEM GIGI FLAVOUR FREE 20 GR",
-    "nama": "POLIDENT LEM GIGI FLAVOUR FREE 20 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-946",
-    "rawItem": "POLIDENT LEM GIGI FLAVOUR FREE 60 GR",
-    "nama": "POLIDENT LEM GIGI FLAVOUR FREE 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-947",
-    "rawItem": "POLIDENT LEM GIGI FLAVOUR FREE 60 GR",
-    "nama": "POLIDENT LEM GIGI FLAVOUR FREE 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-948",
-    "rawItem": "POLIDENT LEM GIGI FRESH MINT 20 GR",
-    "nama": "POLIDENT LEM GIGI FRESH MINT 20 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-949",
-    "rawItem": "POLIDENT LEM GIGI FRESH MINT 20 GR",
-    "nama": "POLIDENT LEM GIGI FRESH MINT 20 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-950",
-    "rawItem": "POLIDENT LEM GIGI FRESH MINT 60 GR",
-    "nama": "POLIDENT LEM GIGI FRESH MINT 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-951",
-    "rawItem": "POLIDENT LEM GIGI FRESH MINT 60 GR",
-    "nama": "POLIDENT LEM GIGI FRESH MINT 60 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-952",
-    "rawItem": "POLYSILANE SUSP 100 ML",
-    "nama": "POLYSILANE",
-    "kemasan": "SUSP 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-953",
-    "rawItem": "PRAXION DROPS 15 ML",
-    "nama": "PRAXION",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-954",
-    "rawItem": "PRAXION FORTE SYR 60 ML",
-    "nama": "PRAXION FORTE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-955",
-    "rawItem": "PRAXION SYR 60 ML",
-    "nama": "PRAXION",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-956",
-    "rawItem": "PROMEDEX SYR 60 ML",
-    "nama": "PROMEDEX",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-957",
-    "rawItem": "PRORIS FORTE SYR 50 ML",
-    "nama": "PRORIS FORTE",
-    "kemasan": "SYR 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-958",
-    "rawItem": "PRORIS SYR 60 ML",
-    "nama": "PRORIS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-959",
-    "rawItem": "PROVE D3 400 IU DROPS 12.5 ML",
-    "nama": "PROVE D3 400 IU",
-    "kemasan": "DROPS 12.5 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-960",
-    "rawItem": "REDOXON JERUK EFF BOX",
-    "nama": "REDOXON JERUK EFF",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-961",
-    "rawItem": "REDOXON JERUK EFF BOX",
-    "nama": "REDOXON JERUK EFF",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-962",
-    "rawItem": "RENOVIT BTL",
-    "nama": "RENOVIT",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-963",
-    "rawItem": "RENOVIT GOLD BTL",
-    "nama": "RENOVIT GOLD",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-964",
-    "rawItem": "RHINOS JUNIOR SYR 60 ML",
-    "nama": "RHINOS JUNIOR",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-965",
-    "rawItem": "RIVANOL 300 ML",
-    "nama": "RIVANOL 300 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-966",
-    "rawItem": "RIVANOL 300 ML",
-    "nama": "RIVANOL 300 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-967",
-    "rawItem": "RIVANOL ONEMED 300 ML",
-    "nama": "RIVANOL ONEMED 300 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-968",
-    "rawItem": "ROHTO COOL EYE DROPS 7 ML",
-    "nama": "ROHTO COOL EYE",
-    "kemasan": "DROPS 7 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-969",
-    "rawItem": "ROHTO DRY FRESH EYE DROPS 7 ML",
-    "nama": "ROHTO DRY FRESH EYE",
-    "kemasan": "DROPS 7 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-970",
-    "rawItem": "ROHTO EYE DROPS 7 ML",
-    "nama": "ROHTO EYE",
-    "kemasan": "DROPS 7 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-971",
-    "rawItem": "ROHTO EYE FLUSH 150 ML",
-    "nama": "ROHTO EYE FLUSH 150 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-972",
-    "rawItem": "SABUN BATANG ASEPSO ORIG 80 GR",
-    "nama": "SABUN BATANG ASEPSO ORIG 80 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-973",
-    "rawItem": "SABUN BATANG JF SULFUR DERMAMED 90 GR",
-    "nama": "SABUN BATANG JF SULFUR DERMAMED 90 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-974",
-    "rawItem": "SAFE CARE ROLL ON 10 ML",
-    "nama": "SAFE CARE",
-    "kemasan": "ROLL ON 10 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-975",
-    "rawItem": "SAGAMI EXTREME DOTTED BOX",
-    "nama": "SAGAMI EXTREME DOTTED",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-976",
-    "rawItem": "SAGAMI EXTREME DOTTED BOX",
-    "nama": "SAGAMI EXTREME DOTTED",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-977",
-    "rawItem": "SAGAMI ORIG 0.02 BOX",
-    "nama": "SAGAMI ORIG 0.02",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-978",
-    "rawItem": "SAGAMI ORIG 0.02 BOX",
-    "nama": "SAGAMI ORIG 0.02",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-979",
-    "rawItem": "SALEP88 6 GR",
-    "nama": "SALEP88 6 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-980",
-    "rawItem": "SALICYL SPIRITUS 50 ML",
-    "nama": "SALICYL SPIRITUS 50 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-981",
-    "rawItem": "SALONPAS GEL 15 GR",
-    "nama": "SALONPAS",
-    "kemasan": "GEL 15 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-982",
-    "rawItem": "SALONPAS JET SPRAY 118 ML",
-    "nama": "SALONPAS JET",
-    "kemasan": "SPRAY 118 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-983",
-    "rawItem": "SANADRYL DMP SYR 120 ML",
-    "nama": "SANADRYL DMP",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-984",
-    "rawItem": "SANADRYL DMP SYR 60 ML",
-    "nama": "SANADRYL DMP",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-985",
-    "rawItem": "SANADRYL EXP SYR 120 ML",
-    "nama": "SANADRYL EXP",
-    "kemasan": "SYR 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-986",
-    "rawItem": "SANADRYL EXP SYR 60 ML",
-    "nama": "SANADRYL EXP",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-987",
-    "rawItem": "SANBE TEARS EYE DROPS 8 ML",
-    "nama": "SANBE TEARS EYE",
-    "kemasan": "DROPS 8 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-988",
-    "rawItem": "SAN-B-PLEX DROPS 15 ML",
-    "nama": "SAN-B-PLEX",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-989",
-    "rawItem": "SANMAG SUSP 120 ML",
-    "nama": "SANMAG",
-    "kemasan": "SUSP 120 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-990",
-    "rawItem": "SANMOL DROPS 15 ML",
-    "nama": "SANMOL",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-991",
-    "rawItem": "SANMOL FORTE SYR 60 ML",
-    "nama": "SANMOL FORTE",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-992",
-    "rawItem": "SANMOL SYR 60 ML",
-    "nama": "SANMOL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-993",
-    "rawItem": "SANORINE 0.01% (HIJAU) MOUTHWASH 200 ML",
-    "nama": "SANORINE 0.01% (HIJAU) MOUTHWASH 200 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-994",
-    "rawItem": "SANORINE 0.025% (BIRU) MOUTHWASH 200 ML",
-    "nama": "SANORINE 0.025% (BIRU) MOUTHWASH 200 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-995",
-    "rawItem": "SANORINE 0.025% (BIRU) MOUTHWASH 80 ML",
-    "nama": "SANORINE 0.025% (BIRU) MOUTHWASH 80 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-996",
-    "rawItem": "SCOTTS EMULTION JERUK SYR 200 ML",
-    "nama": "SCOTTS",
-    "kemasan": "EMULTION JERUK SYR 200 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-997",
-    "rawItem": "SELSUN BLUE 5 120 ML",
-    "nama": "SELSUN BLUE 5 120 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-998",
-    "rawItem": "SELSUN BLUE 5 50 ML",
-    "nama": "SELSUN BLUE 5 50 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-999",
-    "rawItem": "SELSUN BLUE 60 ML",
-    "nama": "SELSUN BLUE 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1000",
-    "rawItem": "SELSUN GOLD 120 ML",
-    "nama": "SELSUN GOLD 120 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1001",
-    "rawItem": "SELSUN GOLD 60 ML",
-    "nama": "SELSUN GOLD 60 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1002",
-    "rawItem": "SELSUN YELLOW DOUBLE IMPACT 100 ML",
-    "nama": "SELSUN YELLOW DOUBLE IMPACT 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1003",
-    "rawItem": "SELSUN YELLOW DOUBLE IMPACT 50 ML",
-    "nama": "SELSUN YELLOW DOUBLE IMPACT 50 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1004",
-    "rawItem": "SENSI PADS L BOX",
-    "nama": "SENSI PADS L",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1005",
-    "rawItem": "SENSODYNE COOL GEL 100 GR",
-    "nama": "SENSODYNE COOL",
-    "kemasan": "GEL 100 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1006",
-    "rawItem": "SENSODYNE FRESHMINT 100 GR",
-    "nama": "SENSODYNE FRESHMINT 100 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1007",
-    "rawItem": "SENSODYNE REPAIR & PROTECT 100 GR",
-    "nama": "SENSODYNE REPAIR & PROTECT 100 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1008",
-    "rawItem": "SILADEX ATT (MERAH) SYR 60 ML",
-    "nama": "SILADEX ATT (MERAH)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1009",
-    "rawItem": "SILADEX COUGH & COLD (BIRU) SYR 60 ML",
-    "nama": "SILADEX COUGH & COLD (BIRU)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1010",
-    "rawItem": "SILADEX DMP (KUNING) SYR 60 ML",
-    "nama": "SILADEX DMP (KUNING)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1011",
-    "rawItem": "SILADEX MUCOLYTIC & EXP (HIJAU) SYR 60 ML",
-    "nama": "SILADEX MUCOLYTIC & EXP (HIJAU)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1012",
-    "rawItem": "SILEX SYR 100 ML",
-    "nama": "SILEX",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1013",
-    "rawItem": "SIROP INDRA 10 ML",
-    "nama": "SIROP INDRA 10 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1014",
-    "rawItem": "SIRPLUS STRAWBERY 100 ML",
-    "nama": "SIRPLUS STRAWBERY 100 ML",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1015",
-    "rawItem": "SOFFELL GERANIUM SPRAY 80 ML",
-    "nama": "SOFFELL GERANIUM",
-    "kemasan": "SPRAY 80 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1016",
-    "rawItem": "SPUIT 5 CC ONEMED PCS",
-    "nama": "SPUIT 5 CC ONEMED",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1017",
-    "rawItem": "STERIMAR BLOCKED NOSE HYPERTONIC SPRAY 100 ML",
-    "nama": "STERIMAR BLOCKED NOSE HYPERTONIC",
-    "kemasan": "SPRAY 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1018",
-    "rawItem": "STERIMAR NOSE HYGIENE & COMFORT CHILDREN ADULTS",
-    "nama": "STERIMAR NOSE HYGIENE & COMFORT CHILDREN ADULTS",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1019",
-    "rawItem": "STERIMAR NOSE HYGIENE BABY SPRAY 50 ML",
-    "nama": "STERIMAR NOSE HYGIENE BABY",
-    "kemasan": "SPRAY 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1020",
-    "rawItem": "STIMUNO ANGGUR SYR 60 ML",
-    "nama": "STIMUNO ANGGUR",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1021",
-    "rawItem": "STIMUNO JERUK BERRY SYR 60 ML",
-    "nama": "STIMUNO JERUK BERRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1022",
-    "rawItem": "SUCRALBAT SUSP 100 ML",
-    "nama": "SUCRALBAT",
-    "kemasan": "SUSP 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1023",
-    "rawItem": "SUCRALFATE SUSP DEXA 100 ML",
-    "nama": "SUCRALFATE",
-    "kemasan": "SUSP DEXA 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1024",
-    "rawItem": "SUPER MAGIC CASSANOVA (MERAH) BOX",
-    "nama": "SUPER MAGIC CASSANOVA (MERAH)",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1025",
-    "rawItem": "SUPRAVIT BTL",
-    "nama": "SUPRAVIT",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1026",
-    "rawItem": "SUSU ETAWAKU PLATINUM BOX 200 GR",
-    "nama": "SUSU ETAWAKU PLATINUM",
-    "kemasan": "BOX 200 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1027",
-    "rawItem": "SUSU ETAWALIN BOX 200 GR",
-    "nama": "SUSU ETAWALIN",
-    "kemasan": "BOX 200 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1028",
-    "rawItem": "SUTRA GERIGI (BIRU) BOX",
-    "nama": "SUTRA GERIGI (BIRU)",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1029",
-    "rawItem": "SUTRA LUBRICANT GEL 50 ML",
-    "nama": "SUTRA LUBRICANT",
-    "kemasan": "GEL 50 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1030",
-    "rawItem": "SUTRA OK (HITAM) BOX",
-    "nama": "SUTRA OK (HITAM)",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1031",
-    "rawItem": "SUTRA OK (HITAM) BOX",
-    "nama": "SUTRA OK (HITAM)",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1032",
-    "rawItem": "SUTRA ORIG (MERAH) BOX",
-    "nama": "SUTRA ORIG (MERAH)",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1033",
-    "rawItem": "SUTRA ORIG (MERAH) BOX",
-    "nama": "SUTRA ORIG (MERAH)",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1034",
-    "rawItem": "TEMPRA ANGGUR DROPS 15 ML",
-    "nama": "TEMPRA ANGGUR",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1035",
-    "rawItem": "TEMPRA FORTE ANGGUR SYR 30 ML",
-    "nama": "TEMPRA FORTE ANGGUR",
-    "kemasan": "SYR 30 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1036",
-    "rawItem": "TEMPRA SYR 100 ML",
-    "nama": "TEMPRA",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1037",
-    "rawItem": "TEMPRA SYR 30 ML",
-    "nama": "TEMPRA",
-    "kemasan": "SYR 30 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1038",
-    "rawItem": "TEMPRA SYR 60 ML",
-    "nama": "TEMPRA",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1039",
-    "rawItem": "TENSOCREPE 10 CM X 4.5 M PCS",
-    "nama": "TENSOCREPE 10 CM X 4.5 M",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1040",
-    "rawItem": "TENSOCREPE 15 CM X 4.5 M PCS",
-    "nama": "TENSOCREPE 15 CM X 4.5 M",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1041",
-    "rawItem": "TENSOCREPE 7.5 CM X 4.5 M PCS",
-    "nama": "TENSOCREPE 7.5 CM X 4.5 M",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1042",
-    "rawItem": "TERMOMETER OMRON MC-246 PCS",
-    "nama": "TERMOMETER OMRON MC-246",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1043",
-    "rawItem": "TERMOREX PLUS SYR 60 ML",
-    "nama": "TERMOREX PLUS",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1044",
-    "rawItem": "TERMOREX SYR 60 ML",
-    "nama": "TERMOREX",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1045",
-    "rawItem": "TES KEHAMILAN AKURAT COMPACT BOX",
-    "nama": "TES KEHAMILAN AKURAT COMPACT",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1046",
-    "rawItem": "TES KEHAMILAN AKURAT STRIP",
-    "nama": "TES KEHAMILAN AKURAT",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1047",
-    "rawItem": "TES KEHAMILAN ONEMED PCS",
-    "nama": "TES KEHAMILAN ONEMED",
-    "kemasan": "PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1048",
-    "rawItem": "TES KEHAMILAN SENSITIF COMPACT BOX",
-    "nama": "TES KEHAMILAN SENSITIF COMPACT",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1049",
-    "rawItem": "TES KEHAMILAN SENSITIF STRIP",
-    "nama": "TES KEHAMILAN SENSITIF",
-    "kemasan": "STRIP",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1050",
-    "rawItem": "TIRIZ DROPS 15 ML",
-    "nama": "TIRIZ",
-    "kemasan": "DROPS 15 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1051",
-    "rawItem": "TOLAK ANGIN CAIR PLUS MADU ANAK SACH",
-    "nama": "TOLAK ANGIN CAIR PLUS MADU ANAK",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1052",
-    "rawItem": "TOLAK ANGIN CAIR PLUS MADU SACH",
-    "nama": "TOLAK ANGIN CAIR PLUS MADU",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1053",
-    "rawItem": "TOLAK ANGIN FLU SACH",
-    "nama": "TOLAK ANGIN FLU",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1054",
-    "rawItem": "TOLAK LINU HERBAL SACH",
-    "nama": "TOLAK LINU HERBAL",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1055",
-    "rawItem": "TOPICARE + CERAMIDE CR 100 GR",
-    "nama": "TOPICARE + CERAMIDE",
-    "kemasan": "CR 100 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1056",
-    "rawItem": "TREMENZA SYR 60 ML",
-    "nama": "TREMENZA",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1057",
-    "rawItem": "TRIAMINIC BATUK & PILEK SYR 60 ML",
-    "nama": "TRIAMINIC BATUK & PILEK",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1058",
-    "rawItem": "TRIAMINIC EXP & PILEK SYR 60 ML",
-    "nama": "TRIAMINIC EXP & PILEK",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1059",
-    "rawItem": "TRIFED SYR 60 ML",
-    "nama": "TRIFED",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1060",
-    "rawItem": "ULTRAFIX 10 CM X 5 M BOX",
-    "nama": "ULTRAFIX 10 CM X 5 M",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1061",
-    "rawItem": "VECTRINE DRY SYR 60 ML",
-    "nama": "VECTRINE DRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1062",
-    "rawItem": "VEGETA HERBAL ANGGUR SACH",
-    "nama": "VEGETA HERBAL ANGGUR",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1063",
-    "rawItem": "VERMINT BOX",
-    "nama": "VERMINT",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1064",
-    "rawItem": "VICKS BABY BALM 20 GR",
-    "nama": "VICKS BABY BALM 20 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1065",
-    "rawItem": "VICKS F 44 ANAK SYR 27 ML",
-    "nama": "VICKS F 44 ANAK",
-    "kemasan": "SYR 27 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1066",
-    "rawItem": "VICKS F 44 ANAK SYR 54 ML",
-    "nama": "VICKS F 44 ANAK",
-    "kemasan": "SYR 54 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1067",
-    "rawItem": "VICKS F 44 DWS SYR 100 ML",
-    "nama": "VICKS F 44 DWS",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1068",
-    "rawItem": "VICKS F 44 DWS SYR 27 ML",
-    "nama": "VICKS F 44 DWS",
-    "kemasan": "SYR 27 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1069",
-    "rawItem": "VICKS F 44 DWS SYR 54 ML",
-    "nama": "VICKS F 44 DWS",
-    "kemasan": "SYR 54 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1070",
-    "rawItem": "VICKS INHALER PCS",
-    "nama": "VICKS",
-    "kemasan": "INHALER PCS",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1071",
-    "rawItem": "VICKS VAPORUB 10 GR",
-    "nama": "VICKS VAPORUB 10 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1072",
-    "rawItem": "VICKS VAPORUB 25 GR",
-    "nama": "VICKS VAPORUB 25 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1073",
-    "rawItem": "VICKS VAPORUB 50 GR",
-    "nama": "VICKS VAPORUB 50 GR",
-    "kemasan": "",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1074",
-    "rawItem": "VIGEL LUBRICANT GEL 30 GR",
-    "nama": "VIGEL LUBRICANT",
-    "kemasan": "GEL 30 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1075",
-    "rawItem": "VIGEL LUBRICANT GEL 60 GR",
-    "nama": "VIGEL LUBRICANT",
-    "kemasan": "GEL 60 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1076",
-    "rawItem": "VITABUMIN SYR 130 ML",
-    "nama": "VITABUMIN",
-    "kemasan": "SYR 130 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1077",
-    "rawItem": "VITALONG C BTL",
-    "nama": "VITALONG C",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1078",
-    "rawItem": "VITALONG C+ ZINC BTL",
-    "nama": "VITALONG C+ ZINC",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1079",
-    "rawItem": "VITAMIN C 1000 SIDO MUNCUL LEMON BOX",
-    "nama": "VITAMIN C 1000 SIDO MUNCUL LEMON",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1080",
-    "rawItem": "VOLTAREN GEL 10 GR",
-    "nama": "VOLTAREN",
-    "kemasan": "GEL 10 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1081",
-    "rawItem": "VOLTAREN GEL 20 GR",
-    "nama": "VOLTAREN",
-    "kemasan": "GEL 20 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1082",
-    "rawItem": "VOLTAREN GEL 50 GR",
-    "nama": "VOLTAREN",
-    "kemasan": "GEL 50 GR",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1083",
-    "rawItem": "VOMETA SYR 60 ML",
-    "nama": "VOMETA",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1084",
-    "rawItem": "VOSEDON SUSP 60 ML",
-    "nama": "VOSEDON",
-    "kemasan": "SUSP 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1085",
-    "rawItem": "WELLNESS ACIDOPHILUS BTL",
-    "nama": "WELLNESS ACIDOPHILUS",
-    "kemasan": "BTL",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1086",
-    "rawItem": "WOODS ATT (MERAH) SYR 100 ML",
-    "nama": "WOODS ATT (MERAH)",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1087",
-    "rawItem": "WOODS ATT (MERAH) SYR 60 ML",
-    "nama": "WOODS ATT (MERAH)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1088",
-    "rawItem": "WOODS EXP (BIRU) SYR 100 ML",
-    "nama": "WOODS EXP (BIRU)",
-    "kemasan": "SYR 100 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1089",
-    "rawItem": "WOODS EXP (BIRU) SYR 60 ML",
-    "nama": "WOODS EXP (BIRU)",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1090",
-    "rawItem": "WOODS HERBAL SYR 60 ML",
-    "nama": "WOODS HERBAL",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1091",
-    "rawItem": "YOUVIT BEAUTI+ SACH",
-    "nama": "YOUVIT BEAUTI+",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1092",
-    "rawItem": "YOUVIT BEAUTI+ SACH",
-    "nama": "YOUVIT BEAUTI+",
-    "kemasan": "SACH",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1093",
-    "rawItem": "Y-RINS 12 ML BOX",
-    "nama": "Y-RINS 12 ML",
-    "kemasan": "BOX",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1094",
-    "rawItem": "YUSIMOX DRY SYR 60 ML",
-    "nama": "YUSIMOX DRY",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1095",
-    "rawItem": "ZINCPRO SYR 60 ML",
-    "nama": "ZINCPRO",
-    "kemasan": "SYR 60 ML",
-    "kategori": "TANPA",
-    "kandungan": ""
-  },
-  {
-    "id": "item-1096",
     "rawItem": "CENDO CENFRESH EYE DROPS 5 ML",
-    "nama": "CENDO CENFRESH EYE",
-    "kemasan": "DROPS 5 ML",
+    "nama": "CENDO CENFRESH EYE DROPS",
+    "kemasan": "5 ML",
     "kategori": "TM",
     "kandungan": "CARMELLOSE SODIUM 5MG"
   },
   {
-    "id": "item-1097",
+    "id": "item-410",
     "rawItem": "CENDO CENFRESH MD STRIP",
     "nama": "CENDO CENFRESH MD",
     "kemasan": "STRIP",
@@ -8777,15 +3281,15 @@ export const SAMPLE_DATA = [
     "kandungan": "CARMELLOSE SODIUM 5MG"
   },
   {
-    "id": "item-1098",
+    "id": "item-411",
     "rawItem": "CENDO EYEFRESH EYE DROPS 5 ML",
-    "nama": "CENDO EYEFRESH EYE",
-    "kemasan": "DROPS 5 ML",
+    "nama": "CENDO EYEFRESH EYE DROPS",
+    "kemasan": "5 ML",
     "kategori": "TM",
     "kandungan": "HPMC, DEXTRAN"
   },
   {
-    "id": "item-1099",
+    "id": "item-412",
     "rawItem": "CENDO EYEFRESH MD STRIP",
     "nama": "CENDO EYEFRESH MD",
     "kemasan": "STRIP",
@@ -8793,7 +3297,7 @@ export const SAMPLE_DATA = [
     "kandungan": "HPMC, DEXTRAN"
   },
   {
-    "id": "item-1100",
+    "id": "item-413",
     "rawItem": "CENDO FLOXA MD STRIP",
     "nama": "CENDO FLOXA MD",
     "kemasan": "STRIP",
@@ -8801,23 +3305,23 @@ export const SAMPLE_DATA = [
     "kandungan": "OFLOXACIN 0.3%"
   },
   {
-    "id": "item-1101",
+    "id": "item-414",
     "rawItem": "CENDO GENTA 0.3% EYE DROPS 5 ML",
-    "nama": "CENDO GENTA 0.3% EYE",
-    "kemasan": "DROPS 5 ML",
+    "nama": "CENDO GENTA 0.3% EYE DROPS",
+    "kemasan": "5 ML",
     "kategori": "TM",
     "kandungan": "GENTAMYCIN 3MG"
   },
   {
-    "id": "item-1102",
+    "id": "item-415",
     "rawItem": "CENDO GENTAMYCIN 0.3% EYE OINT 3 GR",
-    "nama": "CENDO GENTAMYCIN 0.3% EYE",
-    "kemasan": "OINT 3 GR",
+    "nama": "CENDO GENTAMYCIN 0.3% EYE OINT",
+    "kemasan": "3 GR",
     "kategori": "TM",
     "kandungan": "GENTAMYCIN 3MG"
   },
   {
-    "id": "item-1103",
+    "id": "item-416",
     "rawItem": "CENDO HYALUB MD STRIP",
     "nama": "CENDO HYALUB MD",
     "kemasan": "STRIP",
@@ -8825,15 +3329,15 @@ export const SAMPLE_DATA = [
     "kandungan": "SODIUM HYALURONATE"
   },
   {
-    "id": "item-1104",
+    "id": "item-417",
     "rawItem": "CENDO LYTEERS EYE DROPS 15 ML",
-    "nama": "CENDO LYTEERS EYE",
-    "kemasan": "DROPS 15 ML",
+    "nama": "CENDO LYTEERS EYE DROPS",
+    "kemasan": "15 ML",
     "kategori": "TM",
     "kandungan": "SODIUM CHLORIDE, POTASSIUM CLORIDE"
   },
   {
-    "id": "item-1105",
+    "id": "item-418",
     "rawItem": "CENDO LYTEERS MD STRIP",
     "nama": "CENDO LYTEERS MD",
     "kemasan": "STRIP",
@@ -8841,7 +3345,7 @@ export const SAMPLE_DATA = [
     "kandungan": "SODIUM CHLORIDE, POTASSIUM CLORIDE"
   },
   {
-    "id": "item-1106",
+    "id": "item-419",
     "rawItem": "CENDO PROTAGENTA MD STRIP",
     "nama": "CENDO PROTAGENTA MD",
     "kemasan": "STRIP",
@@ -8849,7 +3353,7 @@ export const SAMPLE_DATA = [
     "kandungan": "POLYVINYLPYRROLIDONE 20MG"
   },
   {
-    "id": "item-1107",
+    "id": "item-420",
     "rawItem": "CENDO TIMOL 0.5% MD STRIP",
     "nama": "CENDO TIMOL 0.5% MD",
     "kemasan": "STRIP",
@@ -8857,7 +3361,7 @@ export const SAMPLE_DATA = [
     "kandungan": "TIMOLOL 0.5%"
   },
   {
-    "id": "item-1108",
+    "id": "item-421",
     "rawItem": "CENDO TOBROSON MD STRIP",
     "nama": "CENDO TOBROSON MD",
     "kemasan": "STRIP",
@@ -8865,15 +3369,15 @@ export const SAMPLE_DATA = [
     "kandungan": "TOBRAMYCIN, DEXAMETHASON"
   },
   {
-    "id": "item-1109",
+    "id": "item-422",
     "rawItem": "CENDO XITROL EYE DROPS 5 ML",
-    "nama": "CENDO XITROL EYE",
-    "kemasan": "DROPS 5 ML",
+    "nama": "CENDO XITROL EYE DROPS",
+    "kemasan": "5 ML",
     "kategori": "TM",
     "kandungan": "DEXAMETHASONE, NEOMYCIN, POLYMYXIN B"
   },
   {
-    "id": "item-1110",
+    "id": "item-423",
     "rawItem": "CENDO XITROL MD STRIP",
     "nama": "CENDO XITROL MD",
     "kemasan": "STRIP",
@@ -8881,68 +3385,628 @@ export const SAMPLE_DATA = [
     "kandungan": "DEXAMETHASONE, NEOMYCIN, POLYMYXIN B"
   },
   {
-    "id": "item-1111",
+    "id": "item-424",
     "rawItem": "ERLAMYCETIN 1% EYE OINT 3.5 GR",
-    "nama": "ERLAMYCETIN 1% EYE",
-    "kemasan": "OINT 3.5 GR",
+    "nama": "ERLAMYCETIN 1% EYE OINT",
+    "kemasan": "3.5 GR",
     "kategori": "TM",
     "kandungan": "CHLORAMPHENICOL"
   },
   {
-    "id": "item-1112",
+    "id": "item-425",
     "rawItem": "GENOINT 0.3% EYE OINT 3.5 GR",
-    "nama": "GENOINT 0.3% EYE",
-    "kemasan": "OINT 3.5 GR",
+    "nama": "GENOINT 0.3% EYE OINT",
+    "kemasan": "3.5 GR",
     "kategori": "TM",
     "kandungan": "GENTAMICIN"
   },
   {
-    "id": "item-1113",
+    "id": "item-426",
     "rawItem": "GENOINT EYE DROPS 5 ML",
-    "nama": "GENOINT EYE",
-    "kemasan": "DROPS 5 ML",
+    "nama": "GENOINT EYE DROPS",
+    "kemasan": "5 ML",
     "kategori": "TM",
     "kandungan": "GENTAMICIN"
   },
   {
-    "id": "item-1114",
+    "id": "item-427",
     "rawItem": "AKILEN EAR DROPS 5 ML",
-    "nama": "AKILEN EAR",
-    "kemasan": "DROPS 5 ML",
+    "nama": "AKILEN EAR DROPS",
+    "kemasan": "5 ML",
     "kategori": "TT",
     "kandungan": "OFLOXACIN 3MG/ML"
   },
   {
-    "id": "item-1115",
+    "id": "item-428",
     "rawItem": "ERLAMYCETIN 1% EAR DROPS 10 ML",
-    "nama": "ERLAMYCETIN 1% EAR",
-    "kemasan": "DROPS 10 ML",
+    "nama": "ERLAMYCETIN 1% EAR DROPS",
+    "kemasan": "10 ML",
     "kategori": "TT",
     "kandungan": "CHLORAMPHENICOL"
   },
   {
-    "id": "item-1116",
+    "id": "item-429",
     "rawItem": "FORUMEN EAR DROPS 10 ML",
-    "nama": "FORUMEN EAR",
-    "kemasan": "DROPS 10 ML",
+    "nama": "FORUMEN EAR DROPS",
+    "kemasan": "10 ML",
     "kategori": "TT",
     "kandungan": "DOCUSATE NA"
   },
   {
-    "id": "item-1117",
+    "id": "item-430",
     "rawItem": "OTILON EAR DROPS 8 ML",
-    "nama": "OTILON EAR",
-    "kemasan": "DROPS 8 ML",
+    "nama": "OTILON EAR DROPS",
+    "kemasan": "8 ML",
     "kategori": "TT",
     "kandungan": "POLYMYXIN B, NEOMYCIN, FLUDROCORTISONE, LIDOCAINE"
   },
   {
-    "id": "item-1118",
+    "id": "item-431",
     "rawItem": "VITAL EAR OIL 10 ML",
-    "nama": "VITAL EAR OIL 10 ML",
-    "kemasan": "",
+    "nama": "VITAL EAR OIL",
+    "kemasan": "10 ML",
     "kategori": "TT",
     "kandungan": ""
+  },
+  {
+    "id": "item-432",
+    "rawItem": "CETIRIZINE 10 MG TAB",
+    "nama": "CETIRIZINE 10 MG",
+    "kemasan": "TAB",
+    "kategori": "GENERIK",
+    "kandungan": ""
+  },
+  {
+    "id": "item-433",
+    "rawItem": "CIALIS 10 MG TAB",
+    "nama": "CIALIS 10 MG",
+    "kemasan": "TAB",
+    "kategori": "HORMON",
+    "kandungan": "TADALAFIL 10MG"
+  },
+  {
+    "id": "item-434",
+    "rawItem": "CIALIS 20 MG TAB",
+    "nama": "CIALIS 20 MG",
+    "kemasan": "TAB",
+    "kategori": "HORMON",
+    "kandungan": "TADALAFIL 20MG"
+  },
+  {
+    "id": "item-435",
+    "rawItem": "DEXTEEM PLUS TAB",
+    "nama": "DEXTEEM PLUS",
+    "kemasan": "TAB",
+    "kategori": "ALERGI",
+    "kandungan": "DEXAMETHASONE 0.5MG, DEXCHLORPHENIRAMINE 2MG"
+  },
+  {
+    "id": "item-436",
+    "rawItem": "EUTHYROX 100 MCG TAB",
+    "nama": "EUTHYROX 100 MCG",
+    "kemasan": "TAB",
+    "kategori": "HORMON",
+    "kandungan": "LEVOTHYROXINE 100MCG"
+  },
+  {
+    "id": "item-437",
+    "rawItem": "FEMINAX STRIP",
+    "nama": "FEMINAX",
+    "kemasan": "STRIP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL 500MG, HYOSCYAMINE 19MG"
+  },
+  {
+    "id": "item-438",
+    "rawItem": "FLUIMUCIL 600 MG EFF TAB",
+    "nama": "FLUIMUCIL 600 MG EFF",
+    "kemasan": "TAB",
+    "kategori": "PERNAFASAN",
+    "kandungan": "ACETYLCYSTEINE 600MG"
+  },
+  {
+    "id": "item-439",
+    "rawItem": "FREGO 5 MG TAB",
+    "nama": "FREGO 5 MG",
+    "kemasan": "TAB",
+    "kategori": "SARAF",
+    "kandungan": "FLUNARIZINE 5MG"
+  },
+  {
+    "id": "item-440",
+    "rawItem": "GRATHAZON 0.5 MG KAP",
+    "nama": "GRATHAZON 0.5 MG",
+    "kemasan": "KAP",
+    "kategori": "ALERGI",
+    "kandungan": "DEXAMETHASONE 0.5MG"
+  },
+  {
+    "id": "item-441",
+    "rawItem": "IRBESARTAN 150 MG TAB",
+    "nama": "IRBESARTAN 150 MG",
+    "kemasan": "TAB",
+    "kategori": "GENERIK",
+    "kandungan": ""
+  },
+  {
+    "id": "item-442",
+    "rawItem": "KADITIC 50 MG TAB",
+    "nama": "KADITIC 50 MG",
+    "kemasan": "TAB",
+    "kategori": "NYERI",
+    "kandungan": "KALIUM DIKLOFENAK 50MG"
+  },
+  {
+    "id": "item-443",
+    "rawItem": "KAFLAM 50 MG TAB",
+    "nama": "KAFLAM 50 MG",
+    "kemasan": "TAB",
+    "kategori": "NYERI",
+    "kandungan": "KALIUM DIKLOFENAK 50MG"
+  },
+  {
+    "id": "item-444",
+    "rawItem": "LANADEXON 0.5 MG KAP",
+    "nama": "LANADEXON 0.5 MG",
+    "kemasan": "KAP",
+    "kategori": "ALERGI",
+    "kandungan": "DEXAMETHASONE 0.5MG"
+  },
+  {
+    "id": "item-445",
+    "rawItem": "MERISLON 6 MG TAB",
+    "nama": "MERISLON 6 MG",
+    "kemasan": "TAB",
+    "kategori": "SARAF",
+    "kandungan": "BETAHISTINE 6MG"
+  },
+  {
+    "id": "item-446",
+    "rawItem": "EKACETOL FORTE 650 MG KAP",
+    "nama": "EKACETOL FORTE 650 MG",
+    "kemasan": "KAP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL 650MG"
+  },
+  {
+    "id": "item-447",
+    "rawItem": "VALDRES 25 MG TAB",
+    "nama": "VALDRES 25 MG",
+    "kemasan": "TAB",
+    "kategori": "ALERGI",
+    "kandungan": "DIPHENYDRAMINE HYDROCLORIDE"
+  },
+  {
+    "id": "item-448",
+    "rawItem": "ZENCET TAB",
+    "nama": "ZENCET",
+    "kemasan": "TAB",
+    "kategori": "ALERGI",
+    "kandungan": "CETIRIZINE 10MG"
+  },
+  {
+    "id": "item-449",
+    "rawItem": "EMLA 5% CR 5 GR",
+    "nama": "EMLA 5% CR",
+    "kemasan": "5 GR",
+    "kategori": "SALEP",
+    "kandungan": "LIDOCAIN, PRILOCAINE"
+  },
+  {
+    "id": "item-450",
+    "rawItem": "MEPROTHION 500 MG TABLET",
+    "nama": "MEPROTHION 500 MG TABLET",
+    "kemasan": "",
+    "kategori": "MULTIVITAMIN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-451",
+    "rawItem": "PROGESIC KAP",
+    "nama": "PROGESIC",
+    "kemasan": "KAP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "IBUPROFEN 200MG, PARACETAMOL 350MG"
+  },
+  {
+    "id": "item-452",
+    "rawItem": "PUYER BINTANG 7 LUSIN",
+    "nama": "PUYER BINTANG 7 LUSIN",
+    "kemasan": "",
+    "kategori": "OBAT BEBAS",
+    "kandungan": ""
+  },
+  {
+    "id": "item-453",
+    "rawItem": "VIPALBUMIN CAPS",
+    "nama": "VIPALBUMIN",
+    "kemasan": "CAPS",
+    "kategori": "MULTIVITAMIN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-454",
+    "rawItem": "ASTHIN FORCE 12 MG CAPS",
+    "nama": "ASTHIN FORCE 12 MG",
+    "kemasan": "CAPS",
+    "kategori": "MULTIVITAMIN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-455",
+    "rawItem": "ANTASIDA DOEN TAB",
+    "nama": "ANTASIDA DOEN",
+    "kemasan": "TAB",
+    "kategori": "GENERIK",
+    "kandungan": ""
+  },
+  {
+    "id": "item-456",
+    "rawItem": "BODREXIN TAB",
+    "nama": "BODREXIN",
+    "kemasan": "TAB",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "ACETYLSALICYLIC ACID"
+  },
+  {
+    "id": "item-457",
+    "rawItem": "DIFLUCAN 150 MG CAPS",
+    "nama": "DIFLUCAN 150 MG",
+    "kemasan": "CAPS",
+    "kategori": "ANTIBIOTIK",
+    "kandungan": "FLUCONAZOLE 150MG"
+  },
+  {
+    "id": "item-458",
+    "rawItem": "LASAL NEBU 2.5 MG VIAL",
+    "nama": "LASAL NEBU 2.5 MG VIAL",
+    "kemasan": "",
+    "kategori": "PERNAFASAN",
+    "kandungan": "SALBUTAMOL"
+  },
+  {
+    "id": "item-459",
+    "rawItem": "ALERHIS 10 MG STRIP",
+    "nama": "ALERHIS 10 MG",
+    "kemasan": "STRIP",
+    "kategori": "PERNAFASAN",
+    "kandungan": "LORATADINE 10MG"
+  },
+  {
+    "id": "item-460",
+    "rawItem": "ANADEX TAB",
+    "nama": "ANADEX",
+    "kemasan": "TAB",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL, PHENYLPROPANOLAMIN, CTM, DEXTROMETHORPAN"
+  },
+  {
+    "id": "item-461",
+    "rawItem": "ANTIMO ANAK STRAWBERRY SACH",
+    "nama": "ANTIMO ANAK STRAWBERRY",
+    "kemasan": "SACH",
+    "kategori": "OBAT BEBAS",
+    "kandungan": ""
+  },
+  {
+    "id": "item-462",
+    "rawItem": "APOLAR N CR 10 GR",
+    "nama": "APOLAR N CR",
+    "kemasan": "10 GR",
+    "kategori": "SALEP",
+    "kandungan": "DESONIDE 0.5MG, NEOMYCIN SULPHATE 5MG"
+  },
+  {
+    "id": "item-463",
+    "rawItem": "BODREX FLU & BATUK BERDAHAK PE STRIP",
+    "nama": "BODREX FLU & BATUK BERDAHAK PE",
+    "kemasan": "STRIP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL, PHENYLEPRINE, GUAIFENESIN, BROMHEXINE"
+  },
+  {
+    "id": "item-464",
+    "rawItem": "BODREX FLU & BATUK PE STRIP",
+    "nama": "BODREX FLU & BATUK PE",
+    "kemasan": "STRIP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL, PHENYLEPRINE, DEXTROMETHORPHAN"
+  },
+  {
+    "id": "item-465",
+    "rawItem": "BORRAGINOL-N OINT 15 GR",
+    "nama": "BORRAGINOL-N OINT",
+    "kemasan": "15 GR",
+    "kategori": "SALEP",
+    "kandungan": "LITHOSPERMI, DIBUCAIN, DIPHENHYDRAMINE, CETRIMIDE, AETHYLIS"
+  },
+  {
+    "id": "item-466",
+    "rawItem": "CENDO GENTA 0.3% MD STRIP",
+    "nama": "CENDO GENTA 0.3% MD",
+    "kemasan": "STRIP",
+    "kategori": "TM",
+    "kandungan": "GENTAMYCIN 3MG"
+  },
+  {
+    "id": "item-467",
+    "rawItem": "CENDO P-PRED MD STRIP",
+    "nama": "CENDO P-PRED MD",
+    "kemasan": "STRIP",
+    "kategori": "TM",
+    "kandungan": "PREDNISOLON 10MG"
+  },
+  {
+    "id": "item-468",
+    "rawItem": "CENDO XITROL EYE OINT 3.5 GR",
+    "nama": "CENDO XITROL EYE OINT",
+    "kemasan": "3.5 GR",
+    "kategori": "TM",
+    "kandungan": "DEXAMETHASONE, NEOMYCIN, POLYMYXIN B"
+  },
+  {
+    "id": "item-469",
+    "rawItem": "CLINOVIR 5% CR 5 GR",
+    "nama": "CLINOVIR 5% CR",
+    "kemasan": "5 GR",
+    "kategori": "SALEP",
+    "kandungan": "ACICLOVIR"
+  },
+  {
+    "id": "item-470",
+    "rawItem": "COLME EAR DROPS 8 ML",
+    "nama": "COLME EAR DROPS",
+    "kemasan": "8 ML",
+    "kategori": "TT",
+    "kandungan": "CHLORAMPHENICOL, LIDOCAINE"
+  },
+  {
+    "id": "item-471",
+    "rawItem": "CURVIT KAP",
+    "nama": "CURVIT",
+    "kemasan": "KAP",
+    "kategori": "MULTIVITAMIN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-472",
+    "rawItem": "DERMATIX ULTRA CR 5 GR",
+    "nama": "DERMATIX ULTRA CR",
+    "kemasan": "5 GR",
+    "kategori": "SALEP",
+    "kandungan": ""
+  },
+  {
+    "id": "item-473",
+    "rawItem": "DULCOLAX 5 MG TAB",
+    "nama": "DULCOLAX 5 MG",
+    "kemasan": "TAB",
+    "kategori": "PENCERNAAN",
+    "kandungan": "BISAKODIL"
+  },
+  {
+    "id": "item-474",
+    "rawItem": "EMTRIX SOL 10 ML",
+    "nama": "EMTRIX SOL",
+    "kemasan": "10 ML",
+    "kategori": "SALEP",
+    "kandungan": ""
+  },
+  {
+    "id": "item-475",
+    "rawItem": "ERICFIL 50 MG ORAL FILM",
+    "nama": "ERICFIL 50 MG ORAL FILM",
+    "kemasan": "",
+    "kategori": "HORMON",
+    "kandungan": "SILDENAFIL 50MG"
+  },
+  {
+    "id": "item-476",
+    "rawItem": "EVALEN GEL 10 GR",
+    "nama": "EVALEN GEL",
+    "kemasan": "10 GR",
+    "kategori": "SALEP",
+    "kandungan": "ADAPALENE"
+  },
+  {
+    "id": "item-477",
+    "rawItem": "FAMETSON 4 MG TAB",
+    "nama": "FAMETSON 4 MG",
+    "kemasan": "TAB",
+    "kategori": "ALERGI",
+    "kandungan": "METHYLPREDNISOLONE 4MG"
+  },
+  {
+    "id": "item-478",
+    "rawItem": "FARSIFEN 400 MG TAB",
+    "nama": "FARSIFEN 400 MG",
+    "kemasan": "TAB",
+    "kategori": "NYERI",
+    "kandungan": "IBUPROFEN 400MG"
+  },
+  {
+    "id": "item-479",
+    "rawItem": "FATIGON MULTIVITAMIN MINERAL STRIP",
+    "nama": "FATIGON MULTIVITAMIN MINERAL",
+    "kemasan": "STRIP",
+    "kategori": "MULTIVITAMIN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-480",
+    "rawItem": "FLUTAMOL TAB",
+    "nama": "FLUTAMOL",
+    "kemasan": "TAB",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL, PHENYLPROPANOLAMINE, CTM, GLYCERIL GUAIACOLAT"
+  },
+  {
+    "id": "item-481",
+    "rawItem": "LAPIBAL 500 MCG CAPS",
+    "nama": "LAPIBAL 500 MCG",
+    "kemasan": "CAPS",
+    "kategori": "SARAF",
+    "kandungan": "MECOBALAMIN 500MG"
+  },
+  {
+    "id": "item-482",
+    "rawItem": "LYRICA 150 MG CAPS",
+    "nama": "LYRICA 150 MG",
+    "kemasan": "CAPS",
+    "kategori": "SARAF",
+    "kandungan": "PREGABALIN 150MG"
+  },
+  {
+    "id": "item-483",
+    "rawItem": "NEBACETIN OINT 5 GR",
+    "nama": "NEBACETIN OINT",
+    "kemasan": "5 GR",
+    "kategori": "SALEP",
+    "kandungan": "NEOMYCIN, BACITRACIN"
+  },
+  {
+    "id": "item-484",
+    "rawItem": "NEBACETIN POWDER 5 GR",
+    "nama": "NEBACETIN POWDER",
+    "kemasan": "5 GR",
+    "kategori": "SALEP",
+    "kandungan": "NEOMYCIN, BACITRACIN"
+  },
+  {
+    "id": "item-485",
+    "rawItem": "NEO RHEUMACYL NEURO KAP",
+    "nama": "NEO RHEUMACYL NEURO",
+    "kemasan": "KAP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "IBUPROFEN, VIT B1, B6,B12"
+  },
+  {
+    "id": "item-486",
+    "rawItem": "NEW DIATAB STRIP",
+    "nama": "NEW DIATAB",
+    "kemasan": "STRIP",
+    "kategori": "PENCERNAAN",
+    "kandungan": "ATTAPULGITE 600MG"
+  },
+  {
+    "id": "item-487",
+    "rawItem": "NIACEF 4% GEL 15 GR",
+    "nama": "NIACEF 4% GEL",
+    "kemasan": "15 GR",
+    "kategori": "SALEP",
+    "kandungan": "NIACINAMIDE"
+  },
+  {
+    "id": "item-488",
+    "rawItem": "OSKADON STRIP",
+    "nama": "OSKADON",
+    "kemasan": "STRIP",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL, CAFFEINE"
+  },
+  {
+    "id": "item-489",
+    "rawItem": "OTOPAIN EAR DROPS 8 ML",
+    "nama": "OTOPAIN EAR DROPS",
+    "kemasan": "8 ML",
+    "kategori": "SUPPOSITORIA",
+    "kandungan": ""
+  },
+  {
+    "id": "item-490",
+    "rawItem": "PARATUSIN DMP TAB",
+    "nama": "PARATUSIN DMP",
+    "kemasan": "TAB",
+    "kategori": "OBAT BEBAS",
+    "kandungan": "PARACETAMOL, PHENYLPROPANOLAMINE, CTM, DEXTROMETHORPAN"
+  },
+  {
+    "id": "item-491",
+    "rawItem": "PHAROLIT SACH",
+    "nama": "PHAROLIT",
+    "kemasan": "SACH",
+    "kategori": "PENCERNAAN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-492",
+    "rawItem": "PI KANG SHUANG CR 5 GR",
+    "nama": "PI KANG SHUANG CR",
+    "kemasan": "5 GR",
+    "kategori": "SALEP",
+    "kandungan": ""
+  },
+  {
+    "id": "item-493",
+    "rawItem": "POLYSILANE CHEW TAB",
+    "nama": "POLYSILANE CHEW",
+    "kemasan": "TAB",
+    "kategori": "PENCERNAAN",
+    "kandungan": "ALUMINIUM 200MG, MAGNESIUM 200, SIMETICONE 80MG"
+  },
+  {
+    "id": "item-494",
+    "rawItem": "PREGABALIN 150 MG CAPS",
+    "nama": "PREGABALIN 150 MG",
+    "kemasan": "CAPS",
+    "kategori": "GENERIK",
+    "kandungan": ""
+  },
+  {
+    "id": "item-495",
+    "rawItem": "PROMEL 20 MG TAB",
+    "nama": "PROMEL 20 MG",
+    "kemasan": "TAB",
+    "kategori": "HORMON",
+    "kandungan": "TADALAFIL 20MG"
+  },
+  {
+    "id": "item-496",
+    "rawItem": "PRORIS 125 MG SUPP",
+    "nama": "PRORIS 125 MG",
+    "kemasan": "SUPP",
+    "kategori": "SUPPOSITORIA",
+    "kandungan": ""
+  },
+  {
+    "id": "item-497",
+    "rawItem": "SALBUTAMOL 4 MG TAB",
+    "nama": "SALBUTAMOL 4 MG",
+    "kemasan": "TAB",
+    "kategori": "GENERIK",
+    "kandungan": ""
+  },
+  {
+    "id": "item-498",
+    "rawItem": "SANGOBION ACTIV CAPS",
+    "nama": "SANGOBION ACTIV",
+    "kemasan": "CAPS",
+    "kategori": "MULTIVITAMIN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-499",
+    "rawItem": "SUPERTETRA 250 MG STRIP",
+    "nama": "SUPERTETRA 250 MG",
+    "kemasan": "STRIP",
+    "kategori": "ANTIBIOTIK",
+    "kandungan": "TETRACYCLINE 250MG"
+  },
+  {
+    "id": "item-500",
+    "rawItem": "SYMBICORT 160 MG TURBUHALER",
+    "nama": "SYMBICORT 160 MG TURBUHALER",
+    "kemasan": "",
+    "kategori": "PERNAFASAN",
+    "kandungan": ""
+  },
+  {
+    "id": "item-501",
+    "rawItem": "ZELFACE 20% CR 10 GR",
+    "nama": "ZELFACE 20% CR",
+    "kemasan": "10 GR",
+    "kategori": "SALEP",
+    "kandungan": "AZELAIC ACID"
   }
 ];
 
