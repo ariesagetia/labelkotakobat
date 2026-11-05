@@ -49,25 +49,39 @@ export default function LabelCard({
     : (settings?.fontSizeKemasan || nameSize); // pt
   const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default 11 pt)
 
-  // Smart scaling agar teks selalu pas di area 50% tanpa mepet batas atas, samping, atau garis tengah
+  // Hitung perkiraan baris hanya untuk nama yang mepet batas kotak
   const nameText = (item.nama || '').trim();
   const kemasanText = (item.kemasan || '').trim();
-  const nameLen = nameText.length;
-  const longestWord = nameText.split(/\s+/).reduce((max, w) => Math.max(max, w.length), 0);
-  const totalWords = (nameText ? nameText.split(/\s+/).length : 0) + (kemasanText ? 1 : 0);
+  
+  // Hitung baris teks jika dirender pada ukuran penuh (nameSize)
+  // Lebar cetak efektif sekitar 205px. Rata-rata lebar huruf Arial bold ~ (nameSize * 0.72) px
+  const maxCharsPerLine = Math.floor(205 / (nameSize * 0.72));
+  const words = nameText.split(/\s+/);
+  let estimatedLines = 0;
+  let curLineLen = 0;
+  for (const w of words) {
+    if (curLineLen === 0) {
+      curLineLen = w.length;
+    } else if (curLineLen + 1 + w.length <= maxCharsPerLine) {
+      curLineLen += 1 + w.length;
+    } else {
+      estimatedLines++;
+      curLineLen = w.length;
+    }
+  }
+  if (curLineLen > 0) estimatedLines++;
+  if (kemasanText) estimatedLines++;
 
-  let effectiveNameSize = nameSize; // Default 17 pt
-  if (nameLen > 32 || totalWords >= 5) {
-    // Nama super panjang (>32 huruf atau 5+ kata, seperti DEXAMETHASONE HARSEN 0.75 MG TAB)
+  // HANYA jika teks menghasilkan 4 baris ke atas (mepet kotak), baru disesuaikan sedikit (14.5 pt)
+  // Semua obat normal (1-3 baris, ~92% obat) TETAP 100% ukuran penuh 17 pt!
+  let effectiveNameSize = nameSize;
+  if (estimatedLines >= 5) {
     effectiveNameSize = Math.max(nameSize - 3.5, 13.5);
-  } else if (nameLen > 21 || longestWord >= 12 || totalWords >= 4) {
-    // Nama panjang (seperti METHYL PREDNISOLONE 4 MG / 8 MG, EPERISONE-HCL)
-    effectiveNameSize = Math.max(nameSize - 3, 14);
-  } else if (nameLen > 16 || longestWord >= 10 || totalWords >= 3) {
-    // Nama sedang (seperti DEXKETOPROFEN 25 MG TAB)
-    effectiveNameSize = Math.max(nameSize - 1.5, 15.5);
+  } else if (estimatedLines === 4) {
+    // Seperti METHYL PREDNISOLONE 4/8 MG TAB -> hanya turun sedikit ke 14.5 pt agar tidak mepet batas
+    effectiveNameSize = Math.max(nameSize - 2.5, 14.5);
   } else {
-    // Nama normal / pendek (1-2 baris, seperti ALLERON 4 MG TAB) -> tetap 17 pt penuh
+    // 1 s/d 3 baris: ALLERON, GABAPENTIN, DEXKETOPROFEN, EPERISONE-HCL, dll -> TETAP 17 PT PENUH!
     effectiveNameSize = nameSize;
   }
 
