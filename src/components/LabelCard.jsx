@@ -1,6 +1,7 @@
 import React from 'react';
 import { Edit2, Copy } from 'lucide-react';
 import { AVAILABLE_FONTS } from '../utils/fontConstants';
+import { getOptimalItemFontSize } from '../utils/autoFitFont';
 
 export default function LabelCard({
   item,
@@ -49,47 +50,17 @@ export default function LabelCard({
     : (settings?.fontSizeKemasan || nameSize); // pt
   const baseKandunganSize = settings?.fontSizeKandungan || 11; // pt (default 11 pt)
 
-  // Hitung perkiraan baris hanya untuk nama yang mepet batas kotak
-  const nameText = (item.nama || '').trim();
-  const kemasanText = (item.kemasan || '').trim();
-  
-  // Hitung baris teks jika dirender pada ukuran penuh (nameSize)
-  // Lebar cetak efektif sekitar 205px. Rata-rata lebar huruf Arial bold ~ (nameSize * 0.72) px
-  const maxCharsPerLine = Math.floor(205 / (nameSize * 0.72));
-  const words = nameText.split(/\s+/);
-  let estimatedLines = 0;
-  let curLineLen = 0;
-  for (const w of words) {
-    if (curLineLen === 0) {
-      curLineLen = w.length;
-    } else if (curLineLen + 1 + w.length <= maxCharsPerLine) {
-      curLineLen += 1 + w.length;
-    } else {
-      estimatedLines++;
-      curLineLen = w.length;
-    }
-  }
-  if (curLineLen > 0) estimatedLines++;
-  if (kemasanText) estimatedLines++;
-
-  // HANYA jika teks menghasilkan 4 baris ke atas (mepet kotak), baru disesuaikan sedikit (14.5 pt)
-  // Semua obat normal (1-3 baris, ~92% obat) TETAP 100% ukuran penuh 17 pt!
-  let effectiveNameSize = nameSize;
-  if (estimatedLines >= 5) {
-    effectiveNameSize = Math.max(nameSize - 3.5, 13.5);
-  } else if (estimatedLines === 4) {
-    // Seperti METHYL PREDNISOLONE 4/8 MG TAB -> hanya turun sedikit ke 14.5 pt agar tidak mepet batas
-    effectiveNameSize = Math.max(nameSize - 2.5, 14.5);
-  } else {
-    // 1 s/d 3 baris: ALLERON, GABAPENTIN, DEXKETOPROFEN, EPERISONE-HCL, dll -> TETAP 17 PT PENUH!
-    effectiveNameSize = nameSize;
-  }
+  // Hitung ukuran font nama obat dengan simulasi presisi lebar huruf & baris:
+  // - Obat normal (~88.3%) TETAP ukuran penuh 17 pt (Ekstra Besar)
+  // - Obat dengan kata panjang (e.g. DEXAMETHASONE) atau baris banyak disesuaikan presisi
+  //   agar kata tidak terpotong (tidak split) dan TIDAK PERNAH mepet ke batas kotak / garis tengah
+  const effectiveNameSize = getOptimalItemFontSize(item.nama, item.kemasan, nameSize);
 
   const effectiveKemasanSize = (settings?.syncKemasanSize !== false)
     ? effectiveNameSize
     : (settings?.fontSizeKemasan || effectiveNameSize);
 
-  // Kandungan obat: tetap ukuran standar (11 pt), hanya disesuaikan jika teks ekstra panjang
+  // Kandungan obat: tetap ukuran standar (11 pt), disesuaikan jika teks ekstra panjang
   const kandunganText = (item.kandungan || '').trim();
   let effectiveKandunganSize = baseKandunganSize;
   if (kandunganText.length > 55) {
@@ -109,6 +80,7 @@ export default function LabelCard({
   const dividerColor = isWhiteBg ? categoryColor : resolvedTextColor;
 
   const hasKandungan = Boolean(item.kandungan && item.kandungan.trim());
+  const halfHeight = showDivider ? `calc(50% - ${dividerThickness / 2}px)` : '50%';
 
   return (
     <div
@@ -177,11 +149,11 @@ export default function LabelCard({
         {/* Top Half: Exactly 50% height with safe margins so text NEVER touches top border or middle divider */}
         <div 
           style={{ 
-            height: '50%', 
-            maxHeight: '50%',
+            height: halfHeight, 
+            maxHeight: halfHeight,
             padding: '5px 8px 4px 8px' // Safe buffer from top border and middle divider
           }}
-          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center overflow-hidden box-border"
+          className="w-full min-h-0 flex flex-col justify-center items-center overflow-hidden box-border"
         >
           {/* Line 1: Nama Obat + Kekuatan / Dosis */}
           <div
@@ -231,11 +203,11 @@ export default function LabelCard({
         {/* Bottom Half: Exactly 50% height with safe margins */}
         <div 
           style={{ 
-            height: '50%', 
-            maxHeight: '50%',
+            height: halfHeight, 
+            maxHeight: halfHeight,
             padding: '4px 8px 5px 8px' // Safe buffer from middle divider and bottom border
           }}
-          className="w-full flex-1 min-h-0 flex flex-col justify-center items-center overflow-hidden box-border"
+          className="w-full min-h-0 flex flex-col justify-center items-center overflow-hidden box-border"
         >
           {hasKandungan && (
             <div
